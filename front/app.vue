@@ -1,8 +1,14 @@
 <template>
-  <div>
+  <nuxt-layout>
     <nuxt-page></nuxt-page>
-  </div>
+  </nuxt-layout>
 </template>
 
 <script lang="ts" setup>
+
+  import "~/assets/sass/style.scss"
+
 </script>
+
+
+<style></style>
