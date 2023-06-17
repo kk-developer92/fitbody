@@ -107,31 +107,8 @@
 
                     </a>
                 </div>
-                <swiper :modules="modules" :slides-per-view="3" :space-between="50" navigation
-                    :pagination="{ clickable: true }" :scrollbar="{ draggable: true }" @swiper="onSwiper"
-                    @slideChange="onSlideChange">
-                    <swiper-slide>Slide 1</swiper-slide>
-                    <swiper-slide>Slide 2</swiper-slide>
-                    <swiper-slide>Slide 3</swiper-slide>
-                    ...
-                </swiper>
+                
             </div>
         </div>
     </footer>
 </template>
-
-<script lang="ts" setup>
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from 'swiper/vue';
-
-
-const onSwiper = (swiper: any) => {
-    console.log(swiper);
-};
-const onSlideChange = () => {
-    console.log('slide change');
-};
-let modules = [Navigation, Pagination, Scrollbar, A11y],
-</script>
