@@ -10,7 +10,5 @@
 </script>
 
 <style>
-h2 {
-    color: white;
-}
+
 </style>
