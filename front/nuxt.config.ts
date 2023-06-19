@@ -6,4 +6,8 @@ export default defineNuxtConfig({
   buildModules: [
     '@nuxtjs/style-resources',
   ],
+  
+  
 })
+
+
