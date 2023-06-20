@@ -7,10 +7,9 @@
 </template>
 
 <script lang="ts" setup>
+
 </script>
 
 <style>
-h2 {
-    color: white;
-}
+
 </style>
