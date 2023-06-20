@@ -69,6 +69,8 @@ h2 {
     @media (max-width: 991.98px) {
         &__image {
             text-align: center;
+            margin-bottom: -50px;
+
         }
     }
     
@@ -85,10 +87,6 @@ h2 {
             font-size: 18px;
         }
         
-        .promo__image {
-            margin-bottom: -50px;
-            
-        }
     }
 }
 
@@ -150,7 +148,7 @@ h2 {
     position: relative;
     display: block;
     z-index: 1;
-    
+
     &::before {
         content: "";
         position: absolute;
@@ -161,77 +159,77 @@ h2 {
         background-image: linear-gradient(16.07deg, #0B2435 3.23%, rgba(11, 36, 53, 0) 53.88%);
         border-radius: 20px;
     }
-    
+
     img {
         border-radius: 20px;
     }
-    
+
     &__wrapper {
         position: absolute;
         left: 20px;
         right: 20px;
         bottom: 20px;
         align-items: center;
-        
+
         display: flex;
         justify-content: space-between;
-        
+
         svg {
             flex-shrink: 0;
         }
     }
-    
+
     &__title {
         margin-bottom: 0;
         font-weight: 800;
         font-size: 24px;
         line-height: 24px;
         color: white;
-        min-height: 40px;
         overflow: hidden;
         text-overflow: ellipsis;
+        max-height: 46px;
     }
-    
-    @media(max-width: 991.98px) {
-        &__desc {
-            color: #FFFFFF;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 20px;
+
+    &__desc {
+        color: #FFFFFF;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        margin-top: 12px;
+    }
+
+
+
+    @media(max-width:991.98px) {
+        img {
+            border-radius: 8px;
+            height: 120px;
+            width: 100%;
+            object-fit: cover;
         }
-        
-        
-        @media(max-width: 991.98px) {
-            img {
-                border-radius: 8px;
-                height: 120px;
-                width: 100%;
-                object-fit: cover;
-            }
-            
-            &::before {
-                border-radius: 8px;
-            }
-            font-size: 12px;
-            min-height: auto;
+
+        &::before {
+            border-radius: 8px;
         }
+
         &__wrapper {
             bottom: 8px;
             left: 10px;
             right: 6px;
         }
+
         &__title {
             font-size: 12px;
             min-height: auto;
             padding-right: 12px;
         }
-        
+
         &__desc {
             font-size: 10px;
             line-height: 12px;
             padding-right: 12px;
         }
-        
+
         svg {
             width: 16px;
             height: 16px;
@@ -386,10 +384,10 @@ h2.head-nav {
 
 .diploms {
     overflow: hidden;
-    
+
     .swiper {
         overflow: visible;
-        
+
         @media (max-width: 991.98px) {
             width: 130%;
         }
@@ -398,14 +396,7 @@ h2.head-nav {
             width: 140%;
         }
     }
-    
-    h2 {
-        display: flex;
-        align-items: center;
-        gap: 50px;
-        margin-bottom: 40px;
-    }
-    
+
     img {
         max-width: 100%;
         border-radius: 10px;
@@ -448,11 +439,11 @@ h2.head-nav {
         overflow: visible;
 
         @media (max-width: 991.98px) {
-            width: 130%;
+            width: 110%;
         }
 
         @media (max-width: 575.98px) {
-            width: 180%;
+            width: 130%;
         }
     }
 
@@ -495,12 +486,17 @@ h2.head-nav {
         display: flex;
         gap: 20px;
         flex-grow: 1;
-        font-weight: 800;
+        font-weight: 700;
         font-size: 22px;
         line-height: 24px;
+        max-width: 360px;
+        height: 80px;
+        margin: 0 auto;
+        white-space: nowrap;
         svg {
             color: #000;
             transition: 0.2s;
+            flex-shrink: 0;
         }
 
         &:hover {
@@ -513,7 +509,13 @@ h2.head-nav {
                 color: #000;
             }
         }
+
+        @media (max-width: 1199.98px) {
+            font-size: 18px;
+        }
     }
+
+    
 
 }
 
@@ -612,7 +614,6 @@ h2.head-nav {
             }
         }
     
-    ;
     }
     
     @media(max-width: 991.98px) {
@@ -622,7 +623,7 @@ h2.head-nav {
             gap: 20px;
         }
         
-        &_social {
+        &__social {
             justify-content: center;
         }
     }
