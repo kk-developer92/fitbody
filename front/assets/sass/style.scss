@@ -653,6 +653,9 @@ h2.head-nav {
         all: unset;
         cursor: pointer;
         transition: .4s ease;
+        display: flex;
+        align-items: center;
+        gap: 12px;
         
         &:hover {
             color: $main-color;
@@ -664,12 +667,12 @@ h2.head-nav {
         font-size: 1.5vw;
         text-align: center;
         
-        @media (max-width: 770px) {
+        @media (max-width: 991.98px) {
             width: auto;
             font-size: 3vw;
         }
         
-        @media (max-width: 568px) {
+        @media (max-width: 575.98px) {
             text-align: left;
             font-size: 4.5vw;
         }
@@ -677,7 +680,7 @@ h2.head-nav {
 }
 
 .training__programs {
-    padding: 104px 0 104px 0;
+    padding: 90px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -731,6 +734,7 @@ h2.head-nav {
     h2 {
         font-size: 3.5vw;
         font-weight: 700;
+        margin-bottom: 30px;
         
         @media (max-width: 595px) {
             font-size: 5vw;

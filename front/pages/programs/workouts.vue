@@ -5,7 +5,7 @@
                 <div class="d-flex flex-column align-items-sm-center justify-content-center gap-4 gap-am-5">
                     <nuxt-link to="/" class="">
                         <svg width="19" height="8" viewBox="0 0 19 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 4H19M1 4L4 1M1 4L4 7" stroke="white"/>
+                            <path d="M1 4H19M1 4L4 1M1 4L4 7" stroke="currentColor" />
                         </svg>
                         На главную
                     </nuxt-link>
@@ -19,14 +19,12 @@
                         <ul class="nav nav-tabs tab-gender pt-2 justify-content-center" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#training-man"
-                                        type="button"
-                                        role="tab" aria-selected="true">Для мужчин
+                                    type="button" role="tab" aria-selected="true">Для мужчин
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#training-woman"
-                                        type="button"
-                                        role="tab" aria-selected="false">Для женщин
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#training-woman" type="button"
+                                    role="tab" aria-selected="false">Для женщин
                                 </button>
                             </li>
                         </ul>
@@ -37,141 +35,294 @@
         <div class="container">
             <div class="training__programs">
                 <section class="">
-                    <ul class="nav nav-tabs train-tab-gender pt-2 justify-content-center" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#training-man"
-                                    type="button"
-                                    role="tab" aria-selected="true">
-                                НОВИЧКИ
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#training-woman"
-                                    type="button"
-                                    role="tab" aria-selected="false">
-                                ОПЫТНЫЕ
-                            </button>
-                        </li>
-                    </ul>
-                    <div class="tab-content mt-5" id="training">
+
+                    <div class="tab-content" id="training">
                         <div class="tab-pane fade show active" id="training-man" role="tabpanel" tabindex="0">
-                            <div class="row gy-4 justify-content-md-center">
-                                <div class="col-6 col-md-4">
-                                    <!-- service-item -->
-                                    <a href="#" class="service">
-                                        <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
-                                        <div class="service__wrapper">
+                            <!-- second tab nav -->
+                            <ul class="nav nav-tabs train-tab-gender pt-2 justify-content-center" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#junior-man"
+                                        type="button" role="tab" aria-selected="true">
+                                        НОВИЧКИ
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lead-man" type="button"
+                                        role="tab" aria-selected="false">
+                                        ОПЫТНЫЕ
+                                    </button>
+                                </li>
+                            </ul>
 
-                                            <h3 class="service__title">Ноги</h3>
-                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="15" cy="15" r="15" fill="#F52626"/>
-                                                <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                                      stroke-linejoin="round"/>
-                                            </svg>
 
+                            <div class="tab-content mt-5">
+                                <!-- sub man tab 1 -->
+                                <div class="tab-pane fade show active" id="junior-man">
+
+                                    <div class="row gy-4 justify-content-md-center">
+                                        <div class="col-6 col-md-4">
+                                            <!-- service-item -->
+                                            <a href="#" class="service">
+                                                <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
+                                                <div class="service__wrapper">
+
+                                                    <h3 class="service__title">Ноги</h3>
+                                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
+                                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+
+                                                </div>
+                                            </a>
+                                            <!-- end service-item -->
                                         </div>
-                                    </a>
-                                    <!-- end service-item -->
+                                        <div class="col-6 col-md-4">
+                                            <!-- service-item -->
+                                            <a href="#" class="service">
+                                                <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
+                                                <div class="service__wrapper">
+
+                                                    <h3 class="service__title">Full body</h3>
+                                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
+                                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+
+                                                </div>
+                                            </a>
+                                            <!-- end service-item -->
+                                        </div>
+                                        <div class="col-6 col-md-4">
+                                            <!-- service-item -->
+                                            <a href="#" class="service">
+                                                <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
+                                                <div class="service__wrapper">
+
+                                                    <h3 class="service__title">Грудные мышцы</h3>
+                                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
+                                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+
+                                                </div>
+                                            </a>
+                                            <!-- end service-item -->
+                                        </div>
+                                    </div>
+
                                 </div>
-                                <div class="col-6 col-md-4">
-                                    <!-- service-item -->
-                                    <a href="#" class="service">
-                                        <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
-                                        <div class="service__wrapper">
 
-                                            <h3 class="service__title">Full body</h3>
-                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="15" cy="15" r="15" fill="#F52626"/>
-                                                <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                                      stroke-linejoin="round"/>
-                                            </svg>
+                                <!-- sub man tab 2 -->
+                                <div class="tab-pane fade" id="lead-man">
 
+                                    <div class="row gy-4 justify-content-md-center">
+                                        <div class="col-6 col-md-4">
+                                            <!-- service-item -->
+                                            <a href="#" class="service">
+                                                <img class="img-fluid" src="@/assets/img/services/lead_man.jpg" alt="">
+                                                <div class="service__wrapper">
+
+                                                    <h3 class="service__title">Ноги</h3>
+                                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
+                                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+
+                                                </div>
+                                            </a>
+                                            <!-- end service-item -->
                                         </div>
-                                    </a>
-                                    <!-- end service-item -->
-                                </div>
-                                <div class="col-6 col-md-4">
-                                    <!-- service-item -->
-                                    <a href="#" class="service">
-                                        <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
-                                        <div class="service__wrapper">
+                                        <div class="col-6 col-md-4">
+                                            <!-- service-item -->
+                                            <a href="#" class="service">
+                                                <img class="img-fluid" src="@/assets/img/services/lead_man.jpg" alt="">
+                                                <div class="service__wrapper">
 
-                                            <h3 class="service__title">Грудные мышцы</h3>
-                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="15" cy="15" r="15" fill="#F52626"/>
-                                                <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                                      stroke-linejoin="round"/>
-                                            </svg>
+                                                    <h3 class="service__title">Full body</h3>
+                                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
+                                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
 
+                                                </div>
+                                            </a>
+                                            <!-- end service-item -->
                                         </div>
-                                    </a>
-                                    <!-- end service-item -->
+                                        <div class="col-6 col-md-4">
+                                            <!-- service-item -->
+                                            <a href="#" class="service">
+                                                <img class="img-fluid" src="@/assets/img/services/lead_man.jpg" alt="">
+                                                <div class="service__wrapper">
+
+                                                    <h3 class="service__title">Грудные мышцы</h3>
+                                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
+                                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+
+                                                </div>
+                                            </a>
+                                            <!-- end service-item -->
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
+
                         </div>
-                        <!-- tab2 -->
+                        <!-- woman tab -->
                         <div class="tab-pane fade" id="training-woman" role="tabpanel" tabindex="0">
+                            <ul class="nav nav-tabs train-tab-gender justify-content-center" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#junior-woman"
+                                        type="button" role="tab" aria-selected="true">
+                                        НОВИЧКИ
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lead-woman" type="button"
+                                        role="tab" aria-selected="false">
+                                        ОПЫТНЫЕ
+                                    </button>
+                                </li>
+                            </ul>
 
-                            <div class="row gy-4 justify-content-md-center">
-                                <div class="col-6 col-md-4">
-                                    <!-- service-item -->
-                                    <a href="#" class="service">
-                                        <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
-                                        <div class="service__wrapper">
+                            <div class="tab-content mt-5">
+                                <!-- sub woman tab 1 -->
+                                <div class="tab-pane fade show active" id="junior-woman">
+                                    <div class="row gy-4 justify-content-md-center">
+                                        <div class="col-6 col-md-4">
+                                            <!-- service-item -->
+                                            <a href="#" class="service">
+                                                <img class="img-fluid" src="@/assets/img/services/junior_woman.jpg" alt="">
+                                                <div class="service__wrapper">
 
-                                            <h3 class="service__title">НОВИЧКИ</h3>
-                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="15" cy="15" r="15" fill="#F52626"/>
-                                                <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                                      stroke-linejoin="round"/>
-                                            </svg>
+                                                    <h3 class="service__title">НОВИЧКИ</h3>
+                                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
+                                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
 
+                                                </div>
+                                            </a>
+                                            <!-- end service-item -->
                                         </div>
-                                    </a>
-                                    <!-- end service-item -->
+
+                                        <div class="col-6 col-md-4">
+                                            <!-- service-item -->
+                                            <a href="#" class="service">
+                                                <img class="img-fluid" src="@/assets/img/services/junior_woman.jpg" alt="">
+                                                <div class="service__wrapper">
+
+                                                    <h3 class="service__title">НОВИЧКИ</h3>
+                                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
+                                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+
+                                                </div>
+                                            </a>
+                                            <!-- end service-item -->
+                                        </div>
+                                        <div class="col-6 col-md-4">
+                                            <!-- service-item -->
+                                            <a href="#" class="service">
+                                                <img class="img-fluid" src="@/assets/img/services/junior_woman.jpg" alt="">
+                                                <div class="service__wrapper">
+
+                                                    <h3 class="service__title">ОПЫТНЫЕ</h3>
+                                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
+                                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+
+                                                </div>
+                                            </a>
+                                            <!-- end service-item -->
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="col-6 col-md-4">
-                                    <!-- service-item -->
-                                    <a href="#" class="service">
-                                        <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
-                                        <div class="service__wrapper">
+                                <!-- sub woman tab 2 -->
+                                <div class="tab-pane fade" id="lead-woman">
+                                    <div class="row gy-4 justify-content-md-center">
+                                        <div class="col-6 col-md-4">
+                                            <!-- service-item -->
+                                            <a href="#" class="service">
+                                                <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
+                                                <div class="service__wrapper">
 
-                                            <h3 class="service__title">НОВИЧКИ</h3>
-                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="15" cy="15" r="15" fill="#F52626"/>
-                                                <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                                      stroke-linejoin="round"/>
-                                            </svg>
+                                                    <h3 class="service__title">НОВИЧКИ</h3>
+                                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
+                                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
 
+                                                </div>
+                                            </a>
+                                            <!-- end service-item -->
                                         </div>
-                                    </a>
-                                    <!-- end service-item -->
-                                </div>
-                                <div class="col-6 col-md-4">
-                                    <!-- service-item -->
-                                    <a href="#" class="service">
-                                        <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
-                                        <div class="service__wrapper">
 
-                                            <h3 class="service__title">ОПЫТНЫЕ</h3>
-                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="15" cy="15" r="15" fill="#F52626"/>
-                                                <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                                      stroke-linejoin="round"/>
-                                            </svg>
+                                        <div class="col-6 col-md-4">
+                                            <!-- service-item -->
+                                            <a href="#" class="service">
+                                                <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
+                                                <div class="service__wrapper">
 
+                                                    <h3 class="service__title">НОВИЧКИ</h3>
+                                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
+                                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+
+                                                </div>
+                                            </a>
+                                            <!-- end service-item -->
                                         </div>
-                                    </a>
-                                    <!-- end service-item -->
+                                        <div class="col-6 col-md-4">
+                                            <!-- service-item -->
+                                            <a href="#" class="service">
+                                                <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
+                                                <div class="service__wrapper">
+
+                                                    <h3 class="service__title">ОПЫТНЫЕ</h3>
+                                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
+                                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+
+                                                </div>
+                                            </a>
+                                            <!-- end service-item -->
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+
 
                         </div>
                     </div>
@@ -181,11 +332,11 @@
             <div class="program__video">
                 <h2>Ошибки новичков</h2>
             </div>
-            <section class="video">
+            <section class="video pb-3 pb-md-5">
                 <div class="container">
                     <div class="ratio ratio-16x9">
                         <iframe src="https://www.youtube.com/embed/dvkozMW37Qc?rel=0" title="YouTube video"
-                                allowfullscreen></iframe>
+                            allowfullscreen></iframe>
                     </div>
                 </div>
             </section>
@@ -196,6 +347,4 @@
 <script lang="ts" setup>
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
