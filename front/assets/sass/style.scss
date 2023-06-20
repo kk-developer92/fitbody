@@ -335,23 +335,6 @@ h2 {
     }
     
 }
-
-
-iframe {
-    @media(max-width: 991.98px) {
-        height: 400px;
-    }
-    
-    @media(max-width: 767.98px) {
-        height: 300px;
-    }
-    
-    @media(max-width: 575.98px) {
-        height: 205px;
-    }
-}
-
-
 .categories {
     &__item {
         background: #1E242E;
@@ -379,7 +362,7 @@ iframe {
             align-self: flex-end;
             flex-shrink: 0;
         }
-        
+
         @media(max-width: 991.98px) {
             padding: 15px 24px 15px 30px;
         }
@@ -387,6 +370,19 @@ iframe {
     
 }
 
+h2.head-nav {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 40px;
+
+    @media (max-width: 991.98px) {
+        font-size: 26px;
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+}
 
 .diploms {
     overflow: hidden;
@@ -397,12 +393,11 @@ iframe {
         @media (max-width: 991.98px) {
             width: 130%;
         }
-        
+
         @media (max-width: 575.98px) {
             width: 140%;
         }
     }
-    
     
     h2 {
         display: flex;
@@ -415,15 +410,6 @@ iframe {
         max-width: 100%;
         border-radius: 10px;
         width: 100%;
-    }
-    
-    
-    @media (max-width: 991.98px) {
-        h2 {
-            font-size: 26px;
-            gap: 10px;
-            justify-content: space-between;
-        }
     }
 }
 
@@ -455,6 +441,81 @@ iframe {
     }
 }
 
+.reviews {
+    overflow: hidden;
+
+    .swiper {
+        overflow: visible;
+
+        @media (max-width: 991.98px) {
+            width: 130%;
+        }
+
+        @media (max-width: 575.98px) {
+            width: 180%;
+        }
+    }
+
+    a {
+        display: flex;
+        flex-direction: column;
+        background: #3D4552;
+        border-radius: 30px;
+        padding: 10px;
+        position: relative;
+
+        span {
+            border-radius: 20px;
+            overflow: hidden;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 143px;
+                height: 31px;
+                top: 2px;
+                left: 50%;
+                translate: -50%;
+                background: url(../img/review_mask.png);
+            }
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            width: 100%;
+        }
+    }
+
+}
+
+.buttons {
+    .button {
+        padding-inline: 20px;
+        display: flex;
+        gap: 20px;
+        flex-grow: 1;
+        font-weight: 800;
+        font-size: 22px;
+        line-height: 24px;
+        svg {
+            color: #000;
+            transition: 0.2s;
+        }
+
+        &:hover {
+            svg {
+                color: $main-color;
+            }
+        }
+        &:active {
+            svg {
+                color: #000;
+            }
+        }
+    }
+
+}
 
 .faq {
     background: #1E242E;
@@ -665,7 +726,6 @@ iframe {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 120px;
     
     h2 {
         font-size: 3.5vw;

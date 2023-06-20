@@ -1,5 +1,6 @@
 <template>
-    <section class="faq py-3 py-md-5">
+    <div class="pt-3"></div>
+    <section class="faq py-3 py-md-5 mt-3 mt-md-5">
         <div class="container py-3">
             <div class="row">
                 <div class="col-md-10 mx-auto">

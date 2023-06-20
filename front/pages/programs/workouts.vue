@@ -180,8 +180,15 @@
             </div>
             <div class="program__video">
                 <h2>Ошибки новичков</h2>
-                <img class="mt-4 w-100" src="~/assets/img/video2.png" alt="">
             </div>
+            <section class="video">
+                <div class="container">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/dvkozMW37Qc?rel=0" title="YouTube video"
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 </template>
