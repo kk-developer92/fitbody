@@ -3,7 +3,7 @@
         <div class="bg-dark">
             <div class="container">
                 <div class="d-flex flex-column align-items-sm-center justify-content-center gap-4 gap-am-5">
-                    <nuxt-link to="/" class="">
+                    <nuxt-link to="/" class="page-nav">
                         <svg width="19" height="8" viewBox="0 0 19 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 4H19M1 4L4 1M1 4L4 7" stroke="currentColor" />
                         </svg>
