@@ -2,7 +2,7 @@ $main-color: #F52626;
 $bg-dark: #1E242E;
 
 @media (min-width: 1200px) {
-    
+
     .container,
     .container-lg,
     .container-md,
@@ -21,7 +21,7 @@ h2 {
     font-weight: 800;
     font-size: 48px;
     color: white;
-    
+
     @media (max-width: 991.98px) {
         font-size: 28px;
     }
@@ -34,38 +34,38 @@ h2 {
         margin-bottom: 38px;
         font-weight: 800;
         color: $main-color;
-        
-        
+
+
         span {
             color: white;
             font-size: 48px;
             display: block;
         }
     }
-    
+
     &__text {
         font-size: 24px;
         margin-bottom: 40px;
     }
-    
+
     &__image {
         z-index: -1;
     }
-    
+
     @media(max-width: 1199.98px) {
         h1 {
             font-size: 56px;
-            
+
             span {
                 font-size: 40px;
             }
         }
-        
+
         &__text {
             font-size: 20px;
         }
     }
-    
+
     @media (max-width: 991.98px) {
         &__image {
             text-align: center;
@@ -73,20 +73,20 @@ h2 {
 
         }
     }
-    
+
     @media (max-width: 767.98px) {
         h1 {
             font-size: 32px;
-            
+
             span {
                 font-size: 24px;
             }
         }
-        
+
         &__text {
             font-size: 18px;
         }
-        
+
     }
 }
 
@@ -98,29 +98,29 @@ h2 {
     display: inline-flex;
     align-items: center;
     padding: 0 35px;
-    
+
     &:hover {
         background: none;
         border-color: $main-color;
         color: $main-color;
     }
-    
+
     &:active {
         background-color: $main-color !important;
         border-color: $main-color !important;
     }
-    
+
     @media (max-width: 767.98px) {
         height: 56px;
         font-size: 16px;
         padding: 0 20px;
     }
-    
+
 }
 
 .tab-gender {
     border: none;
-    
+
     .nav-link {
         font-weight: 800;
         font-size: 18px;
@@ -130,13 +130,13 @@ h2 {
         border-bottom: 2px solid #666D85;
         border-radius: 0;
         margin: 0;
-        
+
         &.active {
             background: none;
             color: $main-color;
             border-color: $main-color;
         }
-        
+
         @media (max-width: 767.98px) {
             width: 150px;
             font-size: 16px;
@@ -238,20 +238,20 @@ h2 {
 }
 
 .btn.btn-more {
-    
+
     --bs-btn-font-weight: 700;
     color: $main-color;
-    
+
     margin: 40px auto 0;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    
+
     font-size: 14px;
     line-height: 24px;
-    
+
     &:hover {
         color: white;
     }
@@ -259,7 +259,7 @@ h2 {
 
 .about {
     border-top: 1px solid #455266;
-    
+
     &__title {
         font-weight: 800;
         font-size: 56px;
@@ -267,13 +267,13 @@ h2 {
         color: $main-color;
         margin-bottom: 34px;
     }
-    
+
     &__list {
         display: flex;
         flex-direction: column;
         gap: 20px;
         padding: 0;
-        
+
         li {
             list-style: none;
             position: relative;
@@ -281,14 +281,14 @@ h2 {
             font-weight: 500;
             font-size: 20px;
             line-height: 30px;
-            
+
             h3 {
                 font-weight: 800;
                 font-size: 18px;
                 line-height: 30px;
             }
-            
-            
+
+
             &::before {
                 content: "";
                 position: absolute;
@@ -301,29 +301,29 @@ h2 {
             }
         }
     }
-    
+
     @media(max-width: 991.98px) {
         &__title {
             font-size: 42px;
             line-height: 48px;
             padding-right: 40px;
         }
-        
+
         &__list {
             gap: 0;
-            
+
             li {
                 font-size: 16px;
                 line-height: 24px;
                 padding-left: 20px;
-                
+
                 &::before {
                     width: 8px;
                     height: 8px;
                     border-width: 2px;
                     top: 10px;
                 }
-                
+
                 h3 {
                     font-size: 14px;
                     margin-bottom: 0;
@@ -331,8 +331,9 @@ h2 {
             }
         }
     }
-    
+
 }
+
 .categories {
     &__item {
         background: #1E242E;
@@ -345,17 +346,17 @@ h2 {
         height: 100%;
         max-width: 400px;
         margin: 0 auto;
-        
+
         h3 {
             margin-bottom: 18px;
             font-size: 32px;
             font-weight: 800;
         }
-        
+
         p {
             margin: 0;
         }
-        
+
         svg {
             align-self: flex-end;
             flex-shrink: 0;
@@ -365,7 +366,7 @@ h2 {
             padding: 15px 24px 15px 30px;
         }
     }
-    
+
 }
 
 h2.head-nav {
@@ -407,7 +408,7 @@ h2.head-nav {
 .pagination {
     display: flex;
     gap: 10px;
-    
+
     button {
         width: 50px;
         height: 50px;
@@ -418,12 +419,12 @@ h2.head-nav {
         justify-content: center;
         align-items: center;
     }
-    
+
     @media (max-width: 991.98px) {
         button {
             width: 40px;
             height: 40px;
-            
+
             svg {
                 width: 8px;
                 height: 16px;
@@ -493,6 +494,7 @@ h2.head-nav {
         height: 80px;
         margin: 0 auto;
         white-space: nowrap;
+
         svg {
             color: #000;
             transition: 0.2s;
@@ -504,6 +506,7 @@ h2.head-nav {
                 color: $main-color;
             }
         }
+
         &:active {
             svg {
                 color: #000;
@@ -515,23 +518,23 @@ h2.head-nav {
         }
     }
 
-    
+
 
 }
 
 .faq {
     background: #1E242E;
-    
+
     .accordion {
         background-color: transparent;
-        
+
         &-item {
             background: none;
             color: white;
             border-color: #666D85;
             border-width: 2px;
         }
-        
+
         &-button {
             background-color: transparent;
             color: white;
@@ -539,7 +542,7 @@ h2.head-nav {
             padding: 28px 0;
             font-weight: 800;
             font-size: 24px;
-            
+
             &::after {
                 color: white;
                 width: 30px;
@@ -554,24 +557,24 @@ h2.head-nav {
                 align-self: flex-start;
                 translate: 0 5px;
             }
-            
+
             &.collapsed {
                 &::after {
                     background-image: url(../icons/plus.svg);
                     transform: none;
                 }
             }
-            
+
             &:not(.collapsed) {
                 &::after {
                     background-image: url(../icons/minus.svg);
                     transform: none;
                 }
             }
-            
-            
+
+
         }
-        
+
         &-body {
             padding-inline: 0;
             padding-top: 0;
@@ -579,103 +582,103 @@ h2.head-nav {
             font-size: 18px;
             line-height: 26px;
         }
-        
+
         @media(max-width: 991.98px) {
             &-button {
                 padding: 20px 0;
                 font-size: 18px;
             }
         }
-        
+
     }
-    
+
 }
 
 
 .footer {
-    
+
     &__copyright {
         font-weight: 500;
         font-size: 14px;
     }
-    
+
     &__menu {
         .nav {
             gap: 20px;
-            
+
             a {
                 font-weight: 800;
                 font-size: 18px;
                 padding: 0;
-                
+
                 &:hover {
                     color: $main-color !important;
                 }
             }
         }
-    
+
     }
-    
+
     @media(max-width: 991.98px) {
         text-align: center;
-        
+
         &__wrap {
             gap: 20px;
         }
-        
+
         &__social {
             justify-content: center;
         }
     }
-    
-    
+
+
 }
 
 .bg-dark {
     background-color: $bg-dark !important;
     padding-top: 86px;
-    
+
     @media (max-width: 568px) {
         padding-top: 40px;
     }
-    
+
     h1 {
         color: $main-color;
         font-size: 8vw;
         font-weight: 800;
-        
+
         @media (max-width: 568px) {
             font-size: 10vw;
         }
     }
-    
-    a {
-        all: unset;
-        cursor: pointer;
-        transition: .4s ease;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        
-        &:hover {
-            color: $main-color;
-        }
-    }
-    
+
     p {
         width: 45vw;
         font-size: 1.5vw;
         text-align: center;
-        
+
         @media (max-width: 991.98px) {
             width: auto;
             font-size: 3vw;
         }
-        
+
         @media (max-width: 575.98px) {
             text-align: left;
             font-size: 4.5vw;
         }
+    }
+}
+
+.page-nav {
+    all: unset;
+    cursor: pointer;
+    transition: .4s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &:hover {
+        color: $main-color;
     }
 }
 
@@ -684,7 +687,7 @@ h2.head-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     @media (max-width: 568px) {
         padding: 56px 0 56px 0;
     }
@@ -696,7 +699,7 @@ h2.head-nav {
     border-radius: 8px;
     width: 406px;
     margin: 0 auto;
-    
+
     .nav-link {
         font-weight: 600;
         font-size: 1vw;
@@ -705,22 +708,22 @@ h2.head-nav {
         border: none;
         margin: 0;
         border-radius: 4px;
-        
+
         &.active {
             color: white;
             background: #666D85;
         }
-        
+
         @media (max-width: 767.98px) {
             width: 150px;
             font-size: 16px;
         }
-        
+
         @media (max-width: 568px) {
             font-size: 3vw;
         }
     }
-    
+
     @media (max-width: 767.98px) {
         width: 306px;
     }
@@ -730,14 +733,85 @@ h2.head-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     h2 {
         font-size: 3.5vw;
         font-weight: 700;
         margin-bottom: 30px;
-        
+
         @media (max-width: 595px) {
             font-size: 5vw;
+        }
+    }
+}
+
+
+
+.page {
+    .page-nav {
+        margin-bottom: 41px;
+    }
+
+    &__promo {
+        overflow: hidden;
+        .promo__image {
+            position: relative;
+            display: flex;
+            flex-direction: row-reverse;
+            scale: 1.6;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                background: url(../img/mask.png) no-repeat center center / cover;
+            }
+
+        }
+        @media (max-width: 991.98px) {
+            scale: 1.2;
+        }
+    }
+
+    &__desc {
+        h2 {
+            font-weight: 800;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 24px;
+            margin-bottom: 20px;
+
+            &~p {
+                font-size: 20px;
+            }
+        }
+    }
+
+    @media (max-width: 991.98px) {
+        h2 {
+           
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+
+            &~p {
+                font-size: 16px;
+            }
         }
     }
 }
