@@ -768,9 +768,9 @@ h2.head-nav {
             &::before {
                 content: "";
                 position: absolute;
-                left: 0;
+                left: 12px;
                 top: 0;
-                right: 0;
+                right: 12px;
                 bottom: 0;
                 background: url(../img/mask.png) no-repeat center center / cover;
             }
