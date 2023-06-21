@@ -52,7 +52,7 @@
             </section>
 
             <section class="others">
-                <h3>С этой программой также покупают</h3>
+                <h3 class="others__header">С этой программой также покупают</h3>
                 <div class="py-4">
                     <h2 class="text-center mb-md-4">Питание</h2>
                     <div class="row justify-content-center">
