@@ -154,7 +154,6 @@
                     </button>
                 </div>
             </section>
-
         </div>
     </main>
 </template>
