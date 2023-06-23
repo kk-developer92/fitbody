@@ -44,11 +44,11 @@
                     <div class="row justify-content-center">
                         <div class="col-6 col-md-4">
                             <!-- service-item -->
-                            <a href="#" class="service">
+                            <nuxt-link :to="'/trainings/' + train_beginner[0].id" class="service">
                                 <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
                                 <div class="service__wrapper">
 
-                                    <h3 class="service__title">НОВИЧКИ</h3>
+                                    <h3 class="service__title">{{ train_beginner[0].title }}</h3>
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F52626"/>
@@ -57,16 +57,16 @@
                                     </svg>
 
                                 </div>
-                            </a>
+                            </nuxt-link>
                             <!-- end service-item -->
                         </div>
                         <div class="col-6 col-md-4">
                             <!-- service-item -->
-                            <a href="#" class="service">
+                            <nuxt-link :to="'/trainings/' + train_master[0].id" class="service">
                                 <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
                                 <div class="service__wrapper">
 
-                                    <h3 class="service__title">ОПЫТНЫЕ</h3>
+                                    <h3 class="service__title">{{ train_master[0].title }}</h3>
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F52626"/>
@@ -75,7 +75,7 @@
                                     </svg>
 
                                 </div>
-                            </a>
+                            </nuxt-link>
                             <!-- end service-item -->
                         </div>
                     </div>
@@ -88,11 +88,11 @@
                     <div class="row justify-content-center">
                         <div class="col-6 col-md-4">
                             <!-- service-item -->
-                            <a href="#" class="service">
+                            <nuxt-link :to="'/trainings/' + train_beginner_w[0].id" class="service">
                                 <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
                                 <div class="service__wrapper">
 
-                                    <h3 class="service__title">НОВИЧКИ</h3>
+                                    <h3 class="service__title">{{ train_beginner_w[0].title }}</h3>
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F52626"/>
@@ -101,16 +101,16 @@
                                     </svg>
 
                                 </div>
-                            </a>
+                            </nuxt-link>
                             <!-- end service-item -->
                         </div>
                         <div class="col-6 col-md-4">
                             <!-- service-item -->
-                            <a href="#" class="service">
+                            <nuxt-link :to="'/trainings/' + train_advanced_w[0].id" class="service">
                                 <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
                                 <div class="service__wrapper">
 
-                                    <h3 class="service__title">ОПЫТНЫЕ</h3>
+                                    <h3 class="service__title">{{ train_advanced_w[0].title }}</h3>
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F52626"/>
@@ -119,7 +119,7 @@
                                     </svg>
 
                                 </div>
-                            </a>
+                            </nuxt-link>
                             <!-- end service-item -->
                         </div>
                     </div>
@@ -155,11 +155,11 @@
                     <div class="row justify-content-center">
                         <div class="col-6 col-md-4">
                             <!-- service-item -->
-                            <a href="#" class="service">
+                            <nuxt-link :to="'/nutrions' + nutrition[0].id" class="service">
                                 <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
                                 <div class="service__wrapper">
 
-                                    <h3 class="service__title">НОВИЧКИ</h3>
+                                    <h3 class="service__title">{{ nutrition[0].title }}</h3>
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F52626"/>
@@ -168,16 +168,16 @@
                                     </svg>
 
                                 </div>
-                            </a>
+                            </nuxt-link>
                             <!-- end service-item -->
                         </div>
                         <div class="col-6 col-md-4">
                             <!-- service-item -->
-                            <a href="#" class="service">
+                            <nuxt-link :to="'/nutrions' + nutrition[1].id" class="service">
                                 <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
                                 <div class="service__wrapper">
 
-                                    <h3 class="service__title">ОПЫТНЫЕ</h3>
+                                    <h3 class="service__title">{{ nutrition[1].title }}</h3>
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F52626"/>
@@ -186,7 +186,7 @@
                                     </svg>
 
                                 </div>
-                            </a>
+                            </nuxt-link>
                             <!-- end service-item -->
                         </div>
                     </div>
@@ -199,11 +199,11 @@
                     <div class="row justify-content-center">
                         <div class="col-6 col-md-4">
                             <!-- service-item -->
-                            <a href="#" class="service">
+                            <nuxt-link :to="'/nutrions' + nutrition_w[0].id" class="service">
                                 <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
                                 <div class="service__wrapper">
 
-                                    <h3 class="service__title">НОВИЧКИ</h3>
+                                    <h3 class="service__title">{{ nutrition_w[0].title }}</h3>
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F52626"/>
@@ -212,16 +212,16 @@
                                     </svg>
 
                                 </div>
-                            </a>
+                            </nuxt-link>
                             <!-- end service-item -->
                         </div>
                         <div class="col-6 col-md-4">
                             <!-- service-item -->
-                            <a href="#" class="service">
+                            <nuxt-link :to="'/nutrions' + nutrition_w[1].id" class="service">
                                 <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
                                 <div class="service__wrapper">
 
-                                    <h3 class="service__title">ОПЫТНЫЕ</h3>
+                                    <h3 class="service__title">{{ nutrition_w[1].title }}</h3>
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F52626"/>
@@ -230,7 +230,7 @@
                                     </svg>
 
                                 </div>
-                            </a>
+                            </nuxt-link>
                             <!-- end service-item -->
                         </div>
                     </div>
@@ -265,12 +265,12 @@
                     <div class="row justify-content-center">
                         <div class="col-6 col-md-4">
                             <!-- service-item -->
-                            <a href="#" class="service">
+                            <nuxt-link :to="'/courses/' + course_men[0].id" class="service">
                                 <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
                                 <div class="service__wrapper">
 
                                     <div>
-                                        <h3 class="service__title">НОВИЧКИ</h3>
+                                        <h3 class="service__title">{{ course_men[0].title }}</h3>
                                         <div class="service__desc">что нужно знать и делать, чтобы накачать большие
                                             грудные
                                             мышцы
@@ -284,17 +284,17 @@
                                     </svg>
 
                                 </div>
-                            </a>
+                            </nuxt-link>
                             <!-- end service-item -->
                         </div>
                         <div class="col-6 col-md-4">
                             <!-- service-item -->
-                            <a href="#" class="service">
+                            <nuxt-link :to="'/courses/' + course_men[1].id" class="service">
                                 <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
                                 <div class="service__wrapper">
 
                                     <div>
-                                        <h3 class="service__title">НОВИЧКИ</h3>
+                                        <h3 class="service__title">{{ course_men[1].title }}</h3>
                                         <div class="service__desc">что нужно знать и делать, чтобы накачать большие
                                             грудные
                                             мышцы
@@ -308,7 +308,7 @@
                                     </svg>
 
                                 </div>
-                            </a>
+                            </nuxt-link>
                             <!-- end service-item -->
                         </div>
                     </div>
@@ -330,12 +330,12 @@
                     <div class="row justify-content-center">
                         <div class="col-6 col-md-4">
                             <!-- service-item -->
-                            <a href="#" class="service">
+                            <nuxt-link :to="'/courses/' + course_women[0].id" class="service">
                                 <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
                                 <div class="service__wrapper">
 
                                     <div>
-                                        <h3 class="service__title">НОВИЧКИ</h3>
+                                        <h3 class="service__title">{{ course_women[0].title }}</h3>
                                         <div class="service__desc">что нужно знать и делать, чтобы накачать большие
                                             грудные
                                             мышцы
@@ -349,17 +349,17 @@
                                     </svg>
 
                                 </div>
-                            </a>
+                            </nuxt-link>
                             <!-- end service-item -->
                         </div>
                         <div class="col-6 col-md-4">
                             <!-- service-item -->
-                            <a href="#" class="service">
+                            <nuxt-link :to="'/courses/' + course_women[1].id" class="service">
                                 <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
                                 <div class="service__wrapper">
 
                                     <div>
-                                        <h3 class="service__title">НОВИЧКИ</h3>
+                                        <h3 class="service__title">{{ course_women[1].title }}</h3>
                                         <div class="service__desc">что нужно знать и делать, чтобы накачать большие
                                             грудные
                                             мышцы
@@ -373,7 +373,7 @@
                                     </svg>
 
                                 </div>
-                            </a>
+                            </nuxt-link>
                             <!-- end service-item -->
                         </div>
                     </div>
@@ -428,7 +428,7 @@
         <div class="container py-3">
             <div class="categories__wrapper row gy-4">
                 <div class="col-lg-4">
-                    <nuxt-link to="/programs" class="categories__item">
+                    <nuxt-link to="/trainings" class="categories__item">
                         <div>
                             <h3 class="categories__title">Выбрать <br> тренировки</h3>
                             <p>Программы</p>
@@ -454,7 +454,7 @@
                     </nuxt-link>
                 </div>
                 <div class="col-lg-4">
-                    <nuxt-link to="/nutrition" class="categories__item">
+                    <nuxt-link to="/nutritions" class="categories__item">
                         <div>
                             <h3 class="categories__title">Выбрать <br> питание</h3>
                             <p>Планы</p>
@@ -702,17 +702,14 @@
 </template>
 
 <script lang="ts" setup>
-
-
-// Import Swiper Vue.js components
 import {Swiper, SwiperSlide} from 'swiper/vue';
 import {Navigation} from 'swiper';
+import 'swiper/css';
+import {Fancybox} from "@fancyapps/ui";
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
+import {courses, nutrions, trainings} from "~/data";
 
 const modules = [Navigation];
-
-
-// Import Swiper styles
-import 'swiper/css';
 
 const slides = ref(
     [
@@ -740,9 +737,34 @@ const reviews = ref(
     ]
 )
 
+const data = ref(trainings)
 
-import {Fancybox} from "@fancyapps/ui";
-import '@fancyapps/ui/dist/fancybox/fancybox.css';
+const train_beginner = computed(() => trainings.trains.filter((i: {
+    type: string; complexity: string;
+}) => i.complexity == 'beginner' && i.type == 'men'))
+const train_master = computed(() => trainings.trains.filter((i: {
+    type: string; complexity: string;
+}) => i.complexity == 'advanced' && i.type == 'men'))
+const train_beginner_w = computed(() => trainings.trains.filter((i: {
+    type: string; complexity: string;
+}) => i.complexity == 'beginner' && i.type == 'women'))
+const train_advanced_w = computed(() => trainings.trains.filter((i: {
+    type: string; complexity: string;
+}) => i.complexity == 'advanced' && i.type == 'women'))
+
+const course_men = computed(() => courses.trains.filter((i: {
+    type: string
+}) => i.type == 'men'))
+const course_women = computed(() => courses.trains.filter((i: {
+    type: string
+}) => i.type == 'women'))
+
+const nutrition = computed(() => nutrions.plans.filter((i: {
+    type: string
+}) => i.type == 'men'))
+const nutrition_w = computed(() => nutrions.plans.filter((i: {
+    type: string
+}) => i.type == 'women'))
 
 Fancybox.bind("[data-fancybox]");
 
