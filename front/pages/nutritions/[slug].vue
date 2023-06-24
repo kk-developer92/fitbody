@@ -147,8 +147,11 @@
 
 <script setup lang="ts">
 
-import {nutrions} from "~/data";
+import {courses, nutrions, trainings} from "~/data";
 const route = useRoute()
 
 const current_nutrion = computed(() => nutrions.plans.find((i) => i.id === +route.params.slug))
+const others = ref(() => trainings.trains.find((i) => i.type === current_nutrion.value.type))
+const others_course = ref(() => courses.trains.find((i) => i.type === current_nutrion.value.type))
+
 </script>
