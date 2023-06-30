@@ -43,13 +43,13 @@
                 <div class="py-4">
                     <h2 class="text-center mb-md-4">Питание</h2>
                     <div class="row justify-content-center">
-                        <div class="col-6 col-md-4">
+                        <div v-for="nutrition in others.splice(0, 2)" class="col-6 col-md-4">
                             <!-- service-item -->
-                            <a href="#" class="service">
+                            <nuxt-link :to="'/nutritions/' + nutrition.id" class="service">
                                 <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
                                 <div class="service__wrapper">
 
-                                    <h3 class="service__title">НОВИЧКИ</h3>
+                                    <h3 class="service__title">{{ nutrition.title }}</h3>
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F52626" />
@@ -58,43 +58,23 @@
                                     </svg>
 
                                 </div>
-                            </a>
-                            <!-- end service-item -->
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <!-- service-item -->
-                            <a href="#" class="service">
-                                <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
-                                <div class="service__wrapper">
-
-                                    <h3 class="service__title">ОПЫТНЫЕ</h3>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
-                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                            stroke-linejoin="round" />
-                                    </svg>
-
-                                </div>
-                            </a>
+                            </nuxt-link>
                             <!-- end service-item -->
                         </div>
                     </div>
                 </div>
 
                 <div class="py-4">
-                    <h2 class="text-center mb-md-4">Курсы</h2>
+                    <h2 class="text-center mb-md-4">Тренировки</h2>
                     <div class="row justify-content-center">
-                        <div class="col-6 col-md-4">
+                        <div v-for="train in others_trainings.splice(0, 2)" class="col-6 col-md-4">
                             <!-- service-item -->
-                            <a href="#" class="service">
+                            <nuxt-link :to="'/trainings/' + train.id" class="service">
                                 <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
                                 <div class="service__wrapper">
 
                                     <div>
-                                        <h3 class="service__title">НОВИЧКИ</h3>
-                                        <div class="service__desc">что нужно знать и делать, чтобы накачать большие грудные
-                                            мышцы</div>
+                                        <h3 class="service__title">{{ train.title }}</h3>
                                     </div>
                                     <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -104,29 +84,7 @@
                                     </svg>
 
                                 </div>
-                            </a>
-                            <!-- end service-item -->
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <!-- service-item -->
-                            <a href="#" class="service">
-                                <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
-                                <div class="service__wrapper">
-
-                                    <div>
-                                        <h3 class="service__title">НОВИЧКИ</h3>
-                                        <div class="service__desc">что нужно знать и делать, чтобы накачать большие грудные
-                                            мышцы</div>
-                                    </div>
-                                    <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
-                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                            stroke-linejoin="round" />
-                                    </svg>
-
-                                </div>
-                            </a>
+                            </nuxt-link>
                             <!-- end service-item -->
                         </div>
                     </div>
@@ -147,8 +105,10 @@
 
 <script setup lang="ts">
 
-import {courses} from "~/data";
+import {courses, nutrions, trainings} from "~/data";
 const route = useRoute()
 
-const current_course = computed(() => courses.trains.find((i) => i.id === +route.params.slug))
+const current_course = computed(() => courses.trains.find((i: { id: number; }) => i.id === +route.params.slug))
+const others = ref(nutrions.plans.filter((i: { type: any; }) => i.type === current_course.value.type))
+const others_trainings = ref(trainings.trains.filter((i: { type: any; }) => i.type === current_course.value.type))
 </script>

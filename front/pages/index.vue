@@ -155,7 +155,7 @@
                     <div class="row justify-content-center">
                         <div class="col-6 col-md-4">
                             <!-- service-item -->
-                            <nuxt-link :to="'/nutrions' + nutrition[0].id" class="service">
+                            <nuxt-link :to="'/nutritions/' + nutrition[0].id" class="service">
                                 <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
                                 <div class="service__wrapper">
 
@@ -173,7 +173,7 @@
                         </div>
                         <div class="col-6 col-md-4">
                             <!-- service-item -->
-                            <nuxt-link :to="'/nutrions' + nutrition[1].id" class="service">
+                            <nuxt-link :to="'/nutritions/' + nutrition[1].id" class="service">
                                 <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
                                 <div class="service__wrapper">
 
@@ -199,7 +199,7 @@
                     <div class="row justify-content-center">
                         <div class="col-6 col-md-4">
                             <!-- service-item -->
-                            <nuxt-link :to="'/nutrions' + nutrition_w[0].id" class="service">
+                            <nuxt-link :to="'/nutritions/' + nutrition_w[0].id" class="service">
                                 <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
                                 <div class="service__wrapper">
 
@@ -217,7 +217,7 @@
                         </div>
                         <div class="col-6 col-md-4">
                             <!-- service-item -->
-                            <nuxt-link :to="'/nutrions' + nutrition_w[1].id" class="service">
+                            <nuxt-link :to="'/nutritions/' + nutrition_w[1].id" class="service">
                                 <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
                                 <div class="service__wrapper">
 
@@ -360,10 +360,7 @@
 
                                     <div>
                                         <h3 class="service__title">{{ course_women[1].title }}</h3>
-                                        <div class="service__desc">что нужно знать и делать, чтобы накачать большие
-                                            грудные
-                                            мышцы
-                                        </div>
+                                        <div class="service__desc">{{ course_women[1].short_description }}</div>
                                     </div>
                                     <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
