@@ -1,1 +1,2 @@
-# Documentation is for weak
+# Documentation is for the weak!
+
