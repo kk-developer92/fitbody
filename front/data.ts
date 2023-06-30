@@ -7,7 +7,9 @@ export const trainings: any = {
             title: 'Full Body "light"',
             complexity: 'beginner',
             media: {
-                images: [],
+                images: {
+                    full: '/_nuxt/assets/img/services/1.2.jpg'
+                },
                 videos: []
             },
             price: 240,

@@ -4,7 +4,7 @@
             <div class="container py-3">
                 <div class="promo__wrapper row align-items-center">
                     <div class="promo__image col-lg-5 col-xl-5 order-lg-last text-lg-end">
-                        <img src="@/assets/img/services/page_img.jpg" alt="">
+                        <img :src="current_train.media.images.full || '/_nuxt/assets/img/services/page_img.jpg' " alt="">
                     </div>
                     <div class="promo__text col-lg-7 col-xl-7">
                         <button @click="this.$router.go(-1)" class="page-nav">
