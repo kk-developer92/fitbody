@@ -42,13 +42,13 @@
 
 
                     <div class="row justify-content-center">
-                        <div class="col-6 col-md-4">
+                        <div class="col-6 col-md-4" v-for="t in train_beginner.slice(0, 2)">
                             <!-- service-item -->
-                            <nuxt-link :to="'/trainings/' + train_beginner[0].id" class="service">
-                                <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
+                            <nuxt-link :to="'/trainings/' + t.id" class="service">
+                                <img class="img-fluid" :src="t.media.images.full || '/_nuxt/assets/img/services/service_man.jpg'" alt="">
                                 <div class="service__wrapper">
 
-                                    <h3 class="service__title">{{ train_beginner[0].title }}</h3>
+                                    <h3 class="service__title">{{ t.title }}</h3>
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F52626"/>
@@ -60,24 +60,7 @@
                             </nuxt-link>
                             <!-- end service-item -->
                         </div>
-                        <div class="col-6 col-md-4">
-                            <!-- service-item -->
-                            <nuxt-link :to="'/trainings/' + train_master[0].id" class="service">
-                                <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
-                                <div class="service__wrapper">
 
-                                    <h3 class="service__title">{{ train_master[0].title }}</h3>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="15" cy="15" r="15" fill="#F52626"/>
-                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                              stroke-linejoin="round"/>
-                                    </svg>
-
-                                </div>
-                            </nuxt-link>
-                            <!-- end service-item -->
-                        </div>
                     </div>
 
 
@@ -86,13 +69,13 @@
                 <div class="tab-pane fade" id="training-woman" role="tabpanel" tabindex="0">
 
                     <div class="row justify-content-center">
-                        <div class="col-6 col-md-4">
+                        <div class="col-6 col-md-4" v-for="t in train_beginner_w.slice(0, 2)">
                             <!-- service-item -->
-                            <nuxt-link :to="'/trainings/' + train_beginner_w[0].id" class="service">
-                                <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
+                            <nuxt-link :to="'/trainings/' + t.id" class="service">
+                                <img class="img-fluid" :src="t.media.images.full || '/_nuxt/assets/img/services/service_woman.jpg' " alt="">
                                 <div class="service__wrapper">
 
-                                    <h3 class="service__title">{{ train_beginner_w[0].title }}</h3>
+                                    <h3 class="service__title">{{ t.title }}</h3>
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F52626"/>
@@ -104,24 +87,7 @@
                             </nuxt-link>
                             <!-- end service-item -->
                         </div>
-                        <div class="col-6 col-md-4">
-                            <!-- service-item -->
-                            <nuxt-link :to="'/trainings/' + train_advanced_w[0].id" class="service">
-                                <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
-                                <div class="service__wrapper">
-
-                                    <h3 class="service__title">{{ train_advanced_w[0].title }}</h3>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="15" cy="15" r="15" fill="#F52626"/>
-                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                              stroke-linejoin="round"/>
-                                    </svg>
-
-                                </div>
-                            </nuxt-link>
-                            <!-- end service-item -->
-                        </div>
+ 
                     </div>
 
                 </div>
@@ -153,32 +119,14 @@
 
 
                     <div class="row justify-content-center">
-                        <div class="col-6 col-md-4">
+                        <div class="col-6 col-md-4" v-for="n in nutrition.slice(0, 2)">
                             <!-- service-item -->
-                            <nuxt-link :to="'/nutritions/' + nutrition[0].id" class="service">
-                                <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
+                            <nuxt-link :to="'/nutritions/' + n.id" class="service">
+                                <img class="img-fluid" :src="n.media.images.full || '/_nuxt/assets/img/services/service_man.jpg' " alt="">
                                 <div class="service__wrapper">
 
-                                    <h3 class="service__title">{{ nutrition[0].title }}</h3>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="15" cy="15" r="15" fill="#F52626"/>
-                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                              stroke-linejoin="round"/>
-                                    </svg>
-
-                                </div>
-                            </nuxt-link>
-                            <!-- end service-item -->
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <!-- service-item -->
-                            <nuxt-link :to="'/nutritions/' + nutrition[1].id" class="service">
-                                <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
-                                <div class="service__wrapper">
-
-                                    <h3 class="service__title">{{ nutrition[1].title }}</h3>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                    <h3 class="service__title">{{ n.title }}</h3>
+                                    <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F52626"/>
                                         <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
@@ -197,14 +145,14 @@
                 <div class="tab-pane fade" id="nutrition-woman" role="tabpanel" tabindex="0">
 
                     <div class="row justify-content-center">
-                        <div class="col-6 col-md-4">
+                        <div class="col-6 col-md-4" v-for="n in nutrition_w.slice(0,2)">
                             <!-- service-item -->
-                            <nuxt-link :to="'/nutritions/' + nutrition_w[0].id" class="service">
-                                <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
+                            <nuxt-link :to="'/nutritions/' + n.id" class="service">
+                                <img class="img-fluid" :src="n.media.images.full || '/_nuxt/assets/img/services/service_woman.jpg' " alt="">
                                 <div class="service__wrapper">
 
-                                    <h3 class="service__title">{{ nutrition_w[0].title }}</h3>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                    <h3 class="service__title">{{ n.title }}</h3>
+                                    <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F52626"/>
                                         <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
@@ -215,24 +163,7 @@
                             </nuxt-link>
                             <!-- end service-item -->
                         </div>
-                        <div class="col-6 col-md-4">
-                            <!-- service-item -->
-                            <nuxt-link :to="'/nutritions/' + nutrition_w[1].id" class="service">
-                                <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
-                                <div class="service__wrapper">
 
-                                    <h3 class="service__title">{{ nutrition_w[1].title }}</h3>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="15" cy="15" r="15" fill="#F52626"/>
-                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                              stroke-linejoin="round"/>
-                                    </svg>
-
-                                </div>
-                            </nuxt-link>
-                            <!-- end service-item -->
-                        </div>
                     </div>
 
                 </div>
@@ -262,18 +193,17 @@
                 <div class="tab-pane fade show active" id="courses-man" role="tabpanel" tabindex="0">
 
 
-                    <div class="row justify-content-center">
-                        <div class="col-6 col-md-4">
+                    <div class="row gy-4 justify-content-center">
+                        <div class="col-6 col-md-4" v-for="c in course_men.slice(0,2)">
                             <!-- service-item -->
-                            <nuxt-link :to="'/courses/' + course_men[0].id" class="service">
-                                <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
+                            <nuxt-link :to="'/courses/' + c.id" class="service">
+                                <img class="img-fluid" :src="c.media.images.full || '/_nuxt/assets/img/services/service_man.jpg'" alt="">
                                 <div class="service__wrapper">
 
                                     <div>
-                                        <h3 class="service__title">{{ course_men[0].title }}</h3>
-                                        <div class="service__desc">что нужно знать и делать, чтобы накачать большие
-                                            грудные
-                                            мышцы
+                                        <h3 class="service__title">{{ c.title }}</h3>
+                                        <div class="service__desc">
+                                            {{ c.short_description }}
                                         </div>
                                     </div>
                                     <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
@@ -287,39 +217,45 @@
                             </nuxt-link>
                             <!-- end service-item -->
                         </div>
-                        <div class="col-6 col-md-4">
-                            <!-- service-item -->
-                            <nuxt-link :to="'/courses/' + course_men[1].id" class="service">
-                                <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
-                                <div class="service__wrapper">
+                        
+                    </div>
 
-                                    <div>
-                                        <h3 class="service__title">{{ course_men[1].title }}</h3>
-                                        <div class="service__desc">что нужно знать и делать, чтобы накачать большие
-                                            грудные
-                                            мышцы
+                    <div class="row">
+                        <div class="col-md-8 mx-auto collapse" id="dropdown-man">
+                            <div class="row">
+                                <div class="col-6  gy-4" v-for="c in course_men.slice(2)">
+                                    <!-- service-item -->
+                                    <nuxt-link :to="'/courses/' + c.id" class="service">
+                                        <img class="img-fluid" :src="c.media.images.full || '/_nuxt/assets/img/services/service_man.jpg'" alt="">
+                                        <div class="service__wrapper">
+        
+                                            <div>
+                                                <h3 class="service__title">{{ c.title }}</h3>
+                                                <div class="service__desc">
+                                                    {{ c.short_description }}
+                                                </div>
+                                            </div>
+                                            <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="15" cy="15" r="15" fill="#F52626"/>
+                                                <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
+                                                      stroke-linejoin="round"/>
+                                            </svg>
+        
                                         </div>
-                                    </div>
-                                    <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="15" cy="15" r="15" fill="#F52626"/>
-                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                              stroke-linejoin="round"/>
-                                    </svg>
-
+                                    </nuxt-link>
+                                    <!-- end service-item -->
                                 </div>
-                            </nuxt-link>
-                            <!-- end service-item -->
+                            </div>
                         </div>
                     </div>
 
-                    <button class="btn btn-link btn-more">
+                    <button class="btn btn-link btn-more" data-bs-toggle="collapse" data-bs-target="#dropdown-man">
                         Посмотреть все курсы
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="8" cy="8" r="8" transform="rotate(90 8 8)" fill="#F52626"/>
                             <path d="M11 7L8 10L5 7" stroke="white" stroke-width="0.933333" stroke-linejoin="round"/>
                         </svg>
-
                     </button>
 
 
@@ -328,52 +264,69 @@
                 <div class="tab-pane fade" id="courses-woman" role="tabpanel" tabindex="0">
 
                     <div class="row justify-content-center">
-                        <div class="col-6 col-md-4">
+                        <div class="col-6  gy-4" v-for="c in course_women.slice(0,2)">
                             <!-- service-item -->
-                            <nuxt-link :to="'/courses/' + course_women[0].id" class="service">
-                                <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
+                            <nuxt-link :to="'/courses/' + c.id" class="service">
+                                <img class="img-fluid" :src="c.media.images.full || '/_nuxt/assets/img/services/service_woman.jpg'" alt="">
                                 <div class="service__wrapper">
 
                                     <div>
-                                        <h3 class="service__title">{{ course_women[0].title }}</h3>
-                                        <div class="service__desc">что нужно знать и делать, чтобы накачать большие
-                                            грудные
-                                            мышцы
+                                        <h3 class="service__title">{{ c.title }}</h3>
+                                        <div class="service__desc">
+                                            {{ c.short_description }}
                                         </div>
                                     </div>
                                     <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
+                                            xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F52626"/>
                                         <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                              stroke-linejoin="round"/>
+                                                stroke-linejoin="round"/>
                                     </svg>
 
                                 </div>
                             </nuxt-link>
                             <!-- end service-item -->
                         </div>
-                        <div class="col-6 col-md-4">
-                            <!-- service-item -->
-                            <nuxt-link :to="'/courses/' + course_women[1].id" class="service">
-                                <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
-                                <div class="service__wrapper">
+                       
+                    </div>
 
-                                    <div>
-                                        <h3 class="service__title">{{ course_women[1].title }}</h3>
-                                        <div class="service__desc">{{ course_women[1].short_description }}</div>
-                                    </div>
-                                    <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="15" cy="15" r="15" fill="#F52626"/>
-                                        <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                              stroke-linejoin="round"/>
-                                    </svg>
-
+                    <div class="row">
+                        <div class="col-md-8 mx-auto collapse">
+                            <div class="row">
+                                <div class="col-6  gy-4" v-for="c in course_women.slice(2)">
+                                    <!-- service-item -->
+                                    <nuxt-link :to="'/courses/' + c.id" class="service">
+                                        <img class="img-fluid" :src="c.media.images.full || '/_nuxt/assets/img/services/service_woman.jpg'" alt="">
+                                        <div class="service__wrapper">
+        
+                                            <div>
+                                                <h3 class="service__title">{{ c.title }}</h3>
+                                                <div class="service__desc">
+                                                    {{ c.short_description }}
+                                                </div>
+                                            </div>
+                                            <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="15" cy="15" r="15" fill="#F52626"/>
+                                                <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
+                                                      stroke-linejoin="round"/>
+                                            </svg>
+        
+                                        </div>
+                                    </nuxt-link>
+                                    <!-- end service-item -->
                                 </div>
-                            </nuxt-link>
-                            <!-- end service-item -->
+                            </div>
                         </div>
                     </div>
+
+                    <button class="btn btn-link btn-more" data-bs-toggle="collapse" data-bs-target=".collapse">
+                        Посмотреть все курсы
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="8" cy="8" r="8" transform="rotate(90 8 8)" fill="#F52626"/>
+                            <path d="M11 7L8 10L5 7" stroke="white" stroke-width="0.933333" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
 
                 </div>
             </div>
@@ -626,7 +579,7 @@
         <div class="container">
             <div class="buttons__wrap row gy-4">
                 <div class=" col-lg-4">
-                    <button class="btn btn-primary button w-100">
+                    <nuxt-link to="/trainings" class="btn btn-primary button w-100">
                         <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                   d="M29.1178 15.3883L34.6097 20.8802L20.8785 34.6113L15.3867 29.1194L29.1178 15.3883Z"
@@ -651,10 +604,10 @@
                         </svg>
 
                         Выбрать программу
-                    </button>
+                    </nuxt-link>
                 </div>
                 <div class=" col-lg-4">
-                    <button class="btn btn-primary button w-100">
+                    <nuxt-link to="/nutritions" class="btn btn-primary button w-100">
                         <svg width="51" height="50" viewBox="0 0 51 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                   d="M7.37862 42.728L8.20039 43.2759C9.4793 44.1285 10.982 44.5834 12.519 44.5834H32.8044C34.3415 44.5834 35.8441 44.1285 37.123 43.2759L37.9448 42.7279C40.1107 41.284 41.4117 38.8532 41.4117 36.2501V36.2501C41.4117 35.0995 40.479 34.1667 39.3284 34.1667H5.99508C4.84448 34.1667 3.91174 35.0995 3.91174 36.2501V36.2501C3.91174 38.8532 5.2127 41.2841 7.37862 42.728V42.728Z"
@@ -671,10 +624,10 @@
                                   stroke-linejoin="round"/>
                         </svg>
                         Выбрать питание
-                    </button>
+                    </nuxt-link>
                 </div>
                 <div class="col-lg-4">
-                    <button class="btn btn-primary button w-100">
+                    <nuxt-link to="/courses" class="btn btn-primary button w-100">
                         <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M39.5837 10.4166H41.667C43.9691 10.4166 45.8337 12.2812 45.8337 14.5833V39.5833C45.8337 41.8854 43.9691 43.75 41.667 43.75H8.33366C6.03158 43.75 4.16699 41.8854 4.16699 39.5833V14.5833C4.16699 12.2812 6.03158 10.4166 8.33366 10.4166H10.417"
                                   stroke="currentColor" stroke-width="3" stroke-linecap="round"
@@ -689,7 +642,7 @@
 
 
                         Выбрать курс
-                    </button>
+                    </nuxt-link>
                 </div>
 
             </div>

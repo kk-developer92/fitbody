@@ -162,6 +162,8 @@ h2 {
     
     img {
         border-radius: 20px;
+        aspect-ratio: 1.5;
+        object-fit: cover;
     }
     
     &__wrapper {
@@ -219,6 +221,7 @@ h2 {
         
         &__title {
             font-size: 12px;
+            line-height: normal;
             min-height: auto;
             padding-right: 12px;
         }
@@ -227,7 +230,7 @@ h2 {
             font-size: 10px;
             line-height: 12px;
             padding-right: 12px;
-            margin-top: 0;
+            margin-top: 5px;
         }
         
         svg {
@@ -758,18 +761,21 @@ h2.head-nav {
             display: flex;
             flex-direction: row-reverse;
             scale: 1.6;
+            width: 448px;
+            height: 388px;
             
             img {
                 width: 100%;
                 height: 100%;
+                object-fit: cover;
             }
             
             &::before {
                 content: "";
                 position: absolute;
-                left: 0;
+                left: 11px;
                 top: 0;
-                right: 0;
+                right: 11px;
                 bottom: 0;
                 background: url(../img/mask.png) no-repeat center center / cover;
             }

@@ -18,7 +18,7 @@
                             {{ current_train.description }}
                         </div>
 
-                        <button class="btn btn-primary button">Купить за 200 тыс. сум</button>
+                        <button class="btn btn-primary button">Купить за {{ current_train.price }} тыс. сум</button>
                     </div>
 
                 </div>

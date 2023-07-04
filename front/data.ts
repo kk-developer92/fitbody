@@ -8,7 +8,7 @@ export const trainings: any = {
             complexity: 'beginner',
             media: {
                 images: {
-                    full: '/_nuxt/assets/img/services/1.2.jpg'
+                    full: "/_nuxt/assets/img/services/man-fullbody-light.jpg"
                 },
                 videos: []
             },
@@ -29,7 +29,9 @@ export const trainings: any = {
             title: 'Full Body "New level"',
             complexity: 'beginner',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/man-fullbody-nextlevel.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -45,7 +47,9 @@ export const trainings: any = {
             title: 'Full Body "business"',
             complexity: 'beginner',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/man-fullbody-bussines.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -62,7 +66,9 @@ export const trainings: any = {
             title: 'Full Body "master"',
             complexity: 'advanced',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/man-fullbody-master.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -79,7 +85,9 @@ export const trainings: any = {
             title: 'SPLIT + Full Body',
             complexity: 'advanced',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/man-split-fullbody.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -93,10 +101,12 @@ export const trainings: any = {
         {
             id: 6,
             type: 'men',
-            title: 'Seper SPLIT',
+            title: 'Super SPLIT',
             complexity: 'advanced',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/man-super-split.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -113,7 +123,9 @@ export const trainings: any = {
             title: 'CHEST in focus',
             complexity: 'advanced',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/man-chest-in-focus.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -130,7 +142,9 @@ export const trainings: any = {
             title: 'SHOLDERS in focus',
             complexity: 'advanced',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/man-sholder-in-focus.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -147,7 +161,9 @@ export const trainings: any = {
             title: 'ARMS in focus',
             complexity: 'advanced',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/man-arms.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -164,7 +180,9 @@ export const trainings: any = {
             title: 'Full Body "light"',
             complexity: 'beginner',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/woman-fullbody-light.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -181,7 +199,9 @@ export const trainings: any = {
             title: 'Full Body "glutes"',
             complexity: 'beginner',
             media: {
-                images: [],
+                images: {
+
+                },
                 videos: []
             },
             price: 240,
@@ -252,9 +272,11 @@ export const nutrions: any = {
         {
             id: 1,
             type: 'men',
-            title: 'Быстрое ПОХУДЕНИЕ',
+            title: 'Быстрое похудение',
             media: {
-                images: [],
+                images: {
+                    full: '/_nuxt/assets/img/services/man-pohudenie.jpg'
+                },
                 videos: []
             },
             price: 240,
@@ -270,9 +292,11 @@ export const nutrions: any = {
         }, {
             id: 2,
             type: 'men',
-            title: 'Super РЕЛЬЕФ',
+            title: 'Super рельеф',
             media: {
-                images: [],
+                images: {
+                    full: '/_nuxt/assets/img/services/man-relef.jpg'
+                },
                 videos: []
             },
             price: 240,
@@ -288,9 +312,11 @@ export const nutrions: any = {
         }, {
             id: 3,
             type: 'men',
-            title: 'Super МАССА',
+            title: 'Super масса',
             media: {
-                images: [],
+                images: {
+                    full: '/_nuxt/assets/img/services/man-nabor.jpg'
+                },
                 videos: []
             },
             price: 240,
@@ -304,9 +330,11 @@ export const nutrions: any = {
         {
             id: 4,
             type: 'women',
-            title: 'Быстрое ПОХУДЕНИЕ',
+            title: 'Быстрое похудение',
             media: {
-                images: [],
+                images: {
+                    full: '/_nuxt/assets/img/services/woman-pohudenie.jpg'
+                },
                 videos: []
             },
             price: 240,
@@ -322,9 +350,11 @@ export const nutrions: any = {
         }, {
             id: 5,
             type: 'women',
-            title: 'ЖироСжигание',
+            title: 'Жиросжигание',
             media: {
-                images: [],
+                images: {
+                    full: '/_nuxt/assets/img/services/woman-zhiroziganie.jpg'
+                },
                 videos: []
             },
             price: 240,
@@ -337,9 +367,11 @@ export const nutrions: any = {
         }, {
             id: 6,
             type: 'women',
-            title: 'Набор МАССЫ',
+            title: 'Набор массы',
             media: {
-                images: [],
+                images: {
+                    full: '/_nuxt/assets/img/services/woman-nabor-massi.jpg'
+                },
                 videos: []
             },
             price: 240,
@@ -364,7 +396,9 @@ export const courses: any = {
             type: 'men',
             title: 'Рост Мышц по Науке',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/man-rost-po-nauke.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -384,7 +418,9 @@ export const courses: any = {
             type: 'men',
             title: 'ЖироСжигание по Науке',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/man-ziroziganie-po-nauke.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -404,7 +440,9 @@ export const courses: any = {
             type: 'men',
             title: 'Грудь',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/man-chest-in-focus.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -424,7 +462,9 @@ export const courses: any = {
             type: 'men',
             title: 'Спина',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/man-spina.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -444,7 +484,9 @@ export const courses: any = {
             type: 'men',
             title: 'Плечи',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/man-sholder-in-focus.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -464,7 +506,9 @@ export const courses: any = {
             type: 'men',
             title: 'Руки',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/man-ruki.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -484,7 +528,9 @@ export const courses: any = {
             type: 'men',
             title: 'Пресс (бесплатно)',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/man-press.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -504,7 +550,9 @@ export const courses: any = {
             type: 'men',
             title: 'Ноги (бесплатно)',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/man-nogi.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -524,7 +572,9 @@ export const courses: any = {
             type: 'women',
             title: 'ЖироСжигание по Науке',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/woman-ziroziganie-po-nauke.jpeg"
+                },
                 videos: []
             },
             price: 240,
@@ -544,7 +594,9 @@ export const courses: any = {
             type: 'women',
             title: 'Рост Мышц по Науке',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/woman-rost-po-nauke.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -564,7 +616,9 @@ export const courses: any = {
             type: 'women',
             title: 'ЦЕЛЮЛЛИТ как избавиться',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/woman-popa.jpg"
+                },
                 videos: []
             },
             price: 240,
@@ -584,7 +638,9 @@ export const courses: any = {
             type: 'women',
             title: 'Упругость Кожи и Коллаген',
             media: {
-                images: [],
+                images: {
+                    full: "/_nuxt/assets/img/services/kolagen.avif"
+                },
                 videos: []
             },
             price: 240,

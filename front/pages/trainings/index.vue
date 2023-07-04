@@ -60,7 +60,7 @@
                                         <div v-for="train in train_beginner" class="col-6 col-md-4">
                                             <!-- service-item -->
                                             <nuxt-link :to="'/trainings/' + train.id" class="service">
-                                                <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
+                                                <img class="img-fluid" :src="train.media.images.full" alt="">
                                                 <div class="service__wrapper">
 
                                                     <h3 class="service__title">{{ train.title }}</h3>
@@ -86,7 +86,7 @@
                                         <div v-for="train in train_master" class="col-6 col-md-4">
                                             <!-- service-item -->
                                             <nuxt-link :to="'trainings/' + train.id" class="service">
-                                                <img class="img-fluid" src="@/assets/img/services/lead_man.jpg" alt="">
+                                                <img class="img-fluid" :src="train.media.images.full || '/_nuxt/assets/img/services/lead_man.jpg'" alt="">
                                                 <div class="service__wrapper">
 
                                                     <h3 class="service__title">{{ train.title }}</h3>
@@ -131,7 +131,7 @@
                                         <div v-for="train in train_beginner_w" class="col-6 col-md-4">
                                             <!-- service-item -->
                                             <nuxt-link :to="'/trainings/' + train.id" class="service">
-                                                <img class="img-fluid" src="@/assets/img/services/junior_woman.jpg" alt="">
+                                                <img class="img-fluid" :src="train.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" alt="">
                                                 <div class="service__wrapper">
 
                                                     <h3 class="service__title">{{ train.title }}</h3>

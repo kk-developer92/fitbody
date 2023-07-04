@@ -4,7 +4,7 @@
             <div class="container py-3">
                 <div class="promo__wrapper row align-items-center">
                     <div class="promo__image col-lg-5 col-xl-5 order-lg-last text-lg-end">
-                        <img src="@/assets/img/services/page_img.jpg" alt="">
+                        <img :src="current_course.media.images.full || '/_nuxt/assets/img/services/page_img.jpg' " alt="">
                     </div>
                     <div class="promo__text col-lg-7 col-xl-7">
                         <button @click="this.$router.go(-1)" class="page-nav">
@@ -18,7 +18,7 @@
                             {{ current_course.description }}
                         </div>
 
-                        <button class="btn btn-primary button">Купить за 200 тыс. сум</button>
+                        <button class="btn btn-primary button">Купить за {{current_course.price}} тыс. сум</button>
                     </div>
 
                 </div>
@@ -32,7 +32,7 @@
                         <h2>О ПРОГРАММЕ</h2>
                         <div v-html="current_course.about_program"></div>
 
-                        <button class="btn btn-primary button mt-4">Купить за 200 тыс. сум</button>
+                        <button class="btn btn-primary button mt-4">Купить за {{ current_course.price }} тыс. сум</button>
 
                     </div>
                 </div>
