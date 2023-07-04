@@ -64,7 +64,7 @@
                                                 <div class="service__wrapper">
 
                                                     <h3 class="service__title">{{ train.title }}</h3>
-                                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                    <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
                                                         <circle cx="15" cy="15" r="15" fill="#F52626" />
                                                         <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
@@ -90,7 +90,7 @@
                                                 <div class="service__wrapper">
 
                                                     <h3 class="service__title">{{ train.title }}</h3>
-                                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                    <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
                                                         <circle cx="15" cy="15" r="15" fill="#F52626" />
                                                         <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
@@ -127,7 +127,7 @@
                             <div class="tab-content mt-5">
                                 <!-- sub woman tab 1 -->
                                 <div class="tab-pane fade show active" id="junior-woman">
-                                    <div class="row gy-4 justify-content-md-center">
+                                    <div class="row gy-4">
                                         <div v-for="train in train_beginner_w" class="col-6 col-md-4">
                                             <!-- service-item -->
                                             <nuxt-link :to="'/trainings/' + train.id" class="service">
@@ -135,7 +135,7 @@
                                                 <div class="service__wrapper">
 
                                                     <h3 class="service__title">{{ train.title }}</h3>
-                                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                    <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
                                                         <circle cx="15" cy="15" r="15" fill="#F52626" />
                                                         <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
@@ -151,15 +151,15 @@
 
                                 <!-- sub woman tab 2 -->
                                 <div class="tab-pane fade" id="lead-woman">
-                                    <div class="row gy-4 justify-content-md-center">
-                                        <div v-for="train in train_advanced_w"  class="col-6 col-md-4">
+                                    <div class="row gy-4">
+                                        <div v-for="train in train_advanced_w" class="col-6 col-md-4">
                                             <!-- service-item -->
                                             <nuxt-link :to="'/trainings/' + train.id" class="service">
-                                                <img class="img-fluid" src="@/assets/img/services/service_woman.jpg" alt="">
+                                                <img class="img-fluid" :src="train.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" alt="">
                                                 <div class="service__wrapper">
 
                                                     <h3 class="service__title">{{ train.title }}</h3>
-                                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                    <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
                                                         <circle cx="15" cy="15" r="15" fill="#F52626" />
                                                         <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"

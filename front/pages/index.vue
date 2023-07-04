@@ -264,7 +264,7 @@
                 <div class="tab-pane fade" id="courses-woman" role="tabpanel" tabindex="0">
 
                     <div class="row justify-content-center">
-                        <div class="col-6  gy-4" v-for="c in course_women.slice(0,2)">
+                        <div class="col-6 col-md-4 gy-4" v-for="c in course_women.slice(0,2)">
                             <!-- service-item -->
                             <nuxt-link :to="'/courses/' + c.id" class="service">
                                 <img class="img-fluid" :src="c.media.images.full || '/_nuxt/assets/img/services/service_woman.jpg'" alt="">
@@ -291,7 +291,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-8 mx-auto collapse">
+                        <div class="col-md-8 mx-auto collapse" id="dropdown-woman">
                             <div class="row">
                                 <div class="col-6  gy-4" v-for="c in course_women.slice(2)">
                                     <!-- service-item -->
@@ -320,7 +320,7 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-link btn-more" data-bs-toggle="collapse" data-bs-target=".collapse">
+                    <button class="btn btn-link btn-more" data-bs-toggle="collapse" data-bs-target="#dropdown-woman">
                         Посмотреть все курсы
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="8" cy="8" r="8" transform="rotate(90 8 8)" fill="#F52626"/>
@@ -499,7 +499,7 @@
                 }"
             >
                 <swiper-slide v-for="slide in slides">
-                    <a data-fancybox="gallery" :href="slide">
+                    <a data-fancybox="diploms" :href="slide">
                         <img :src="slide"/>
                     </a>
                 </swiper-slide>
@@ -565,7 +565,7 @@
                 }"
             >
                 <swiper-slide v-for="review in reviews">
-                    <a data-fancybox="gallery" :href="review">
+                    <a data-fancybox="reviews" :href="review">
                         <span>
                             <img :src="review"/>
                         </span>
@@ -669,13 +669,18 @@ const slides = ref(
         "/_nuxt/assets/img/diploms/diplom-4.jpg",
         "/_nuxt/assets/img/diploms/diplom-5.jpg",
         "/_nuxt/assets/img/diploms/diplom-6.jpg",
-        "/_nuxt/assets/img/diploms/diplom-7.jpg",
-        "/_nuxt/assets/img/diploms/diplom-8.jpg"
+        "/_nuxt/assets/img/diploms/diplom-4.jpg",
+        "/_nuxt/assets/img/diploms/diplom-5.jpg",
+        "/_nuxt/assets/img/diploms/diplom-6.jpg",
+        "/_nuxt/assets/img/diploms/diplom-7.jpg"
     ]
 )
 
 const reviews = ref(
     [
+        "/_nuxt/assets/img/reviews/review-1.png",
+        "/_nuxt/assets/img/reviews/review-1.png",
+        "/_nuxt/assets/img/reviews/review-1.png",
         "/_nuxt/assets/img/reviews/review-1.png",
         "/_nuxt/assets/img/reviews/review-1.png",
         "/_nuxt/assets/img/reviews/review-1.png",

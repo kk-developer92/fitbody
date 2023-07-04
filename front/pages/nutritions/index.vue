@@ -36,7 +36,7 @@
                     <div class="tab-content" id="training">
                         <div class="tab-pane fade show active" id="training-man" role="tabpanel" tabindex="0">
                             <!-- second tab nav -->
-                            <div class="row gy-4 justify-content-md-center">
+                            <div class="row gy-4">
                                 <div v-for="nut in nutrition" class="col-6 col-md-4">
                                     <!-- service-item -->
                                     <nuxt-link :to="'/nutritions/' + nut.id" class="service">
@@ -60,7 +60,7 @@
                         </div>
                         <!-- woman tab -->
                         <div class="tab-pane fade" id="training-woman" role="tabpanel" tabindex="0">
-                            <div class="row gy-4 justify-content-md-center">
+                            <div class="row gy-4">
                                 <div v-for="nut in nutrition_w" class="col-6 col-md-4">
                                     <!-- service-item -->
                                     <nuxt-link :to="'/nutritions/' + nut.id" class="service">

@@ -200,7 +200,7 @@ export const trainings: any = {
             complexity: 'beginner',
             media: {
                 images: {
-
+                    full: '/_nuxt/assets/img/services/woman-fullbody-glutter.jpg'
                 },
                 videos: []
             },
@@ -218,7 +218,9 @@ export const trainings: any = {
             title: 'Full Body "business"',
             complexity: 'beginner',
             media: {
-                images: [],
+                images: {
+                    full: '/_nuxt/assets/img/services/woman-fullbody-bussines.jpg'
+                },
                 videos: []
             },
             price: 240,
@@ -235,7 +237,9 @@ export const trainings: any = {
             title: 'GLUTES in focus',
             complexity: 'advanced',
             media: {
-                images: [],
+                images: {
+                    full: '/_nuxt/assets/img/services/woman-glutes-in-focus.jpg'
+                },
                 videos: []
             },
             price: 240,
@@ -252,7 +256,9 @@ export const trainings: any = {
             title: 'Super SPLIT',
             complexity: 'advanced',
             media: {
-                images: [],
+                images: {
+                    full: 'https://img.freepik.com/premium-photo/athletic-fitness-woman-posing-in-the-studio-on-a-dark-background-photo-of-an-attractive-woman-in-fashionable-sportswear-sports-and-healthy-lifestyle_392761-5169.jpg?size=626&ext=jpg&uid=R12698224&ga=GA1.2.321967735.1683624013&semt=ais'
+                },
                 videos: []
             },
             price: 240,

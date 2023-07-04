@@ -36,14 +36,18 @@
                     <div class="tab-content" id="training">
                         <div class="tab-pane fade show active" id="training-man" role="tabpanel" tabindex="0">
                             <!-- second tab nav -->
-                            <div class="row gy-4 justify-content-md-center">
+                            <div class="row gy-4">
                                 <div v-for="c in course" class="col-6 col-md-4">
                                     <!-- service-item -->
                                     <nuxt-link :to="'/courses/' + c.id" class="service">
                                         <img class="img-fluid" :src="c.media.images.full || '/_nuxt/assets/img/services/service_man.jpg'" alt="">
                                         <div class="service__wrapper">
+                                            
+                                            <div>
+                                                <h3 class="service__title">{{ c.title }}</h3>
+                                                <div class="service__desc">{{ c.short_description }}</div>
+                                            </div>
 
-                                            <h3 class="service__title">{{ c.title }}</h3>
                                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                  xmlns="http://www.w3.org/2000/svg">
                                                 <circle cx="15" cy="15" r="15" fill="#F52626"/>
@@ -60,14 +64,18 @@
                         </div>
                         <!-- woman tab -->
                         <div class="tab-pane fade" id="training-woman" role="tabpanel" tabindex="0">
-                            <div class="row gy-4 justify-content-md-center">
+                            <div class="row gy-4">
                                 <div v-for="c in course_w" class="col-6 col-md-4">
                                     <!-- service-item -->
                                     <nuxt-link :to="'/courses/' + c.id" class="service">
                                         <img class="img-fluid" :src="c.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" alt="">
                                         <div class="service__wrapper">
 
-                                            <h3 class="service__title">{{ c.title }}</h3>
+                                            <div>
+                                                <h3 class="service__title">{{ c.title }}</h3>
+                                                <div class="service__desc">{{ c.short_description }}</div>
+                                            </div>
+
                                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                  xmlns="http://www.w3.org/2000/svg">
                                                 <circle cx="15" cy="15" r="15" fill="#F52626"/>

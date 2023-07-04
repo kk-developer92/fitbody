@@ -46,7 +46,7 @@
                         <div v-for="nutrition in others.splice(0, 2)" class="col-6 col-md-4">
                             <!-- service-item -->
                             <nuxt-link :to="'/nutritions/' + nutrition.id" class="service">
-                                <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
+                                <img class="img-fluid" :src="nutrition.media.images.full || image" alt="">
                                 <div class="service__wrapper">
 
                                     <h3 class="service__title">{{ nutrition.title }}</h3>
@@ -70,7 +70,7 @@
                         <div v-for="train in others_trainings.splice(0, 2)" class="col-6 col-md-4">
                             <!-- service-item -->
                             <nuxt-link :to="'/trainings/' + train.id" class="service">
-                                <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
+                                <img class="img-fluid" :src="train.media.images.full || image" alt="">
                                 <div class="service__wrapper">
 
                                     <div>
@@ -89,14 +89,7 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-link btn-more">
-                        Посмотреть все курсы
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="8" cy="8" r="8" transform="rotate(90 8 8)" fill="#F52626" />
-                            <path d="M11 7L8 10L5 7" stroke="white" stroke-width="0.933333" stroke-linejoin="round" />
-                        </svg>
-
-                    </button>
+                    
                 </div>
             </section>
         </div>
@@ -109,6 +102,7 @@ import {courses, nutrions, trainings} from "~/data";
 const route = useRoute()
 
 const current_course = computed(() => courses.trains.find((i: { id: number; }) => i.id === +route.params.slug))
+const image = ref(current_course.value.type === "men" ? '/_nuxt/assets/img/services/service_man.jpg' : '/_nuxt/assets/img/services/service_woman.jpg')
 const others = ref(nutrions.plans.filter((i: { type: any; }) => i.type === current_course.value.type))
 const others_trainings = ref(trainings.trains.filter((i: { type: any; }) => i.type === current_course.value.type))
 </script>

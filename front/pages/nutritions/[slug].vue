@@ -32,7 +32,7 @@
                         <h2>О ПРОГРАММЕ</h2>
                         <div v-html="current_nutrion.about_program"></div>
 
-                        <button class="btn btn-primary button mt-4">Купить за 200 тыс. сум</button>
+                        <button class="btn btn-primary button mt-4">Купить за {{ current_nutrion.price}} тыс. сум</button>
 
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                         <div v-for="train in others.splice(0,2)" class="col-6 col-md-4">
                             <!-- service-item -->
                             <nuxt-link :to="'/trainings/' + train.id" class="service">
-                                <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
+                                <img class="img-fluid" :src="train.media.images.full || image" alt="">
                                 <div class="service__wrapper">
 
                                     <h3 class="service__title">{{ train.title }}</h3>
@@ -70,7 +70,7 @@
                         <div v-for="course in others_course.splice(0,2)" class="col-6 col-md-4">
                             <!-- service-item -->
                             <nuxt-link :to="'/courses/' + course.id" class="service">
-                                <img class="img-fluid" src="@/assets/img/services/service_man.jpg" alt="">
+                                <img class="img-fluid" :src="course.media.images.full || image" alt="">
                                 <div class="service__wrapper">
 
                                     <div>
@@ -110,6 +110,8 @@ import {courses, nutrions, trainings} from "~/data";
 const route = useRoute()
 
 const current_nutrion = computed(() => nutrions.plans.find((i: { id: number; }) => i.id === +route.params.slug))
+const image = ref(current_nutrion.value.type === "men" ? '/_nuxt/assets/img/services/service_man.jpg' : '/_nuxt/assets/img/services/service_woman.jpg')
+
 const others = ref(trainings.trains.filter((i: { type: any; }) => i.type === current_nutrion.value.type))
 const others_course = ref(courses.trains.filter((i: { type: any; }) => i.type === current_nutrion.value.type))
 
