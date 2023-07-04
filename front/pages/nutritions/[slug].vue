@@ -1,4 +1,8 @@
 <template>
+    <Head>
+        <Title>Программа питание {{ current_nutrion.title }} - Fitbody</Title>
+        <Meta name="description" :content="current_nutrion.description" />
+    </Head>
     <main class="page">
         <section class="promo page__promo py-3 py-md-5">
             <div class="container py-3">

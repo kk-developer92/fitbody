@@ -104,6 +104,12 @@
 
 import {nutrions} from "~/data";
 
+useHead({
+    title: "Питание | FitBody",
+    meta: [
+        {name: "description", content: ""}
+    ]
+})
 
 const nutrition = computed(() => nutrions.plans.filter((i: {
     type: string; complexity: string;

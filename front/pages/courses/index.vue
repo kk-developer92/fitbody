@@ -112,6 +112,12 @@
 
 import {courses} from "~/data";
 
+useHead({
+    title: "Курсы | FitBody",
+    meta: [
+        {name: "description", content: ""}
+    ]
+})
 
 const course = computed(() => courses.trains.filter((i: {
     type: string; complexity: string;
