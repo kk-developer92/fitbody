@@ -94,14 +94,13 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-link btn-more">
+                    <nuxt-link to="/courses" class="btn btn-link btn-more">
                         Посмотреть все курсы
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="8" cy="8" r="8" transform="rotate(90 8 8)" fill="#F52626" />
-                            <path d="M11 7L8 10L5 7" stroke="white" stroke-width="0.933333" stroke-linejoin="round" />
+                            <circle cx="8" cy="8" r="8" transform="rotate(90 8 8)" fill="#F52626"/>
+                            <path d="M11 7L8 10L5 7" stroke="white" stroke-width="0.933333" stroke-linejoin="round"/>
                         </svg>
-
-                    </button>
+                    </nuxt-link>
                 </div>
             </section>
         </div>

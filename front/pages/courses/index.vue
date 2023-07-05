@@ -48,7 +48,7 @@
                                                 <div class="service__desc">{{ c.short_description }}</div>
                                             </div>
 
-                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                            <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                  xmlns="http://www.w3.org/2000/svg">
                                                 <circle cx="15" cy="15" r="15" fill="#F52626"/>
                                                 <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
@@ -76,7 +76,7 @@
                                                 <div class="service__desc">{{ c.short_description }}</div>
                                             </div>
 
-                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                            <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                  xmlns="http://www.w3.org/2000/svg">
                                                 <circle cx="15" cy="15" r="15" fill="#F52626"/>
                                                 <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
