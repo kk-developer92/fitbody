@@ -199,6 +199,13 @@
 
 import {trainings} from "~/data";
 
+useHead({
+    title: "Тренировки | FitBody",
+    meta: [
+        {name: "description", content: "фитнес тренер, который составляет программы тренировок в тренажерном зале на основе ваших целей и силовых показателей."}
+    ]
+})
+
 const train_beginner = computed(() => trainings.trains.filter((i: {
     type: string; complexity: string;
 }) => i.complexity == 'beginner' && i.type == 'men'))
