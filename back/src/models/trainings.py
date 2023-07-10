@@ -5,7 +5,7 @@ from .base import Base, DictMixin
 
 
 class TrainingsModel(Base, DictMixin):
-    __tablename__ = "trainings"
+    __tablename__ = "training"
 
     id = Column(String, primary_key=True)
     type = Column(String)

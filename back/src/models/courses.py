@@ -4,7 +4,7 @@ from .base import Base, DictMixin
 
 
 class CourseModel(Base, DictMixin):
-    __tablename__ = "courses"
+    __tablename__ = "course"
 
     id = Column(String, primary_key=True)
     type = Column(String)
