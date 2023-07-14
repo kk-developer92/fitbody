@@ -28,6 +28,6 @@ app.include_router(
 current_user = fastapi_users.current_user()
 
 
-@app.get("/protected-route")
+@app.get("/user", tags=["user"])
 def protected_route(user: User = Depends(current_user)):
     return user
