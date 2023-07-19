@@ -471,7 +471,7 @@ h2.head-nav {
                 top: 2px;
                 left: 50%;
                 translate: -50%;
-                background: url(../img/review_mask.png);
+                background: url(review_mask.png);
             }
         }
         
@@ -562,14 +562,14 @@ h2.head-nav {
             
             &.collapsed {
                 &::after {
-                    background-image: url(../icons/plus.svg);
+                    background-image: url(plus.svg);
                     transform: none;
                 }
             }
             
             &:not(.collapsed) {
                 &::after {
-                    background-image: url(../icons/minus.svg);
+                    background-image: url(minus.svg);
                     transform: none;
                 }
             }
@@ -777,7 +777,7 @@ h2.head-nav {
                 top: 0;
                 right: 11px;
                 bottom: 0;
-                background: url(../img/mask.png) no-repeat center center / cover;
+                background: url(mask.png) no-repeat center center / cover;
             }
             
             @media (max-width: 991.98px) {
