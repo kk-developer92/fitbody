@@ -3,7 +3,10 @@ export default defineNuxtConfig({
   // @ts-ignore
   devtools: { enabled: false },
 
-  ssr: false,
+  buildModules: [
+    '@nuxtjs/style-resources',
+  ],
+  ssr: true,
   app: {
     head: {
       title: "Тренировки, питание, курсы",
