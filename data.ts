@@ -8,7 +8,7 @@ export const trainings: any = {
             complexity: 'beginner',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/man-fullbody-light.jpg"
+                    full: "/img/services/man-fullbody-light.jpg"
                 },
                 videos: []
             },
@@ -30,7 +30,7 @@ export const trainings: any = {
             complexity: 'beginner',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/man-fullbody-nextlevel.jpg"
+                    full: "/img/services/man-fullbody-nextlevel.jpg"
                 },
                 videos: []
             },
@@ -48,7 +48,7 @@ export const trainings: any = {
             complexity: 'beginner',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/man-fullbody-bussines.jpg"
+                    full: "/img/services/man-fullbody-bussines.jpg"
                 },
                 videos: []
             },
@@ -67,7 +67,7 @@ export const trainings: any = {
             complexity: 'advanced',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/man-fullbody-master.jpg"
+                    full: "/img/services/man-fullbody-master.jpg"
                 },
                 videos: []
             },
@@ -86,7 +86,7 @@ export const trainings: any = {
             complexity: 'advanced',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/man-split-fullbody.jpg"
+                    full: "/img/services/man-split-fullbody.jpg"
                 },
                 videos: []
             },
@@ -105,7 +105,7 @@ export const trainings: any = {
             complexity: 'advanced',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/man-super-split.jpg"
+                    full: "/img/services/man-super-split.jpg"
                 },
                 videos: []
             },
@@ -124,7 +124,7 @@ export const trainings: any = {
             complexity: 'advanced',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/man-chest-in-focus.jpg"
+                    full: "/img/services/man-chest-in-focus.jpg"
                 },
                 videos: []
             },
@@ -143,7 +143,7 @@ export const trainings: any = {
             complexity: 'advanced',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/man-sholder-in-focus.jpg"
+                    full: "/img/services/man-sholder-in-focus.jpg"
                 },
                 videos: []
             },
@@ -162,7 +162,7 @@ export const trainings: any = {
             complexity: 'advanced',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/man-arms.jpg"
+                    full: "/img/services/man-arms.jpg"
                 },
                 videos: []
             },
@@ -181,7 +181,7 @@ export const trainings: any = {
             complexity: 'beginner',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/woman-fullbody-light.jpg"
+                    full: "/img/services/woman-fullbody-light.jpg"
                 },
                 videos: []
             },
@@ -200,7 +200,7 @@ export const trainings: any = {
             complexity: 'beginner',
             media: {
                 images: {
-                    full: '/_nuxt/assets/img/services/woman-fullbody-glutter.jpg'
+                    full: '/img/services/woman-fullbody-glutter.jpg'
                 },
                 videos: []
             },
@@ -219,7 +219,7 @@ export const trainings: any = {
             complexity: 'beginner',
             media: {
                 images: {
-                    full: '/_nuxt/assets/img/services/woman-fullbody-bussines.jpg'
+                    full: '/img/services/woman-fullbody-bussines.jpg'
                 },
                 videos: []
             },
@@ -238,7 +238,7 @@ export const trainings: any = {
             complexity: 'advanced',
             media: {
                 images: {
-                    full: '/_nuxt/assets/img/services/woman-glutes-in-focus.jpg'
+                    full: '/img/services/woman-glutes-in-focus.jpg'
                 },
                 videos: []
             },
@@ -281,7 +281,7 @@ export const nutrions: any = {
             title: 'Быстрое похудение',
             media: {
                 images: {
-                    full: '/_nuxt/assets/img/services/man-pohudenie.jpg'
+                    full: '/img/services/man-pohudenie.jpg'
                 },
                 videos: []
             },
@@ -301,7 +301,7 @@ export const nutrions: any = {
             title: 'Super рельеф',
             media: {
                 images: {
-                    full: '/_nuxt/assets/img/services/man-relef.jpg'
+                    full: '/img/services/man-relef.jpg'
                 },
                 videos: []
             },
@@ -321,7 +321,7 @@ export const nutrions: any = {
             title: 'Super масса',
             media: {
                 images: {
-                    full: '/_nuxt/assets/img/services/man-nabor.jpg'
+                    full: '/img/services/man-nabor.jpg'
                 },
                 videos: []
             },
@@ -339,7 +339,7 @@ export const nutrions: any = {
             title: 'Быстрое похудение',
             media: {
                 images: {
-                    full: '/_nuxt/assets/img/services/woman-pohudenie.jpg'
+                    full: '/img/services/woman-pohudenie.jpg'
                 },
                 videos: []
             },
@@ -359,7 +359,7 @@ export const nutrions: any = {
             title: 'Жиросжигание',
             media: {
                 images: {
-                    full: '/_nuxt/assets/img/services/woman-zhiroziganie.jpg'
+                    full: '/img/services/woman-zhiroziganie.jpg'
                 },
                 videos: []
             },
@@ -376,7 +376,7 @@ export const nutrions: any = {
             title: 'Набор массы',
             media: {
                 images: {
-                    full: '/_nuxt/assets/img/services/woman-nabor-massi.jpg'
+                    full: '/img/services/woman-nabor-massi.jpg'
                 },
                 videos: []
             },
@@ -403,7 +403,7 @@ export const courses: any = {
             title: 'Рост Мышц по Науке',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/man-rost-po-nauke.jpg"
+                    full: "/img/services/man-rost-po-nauke.jpg"
                 },
                 videos: []
             },
@@ -425,7 +425,7 @@ export const courses: any = {
             title: 'ЖироСжигание по Науке',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/man-ziroziganie-po-nauke.jpg"
+                    full: "/img/services/man-ziroziganie-po-nauke.jpg"
                 },
                 videos: []
             },
@@ -447,7 +447,7 @@ export const courses: any = {
             title: 'Грудь',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/man-chest-in-focus.jpg"
+                    full: "/img/services/man-chest-in-focus.jpg"
                 },
                 videos: []
             },
@@ -469,7 +469,7 @@ export const courses: any = {
             title: 'Спина',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/man-spina.jpg"
+                    full: "/img/services/man-spina.jpg"
                 },
                 videos: []
             },
@@ -491,7 +491,7 @@ export const courses: any = {
             title: 'Плечи',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/man-sholder-in-focus.jpg"
+                    full: "/img/services/man-sholder-in-focus.jpg"
                 },
                 videos: []
             },
@@ -513,7 +513,7 @@ export const courses: any = {
             title: 'Руки',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/man-ruki.jpg"
+                    full: "/img/services/man-ruki.jpg"
                 },
                 videos: []
             },
@@ -535,7 +535,7 @@ export const courses: any = {
             title: 'Пресс (бесплатно)',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/man-press.jpg"
+                    full: "/img/services/man-press.jpg"
                 },
                 videos: []
             },
@@ -557,7 +557,7 @@ export const courses: any = {
             title: 'Ноги (бесплатно)',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/man-nogi.jpg"
+                    full: "/img/services/man-nogi.jpg"
                 },
                 videos: []
             },
@@ -579,7 +579,7 @@ export const courses: any = {
             title: 'ЖироСжигание по Науке',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/woman-ziroziganie-po-nauke.jpeg"
+                    full: "/img/services/woman-ziroziganie-po-nauke.jpeg"
                 },
                 videos: []
             },
@@ -601,7 +601,7 @@ export const courses: any = {
             title: 'Рост Мышц по Науке',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/woman-rost-po-nauke.jpg"
+                    full: "/img/services/woman-rost-po-nauke.jpg"
                 },
                 videos: []
             },
@@ -623,7 +623,7 @@ export const courses: any = {
             title: 'ЦЕЛЮЛЛИТ как избавиться',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/woman-popa.jpg"
+                    full: "/img/services/woman-popa.jpg"
                 },
                 videos: []
             },
@@ -645,7 +645,7 @@ export const courses: any = {
             title: 'Упругость Кожи и Коллаген',
             media: {
                 images: {
-                    full: "/_nuxt/assets/img/services/kolagen.avif"
+                    full: "/img/services/kolagen.avif"
                 },
                 videos: []
             },
