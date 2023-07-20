@@ -2,6 +2,11 @@
 export default defineNuxtConfig({
   // @ts-ignore
   devtools: { enabled: false },
+
+  buildModules: [
+    '@nuxtjs/style-resources',
+  ],
+  
   ssr: true,
   app: {
     head: {
