@@ -192,23 +192,23 @@ import CategoriesMain from "~/components/common/categories/CategoriesMain.vue";
 
 const slides = ref(
     [
-        "/_nuxt/assets/img/diploms/diplom-1.jpg",
-        "/_nuxt/assets/img/diploms/diplom-2.jpg",
-        "/_nuxt/assets/img/diploms/diplom-3.jpg",
-        "/_nuxt/assets/img/diploms/diplom-4.jpg",
-        "/_nuxt/assets/img/diploms/diplom-5.jpg",
-        "/_nuxt/assets/img/diploms/diplom-6.jpg",
-        "/_nuxt/assets/img/diploms/diplom-4.jpg",
-        "/_nuxt/assets/img/diploms/diplom-5.jpg",
-        "/_nuxt/assets/img/diploms/diplom-6.jpg",
-        "/_nuxt/assets/img/diploms/diplom-7.jpg"
+        "/img/diploms/diplom-1.jpg",
+        "/img/diploms/diplom-2.jpg",
+        "/img/diploms/diplom-3.jpg",
+        "/img/diploms/diplom-4.jpg",
+        "/img/diploms/diplom-5.jpg",
+        "/img/diploms/diplom-6.jpg",
+        "/img/diploms/diplom-4.jpg",
+        "/img/diploms/diplom-5.jpg",
+        "/img/diploms/diplom-6.jpg",
+        "/img/diploms/diplom-7.jpg"
     ]
 )
 
 const reviews = ref(
     [
-        "/_nuxt/review-1.png",
-        "/_nuxt/review-1.png",
+        "/_nuxt/assets/img/reviews/review-1.png",
+        "/_nuxt/assets/img/reviews/review-1.png",
         "/_nuxt/assets/img/reviews/review-1.png",
         "/_nuxt/assets/img/reviews/review-1.png",
         "/_nuxt/assets/img/reviews/review-1.png",
