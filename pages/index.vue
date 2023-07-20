@@ -182,14 +182,13 @@
 
 <script lang="ts" setup>
 import 'swiper/css';
-import pkg from "@fancyapps/ui";
+// import {Fancybox} from "@fancyapps/ui";
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import {courses, nutrions, trainings} from "~/data";
 import TabHeader from "~/components/common/TabHeader.vue";
 import TabBlock from "~/components/common/TabBlock.vue";
 import About from "~/components/About.vue";
 import CategoriesMain from "~/components/common/categories/CategoriesMain.vue";
-const { Fancybox } = pkg;
 
 const slides = ref(
     [
@@ -277,7 +276,7 @@ const sections = ref([
     }
 ])
 
-Fancybox.bind("[data-fancybox]");
+// Fancybox.bind("[data-fancybox]");
 
 </script>
 
