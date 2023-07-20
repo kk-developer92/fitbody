@@ -562,14 +562,14 @@ h2.head-nav {
             
             &.collapsed {
                 &::after {
-                    background-image: url(plus.svg);
+                    background-image: url(../icons/plus.svg);
                     transform: none;
                 }
             }
             
             &:not(.collapsed) {
                 &::after {
-                    background-image: url(minus.svg);
+                    background-image: url(../icons/minus.svg);
                     transform: none;
                 }
             }
@@ -777,7 +777,7 @@ h2.head-nav {
                 top: 0;
                 right: 11px;
                 bottom: 0;
-                background: url(mask.png) no-repeat center center / cover;
+                background: url(../img/mask.png) no-repeat center center / cover;
             }
             
             @media (max-width: 991.98px) {
