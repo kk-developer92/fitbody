@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   buildModules: [
     '@nuxtjs/style-resources',
   ],
-  
+  ssr: false,
   app: {
     head: {
       title: "Тренировки, питание, курсы",
