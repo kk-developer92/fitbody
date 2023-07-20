@@ -1,7 +1,5 @@
 <template>
   <nuxt-layout>
-        <NuxtLoadingIndicator /> <!-- here -->
-
     <nuxt-page></nuxt-page>
   </nuxt-layout>
 </template>
@@ -53,4 +51,5 @@ useHead({
 </script>
 
 
-<style></style>
+<style>
+</style>
