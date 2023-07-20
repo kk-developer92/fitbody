@@ -207,8 +207,8 @@ const slides = ref(
 
 const reviews = ref(
     [
-        "/_nuxt/assets/img/reviews/review-1.png",
-        "/_nuxt/assets/img/reviews/review-1.png",
+        "/_nuxt/review-1.png",
+        "/_nuxt/review-1.png",
         "/_nuxt/assets/img/reviews/review-1.png",
         "/_nuxt/assets/img/reviews/review-1.png",
         "/_nuxt/assets/img/reviews/review-1.png",
