@@ -56,8 +56,8 @@
                 </div>
                 <div class="footer__menu col-md-6">
                     <nav class="nav justify-content-center">
-                        <nuxt-link class="nav-link text-light" to="/programs">Тренировки</nuxt-link>
-                        <nuxt-link class="nav-link text-light" to="/nutrition">Питание</nuxt-link>
+                        <nuxt-link class="nav-link text-light" to="/trainings">Тренировки</nuxt-link>
+                        <nuxt-link class="nav-link text-light" to="/nutritions">Питание</nuxt-link>
                         <nuxt-link class="nav-link text-light" to="/courses">Курсы</nuxt-link>
                     </nav>
                 </div>
