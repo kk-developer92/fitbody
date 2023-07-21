@@ -779,9 +779,14 @@ h2.head-nav {
                 bottom: 0;
                 background: url(../img/mask.png) no-repeat center center / cover;
             }
+
+            @media (max-width: 1199.98px) {
+                width: 400px;
+            }
             
             @media (max-width: 991.98px) {
                 scale: 1.2;
+                
             }
         }
     }
