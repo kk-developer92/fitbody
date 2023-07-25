@@ -40,7 +40,9 @@
                                 <div v-for="c in course" class="col-6 col-md-4">
                                     <!-- service-item -->
                                     <nuxt-link :to="'/courses/' + c.id" class="service">
-                                        <img class="img-fluid" :src="c.media.images.full || '/_nuxt/assets/img/services/service_man.jpg'" alt="">
+                                        <!-- <img class="img-fluid" :src="c.media.images.full || '/_nuxt/assets/img/services/service_man.jpg'" alt=""> -->
+                                        <nuxt-img class="img-fluid" format="webp" :src="c.media.images.full || '/_nuxt/assets/img/services/service_man.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
+                                        
                                         <div class="service__wrapper">
                                             
                                             <div>
@@ -68,7 +70,9 @@
                                 <div v-for="c in course_w" class="col-6 col-md-4">
                                     <!-- service-item -->
                                     <nuxt-link :to="'/courses/' + c.id" class="service">
-                                        <img class="img-fluid" :src="c.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" alt="">
+                                        <!-- <img class="img-fluid" :src="c.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" alt=""> -->
+                                        <nuxt-img class="img-fluid" format="webp" :src="c.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
+                                        
                                         <div class="service__wrapper">
 
                                             <div>

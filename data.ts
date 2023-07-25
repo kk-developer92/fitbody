@@ -645,7 +645,7 @@ export const courses: any = {
             title: 'Упругость Кожи и Коллаген',
             media: {
                 images: {
-                    full: "/img/services/kolagen.avif"
+                    full: "/img/services/kolagen.jpeg"
                 },
                 videos: []
             },

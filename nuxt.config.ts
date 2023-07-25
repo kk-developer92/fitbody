@@ -2,6 +2,9 @@
 export default defineNuxtConfig({
   // @ts-ignore
   devtools: { enabled: false },
+  modules: [
+    '@nuxt/image',
+  ],
   ssr: true,
   app: {
     head: {

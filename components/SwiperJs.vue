@@ -29,7 +29,10 @@
     >
         <swiper-slide v-for="slide in props.data">
             <a data-fancybox="diploms" :href="slide">
-                <img :src="slide"/>
+                <span>
+                    <!-- <img :src="slide"/> -->
+                    <nuxt-img format="webp" :src="slide" sizes="sm:100vw md:50vw lg:300px"  />
+                </span>
             </a>
         </swiper-slide>
     </swiper>
