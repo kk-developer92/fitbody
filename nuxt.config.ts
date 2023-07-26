@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
   ],
   image: {
-    domains: ['fitbody.uz']
+    domains: ['fitbody.uz'],
+    inject: true
   },
   ssr: true,
   app: {
