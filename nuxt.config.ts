@@ -5,7 +5,10 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/image',
   ],
-  image: { domains: ["https://fitbody.uz/"] },
+  image: { 
+    domains: ["https://fitbody.uz"],
+    dir: "img"
+  },
   ssr: true,
   app: {
     head: {
