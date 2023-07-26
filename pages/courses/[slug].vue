@@ -9,7 +9,7 @@
                 <div class="promo__wrapper row align-items-center">
                     <div class="promo__image col-lg-5 col-xl-5 order-lg-last text-lg-end">
                         <!-- <img :src="current_course.media.images.full || '/_nuxt/assets/img/services/page_img.jpg' " alt=""> -->
-                        <nuxt-img :src="current_course.media.images.full" loading="lazy" />
+                        <nuxt-img src="img/services/page_img.jpg" />
 
 
                     </div>
