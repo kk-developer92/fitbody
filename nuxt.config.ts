@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
   ],
   image: {
-    dir: 'assets/img',
+    provider: 'netlify'
   },
   ssr: true,
   app: {

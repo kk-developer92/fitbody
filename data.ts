@@ -403,7 +403,7 @@ export const courses: any = {
             title: 'Рост Мышц по Науке',
             media: {
                 images: {
-                    full: "/services/man-rost-po-nauke.jpg"
+                    full: "/img/services/man-rost-po-nauke.jpg"
                 },
                 videos: []
             },
