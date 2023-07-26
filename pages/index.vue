@@ -178,7 +178,7 @@
 
 <script lang="ts" setup>
 import 'swiper/css';
-// import {Fancybox} from "@fancyapps/ui";
+import {Fancybox} from "@fancyapps/ui";
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import { courses, nutrions, trainings } from "~/data";
 import TabHeader from "~/components/common/TabHeader.vue";
@@ -272,7 +272,7 @@ const sections = ref([
     }
 ])
 
-// Fancybox.bind("[data-fancybox]");
+Fancybox.bind("[data-fancybox]");
 
 </script>
 
