@@ -23,8 +23,8 @@
             :space-between="20"
             :navigation="{
                     enabled: true,
-                    prevEl: '.myPrev',
-                    nextEl: '.myNext'
+                    prevEl: props.prev,
+                    nextEl: props.next
                 }"
     >
         <swiper-slide v-for="slide in props.data">
@@ -42,7 +42,7 @@
 import {Swiper, SwiperSlide} from "swiper/vue";
 import {Navigation} from "swiper";
 
-const props = defineProps<{ data: any }>()
+const props = defineProps<{ data: any, next: string, prev: string }>()
 
 </script>
 

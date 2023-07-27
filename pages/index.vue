@@ -75,7 +75,7 @@
                     </button>
                 </div>
             </h2>
-            <swiper-js :data="slides"></swiper-js>
+            <swiper-js :data="slides" prev=".myPrev" next=".myNext"></swiper-js>
         </div>
     </section>
     <section class="video py-3">
@@ -105,7 +105,7 @@
                 </div>
             </h2>
 
-            <swiper-js :data="reviews"></swiper-js>
+            <swiper-js :data="reviews" prev=".Prev" next=".Next"></swiper-js>
         </div>
     </section>
     <section class="buttons py-4 py-md-5">
