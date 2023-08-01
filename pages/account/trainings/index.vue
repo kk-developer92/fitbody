@@ -45,7 +45,8 @@
                               <h6 class="mb-0"> День 1 Плечи &amp; Трицепсы </h6>
                             </div>
 
-                            <span class="text-success"><input type="checkbox" name="" id=""></span>
+                            <span class="text-success"><input type="checkbox" name="
+                              " id=""></span>
 
                           </nuxt-link>
                           <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
