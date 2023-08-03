@@ -7,8 +7,13 @@
             <img :src="'https://fitseven.ru/wp-content/uploads/2019/07/pitanie-pri-trenirovkah-na-massu.jpg'" alt="">
           </div>
           <div class="promo__text col-lg-7 col-xl-7">
-
-            <h1>Название программы питания</h1>
+            <button class="page-nav">
+              <svg width="19" height="8" viewBox="0 0 19 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 4H19M1 4L4 1M1 4L4 7" stroke="currentColor" />
+              </svg>
+              Личный кабинет
+            </button>
+            <h1>Название программы</h1>
             <div class="promo__text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quidem velit fugit odit. Aperiam,
               suscipit doloremque? Ab, ad! Sed, repellendus! Magni porro perspiciatis voluptatibus ratione,
@@ -38,76 +43,80 @@
                           <h5 class="card-title mb-0">Неделя 1</h5>
                         </div>
                         <div class="list-group">
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6915">
                             <div>
                               <small class="text-muted mb-0">тренировка</small>
                               <h6 class="mb-0"> День 1 Плечи &amp; Трицепсы </h6>
                             </div>
 
-                            <span class="text-success"><input type="checkbox" name="
-                              " id=""></span>
+                            <span class="text-success">Пройдено</span>
 
                           </nuxt-link>
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6918">
                             <div>
                               <small class="text-muted mb-0">тренировка</small>
-                              <h6 class="mb-0"> Day 2 Abs </h6>
+                              <h6 class="mb-0"> День 2 Пресс </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6916">
                             <div>
-                              <small class="text-muted mb-0">workout</small>
-                              <h6 class="mb-0"> Day 3 Back &amp; Biceps </h6>
+                              <small class="text-muted mb-0">тренировка</small>
+                              <h6 class="mb-0"> День 3 Спина &amp; Бицепс </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6917">
                             <div>
-                              <small class="text-muted mb-0">workout</small>
-                              <h6 class="mb-0"> Day 4 Legs </h6>
+                              <small class="text-muted mb-0">тренировка</small>
+                              <h6 class="mb-0"> День 4 Ноги </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
                           <div
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items.center">
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                             <div>
-                              <small class="text-muted mb-0">rest</small>
-                              <h6 class="mb-0"> Day 5 Rest </h6>
+                              <small class="text-muted mb-0">отдых</small>
+                              <h6 class="mb-0"> День 5 Отдых </h6>
                             </div>
 
-                            <span class="text-success">Free</span>
+                            <span class="text-success">Пройдено</span>
 
                           </div>
 
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6919">
                             <div>
-                              <small class="text-muted mb-0">workout</small>
-                              <h6 class="mb-0"> Day 6 Shoulders </h6>
+                              <small class="text-muted mb-0">тренировка</small>
+                              <h6 class="mb-0"> День 6 Плечи </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
                           <div
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items.center">
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                             <div>
-                              <small class="text-muted mb-0">rest</small>
-                              <h6 class="mb-0"> Day 7 Rest </h6>
+                              <small class="text-muted mb-0">отдых</small>
+                              <h6 class="mb-0"> День 7 Отдых </h6>
                             </div>
 
-                            <span class="text-success">Free</span>
+                            <span class="text-success">Пройдено</span>
 
                           </div>
 
@@ -117,79 +126,84 @@
 
                       <div class="card border-0 mb-3 shadow">
                         <div class="card-body border-bottom">
-                          <small class="font-weight-bold text-muted mb-0">Part 2 - 7 workouts</small>
-                          <h5 class="card-title mb-0">Week 2</h5>
+                          <small class="font-weight-bold text-muted mb-0">Часть 2 - 7 тренировок</small>
+                          <h5 class="card-title mb-0">Неделя 2</h5>
                         </div>
                         <div class="list-group">
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6954">
                             <div>
                               <small class="text-muted mb-0">workout</small>
-                              <h6 class="mb-0"> Day 8 Chest &amp; Triceps </h6>
+                              <h6 class="mb-0"> День 8 Плечи &amp; Трицепсы </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6955">
                             <div>
                               <small class="text-muted mb-0">workout</small>
-                              <h6 class="mb-0"> Day 9 Abs </h6>
+                              <h6 class="mb-0"> День 9 Пресс </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6956">
                             <div>
                               <small class="text-muted mb-0">workout</small>
                               <h6 class="mb-0"> Day 10 Back &amp; Biceps </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6957">
                             <div>
                               <small class="text-muted mb-0">workout</small>
-                              <h6 class="mb-0"> Day 11 Legs </h6>
+                              <h6 class="mb-0"> Денб 11 Ноги </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
                           <div
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items.center">
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                             <div>
-                              <small class="text-muted mb-0">rest</small>
-                              <h6 class="mb-0"> Day 12 Rest </h6>
+                              <small class="text-muted mb-0">отдых</small>
+                              <h6 class="mb-0"> День 12 Отдых </h6>
                             </div>
 
-                            <span class="text-success">Free</span>
+                            <span class="text-success">Пройдено</span>
 
                           </div>
 
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6959">
                             <div>
                               <small class="text-muted mb-0">workout</small>
-                              <h6 class="mb-0"> Day 13 Shoulders </h6>
+                              <h6 class="mb-0"> День 13 Плечи </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
                           <div
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items.center">
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                             <div>
                               <small class="text-muted mb-0">rest</small>
-                              <h6 class="mb-0"> Day 14 Rest </h6>
+                              <h6 class="mb-0"> День 14 отдых </h6>
                             </div>
 
-                            <span class="text-success">Free</span>
+                            <span class="text-success">Пройдено</span>
 
                           </div>
 
@@ -201,75 +215,80 @@
                           <h5 class="card-title mb-0">Week 3</h5>
                         </div>
                         <div class="list-group">
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6961">
                             <div>
                               <small class="text-muted mb-0">workout</small>
                               <h6 class="mb-0"> Day 15 Chest &amp; Triceps </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6962">
                             <div>
                               <small class="text-muted mb-0">workout</small>
                               <h6 class="mb-0"> Day 16 Abs </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6963">
                             <div>
                               <small class="text-muted mb-0">workout</small>
                               <h6 class="mb-0"> Day 17 Back &amp; Biceps </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6964">
                             <div>
                               <small class="text-muted mb-0">workout</small>
                               <h6 class="mb-0"> Day 18 Legs </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
                           <div
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items.center">
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                             <div>
                               <small class="text-muted mb-0">rest</small>
                               <h6 class="mb-0"> Day 19 Rest </h6>
                             </div>
 
-                            <span class="text-success">Free</span>
+                            <span class="text-success">Пройдено</span>
 
                           </div>
 
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6966">
                             <div>
                               <small class="text-muted mb-0">workout</small>
                               <h6 class="mb-0"> Day 20 Shoulders </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
                           <div
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items.center">
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                             <div>
                               <small class="text-muted mb-0">rest</small>
                               <h6 class="mb-0"> Day 21 Rest </h6>
                             </div>
 
-                            <span class="text-success">Free</span>
+                            <span class="text-success">Пройдено</span>
 
                           </div>
 
@@ -281,75 +300,80 @@
                           <h5 class="card-title mb-0">Week 4</h5>
                         </div>
                         <div class="list-group">
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6968">
                             <div>
                               <small class="text-muted mb-0">workout</small>
                               <h6 class="mb-0"> Day 22 Chest &amp; Triceps </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6969">
                             <div>
                               <small class="text-muted mb-0">workout</small>
                               <h6 class="mb-0"> Day 23 Abs </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6970">
                             <div>
                               <small class="text-muted mb-0">workout</small>
                               <h6 class="mb-0"> Day 24 Back &amp; Biceps </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6971">
                             <div>
                               <small class="text-muted mb-0">workout</small>
                               <h6 class="mb-0"> Day 25 Legs </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
                           <div
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items.center">
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                             <div>
                               <small class="text-muted mb-0">rest</small>
                               <h6 class="mb-0"> Day 26 Rest </h6>
                             </div>
 
-                            <span class="text-success">Free</span>
+                            <span class="text-success">Пройдено</span>
 
                           </div>
 
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6973">
                             <div>
                               <small class="text-muted mb-0">workout</small>
                               <h6 class="mb-0"> Day 27 Shoulders </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
                           <div
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items.center">
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                             <div>
                               <small class="text-muted mb-0">rest</small>
                               <h6 class="mb-0"> Day 28 Rest </h6>
                             </div>
 
-                            <span class="text-success">Free</span>
+                            <span class="text-success">Пройдено</span>
 
                           </div>
 
@@ -361,95 +385,99 @@
                           <h5 class="card-title mb-0">Week 5 (Challenge)</h5>
                         </div>
                         <div class="list-group">
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6946">
                             <div>
                               <small class="text-muted mb-0">challenge</small>
                               <h6 class="mb-0"> Day 29 Chest &amp; Triceps </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6947">
                             <div>
                               <small class="text-muted mb-0">challenge</small>
                               <h6 class="mb-0"> Day 30 Abs </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6948">
                             <div>
                               <small class="text-muted mb-0">challenge</small>
                               <h6 class="mb-0"> Day 31 Back &amp; Biceps </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6949">
                             <div>
                               <small class="text-muted mb-0">challenge</small>
                               <h6 class="mb-0"> Day 32 Legs </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
                           <div
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items.center">
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                             <div>
                               <small class="text-muted mb-0">rest</small>
                               <h6 class="mb-0"> Day 33 Rest </h6>
                             </div>
 
-                            <span class="text-success">Free</span>
+                            <span class="text-success">Пройдено</span>
 
                           </div>
 
-                          <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          <nuxt-link
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                             to="/account/trainings/6951">
                             <div>
                               <small class="text-muted mb-0">challenge</small>
                               <h6 class="mb-0"> Day 34 Shoulders </h6>
                             </div>
 
-                            <span class="text-danger">Premium</span>
+                            <span class="text-danger">Не пройдено</span>
 
                           </nuxt-link>
                           <div
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items.center">
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                             <div>
                               <small class="text-muted mb-0">rest</small>
                               <h6 class="mb-0"> Day 35 Rest </h6>
                             </div>
 
-                            <span class="text-success">Free</span>
-
-                          </div>
+                          <span class="text-success">Пройдено</span>
 
                         </div>
+
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </section>
+            </div>
+          </section>
 
 
 
 
-          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
 
 
-    </div>
-  </main>
-</template>
+  </div>
+</main></template>
