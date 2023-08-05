@@ -853,3 +853,10 @@ h2.head-nav {
         opacity: 0.20;
     }
 }
+.opacity-hover {
+    cursor: pointer;
+    transition: .3s ease;
+}
+.opacity-hover:hover {
+    opacity: .8;
+}
