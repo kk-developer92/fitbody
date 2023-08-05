@@ -43,7 +43,7 @@ import {useModal} from "~/composables/useModal";
 const modal = useModal('videoModal');
 
 function openModal() {
-    modal.open()
+    modal.open('https://www.youtube.com/embed/dvkozMW37Qc?rel=0')
 }
 
 </script>
