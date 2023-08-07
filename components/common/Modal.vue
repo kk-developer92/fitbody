@@ -1,5 +1,22 @@
 <template>
-    <transition name="form">
+
+<!-- Modal -->
+<div class="modal fade" :id="id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0">
+        <slot></slot>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+    <!-- <transition name="form">
         <div v-if="open" :id="id" aria-hidden="true"
              class="d-flex align-items-center justify-content-center h-100 overflow-hidden position-fixed top-0 left-0 z-3 w-100 bg-dark bg-opacity-25"
              tabindex="-1">
@@ -20,7 +37,7 @@
                 </div>
             </div>
         </div>
-    </transition>
+    </transition> -->
 </template>
 
 <script lang="ts" setup>

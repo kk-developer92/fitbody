@@ -1,7 +1,8 @@
 <template>
-    <modal id="videoModal" @shown="shown">
-        <iframe :src="image" title="YouTube video"
-                    allowfullscreen></iframe>
+    <modal class="modal fade" id="videoModal" @shown="shown">
+        <div class="ratio ratio-16x9">
+            <iframe :src="image" title="YouTube video" allowfullscreen></iframe>
+        </div>
     </modal>
 </template>
 
@@ -16,6 +17,4 @@ function shown(data: any) {
 
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

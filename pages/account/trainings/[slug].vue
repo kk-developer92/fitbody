@@ -48,8 +48,6 @@
                     </div>
                 </div>
             </section>
-            <div class="modal fade" id="js-modal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            </div>
         </div>
     </main>
 </template>
