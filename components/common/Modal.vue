@@ -1,7 +1,9 @@
 <template>
     <!-- Modal -->
     <div class="modal fade" :id="id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered" :class="{
+            'modal-lg': props.size
+        }">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
@@ -20,7 +22,7 @@
 
 import { bus } from "~/constants";
 
-const props = defineProps({ id: { type: String, required: true }, title: { type: String } });
+const props = defineProps({ id: { type: String, required: true }, title: { type: String }, size:{type:String,required: false} });
 const emits = defineEmits(['shown', 'hidden']);
 const open = ref(false);
 
@@ -35,6 +37,8 @@ bus.on('modals.open', ({ id, data }: any) => {
         emits('shown', data);
     }
 });
+
+
 bus.on('modals.close', ({ id }) => {
     if (id === props.id) {
         closeModal();

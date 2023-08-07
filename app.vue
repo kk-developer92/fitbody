@@ -2,12 +2,14 @@
     <nuxt-layout data-bs-theme="dark">
         <nuxt-page></nuxt-page>
         <video-viewer/>
+        <result-modal/>
     </nuxt-layout>
 </template>
 
 <script setup lang="ts">
 import "~/assets/sass/style.scss"
 import VideoViewer from "~/components/modals/VideoViewer.vue";
+import ResultModal from "./components/modals/ResultModal.vue";
 
 useHead({
     link: [

@@ -1,5 +1,5 @@
 <template>
-    <modal class="modal fade" id="videoModal" @shown="shown">
+    <modal class="modal fade" id="videoModal" size="lg" @shown="shown">
         <div class="ratio ratio-16x9">
             <iframe :src="image" title="YouTube video" allowfullscreen></iframe>
         </div>

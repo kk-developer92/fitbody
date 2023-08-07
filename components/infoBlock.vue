@@ -23,7 +23,7 @@
                             <h6 class="mb-0 text-white">Результат:</h6>
                             <p class="mb-0 small">58x12,12,12</p>
                         </div>
-                        <button class="btn btn-link p-0 text-danger">
+                        <button data-bs-target="#resultModal" data-bs-toggle="modal" @click="openResModal" class="btn btn-link p-0 text-danger">
                             <edit-btn/>
                         </button>
                     </div>
@@ -41,9 +41,14 @@ import {useModal} from "~/composables/useModal";
 
 
 const modal = useModal('videoModal');
+const resmodal = useModal('resultModal');
 
 function openModal() {
     modal.open('https://www.youtube.com/embed/dvkozMW37Qc?rel=0')
+}
+
+function openResModal() {
+    resmodal.open()
 }
 
 </script>
