@@ -2,12 +2,12 @@
     <modal class="modal fade" id="resultModal" @shown="shown">
         <form class="form p-3">
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="Вес">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Вес" inputmode="numeric">
                 <label for="floatingInput">Вес</label>
             </div>
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingPassword" placeholder="Подходы">
-                <label for="floatingPassword">Подходы. Например: 12,12,12</label>
+                <input type="text" class="form-control" id="floatingSet" placeholder="Подходы" inputmode="numeric">
+                <label for="floatingSet">Подходы. Например: 12,12,12</label>
             </div>
             <button type="submit" class="btn btn-primary button mt-3">Отправить</button>
         </form>
