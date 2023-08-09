@@ -5,14 +5,16 @@
                 <div class="promo__wrapper row align-items-center">
                     <div class="promo__image col-lg-5 col-xl-5 order-lg-last text-lg-end">
                         <img :src="'https://fitseven.ru/wp-content/uploads/2019/07/pitanie-pri-trenirovkah-na-massu.jpg'"
-                            alt="">
+                             alt="">
                     </div>
                     <div class="promo__text col-lg-7 col-xl-7">
 
                         <h1>Название программы питания</h1>
                         <div class="promo__text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quidem velit fugit odit. Aperiam,
-                            suscipit doloremque? Ab, ad! Sed, repellendus! Magni porro perspiciatis voluptatibus ratione,
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quidem velit fugit odit.
+                            Aperiam,
+                            suscipit doloremque? Ab, ad! Sed, repellendus! Magni porro perspiciatis voluptatibus
+                            ratione,
                             neque provident veniam ipsam officiis.
                         </div>
 
@@ -34,28 +36,29 @@
                                         <div class="accordion accordion-flush faq__accordion" id="accordionPlans">
                                             <div class="accordion-item">
                                                 <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="plans-collapseOne"
-                                                    aria-expanded="false">
+                                                        data-bs-toggle="collapse" data-bs-target="plans-collapseOne"
+                                                        aria-expanded="false">
                                                     Понедельник
                                                 </button>
 
                                                 <div id="plans-collapseOne" class="accordion-collapse collapse"
-                                                    data-bs-parent="#accordionPlans">
+                                                     data-bs-parent="#accordionPlans">
                                                     <div class="accordion-body">Placeholder content for this accordion,
                                                         which is intended to
                                                         demonstrate the <code>.accordion-plans</code> class. This is the
                                                         first item's accordion
-                                                        body.</div>
+                                                        body.
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="accordion-item">
                                                 <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="plans-collapseTwo"
-                                                    aria-expanded="false">
+                                                        data-bs-toggle="collapse" data-bs-target="plans-collapseTwo"
+                                                        aria-expanded="false">
                                                     Вторник
                                                 </button>
                                                 <div id="plans-collapseTwo" class="accordion-collapse collapse"
-                                                    data-bs-parent="#accordionPlans">
+                                                     data-bs-parent="#accordionPlans">
                                                     <div class="accordion-body">Placeholder content for this accordion,
                                                         which is intended to
                                                         demonstrate the <code>.accordion-plans</code> class. This is the
@@ -66,97 +69,107 @@
                                             </div>
                                             <div class="accordion-item">
                                                 <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="plans-collapseThree"
-                                                    aria-expanded="false">
+                                                        data-bs-toggle="collapse" data-bs-target="plans-collapseThree"
+                                                        aria-expanded="false">
                                                     Среда
                                                 </button>
                                                 <div id="plans-collapseThree" class="accordion-collapse collapse"
-                                                    data-bs-parent="#accordionPlans">
+                                                     data-bs-parent="#accordionPlans">
                                                     <div class="accordion-body">Placeholder content for this accordion,
                                                         which is intended to
                                                         demonstrate the <code>.accordion-plans</code> class. This is the
                                                         third item's accordion
-                                                        body. Nothing more exciting happening here in terms of content, but
+                                                        body. Nothing more exciting happening here in terms of content,
+                                                        but
                                                         just filling up the
                                                         space to make it look, at least at first glance, a bit more
                                                         representative of how this
-                                                        would look in a real-world application.</div>
+                                                        would look in a real-world application.
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="accordion-item">
                                                 <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="plans-collapseFour"
-                                                    aria-expanded="false">
+                                                        data-bs-toggle="collapse" data-bs-target="plans-collapseFour"
+                                                        aria-expanded="false">
                                                     Четверг
                                                 </button>
                                                 <div id="plans-collapseFour" class="accordion-collapse collapse"
-                                                    data-bs-parent="#accordionPlans">
+                                                     data-bs-parent="#accordionPlans">
                                                     <div class="accordion-body">Placeholder content for this accordion,
                                                         which is intended to
                                                         demonstrate the <code>.accordion-plans</code> class. This is the
                                                         third item's accordion
-                                                        body. Nothing more exciting happening here in terms of content, but
+                                                        body. Nothing more exciting happening here in terms of content,
+                                                        but
                                                         just filling up the
                                                         space to make it look, at least at first glance, a bit more
                                                         representative of how this
-                                                        would look in a real-world application.</div>
+                                                        would look in a real-world application.
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="accordion-item">
                                                 <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="plans-collapseFive"
-                                                    aria-expanded="false">
+                                                        data-bs-toggle="collapse" data-bs-target="plans-collapseFive"
+                                                        aria-expanded="false">
                                                     Пятница
                                                 </button>
                                                 <div id="plans-collapseFive" class="accordion-collapse collapse"
-                                                    data-bs-parent="#accordionPlans">
+                                                     data-bs-parent="#accordionPlans">
                                                     <div class="accordion-body">Placeholder content for this accordion,
                                                         which is intended to
                                                         demonstrate the <code>.accordion-plans</code> class. This is the
                                                         third item's accordion
-                                                        body. Nothing more exciting happening here in terms of content, but
+                                                        body. Nothing more exciting happening here in terms of content,
+                                                        but
                                                         just filling up the
                                                         space to make it look, at least at first glance, a bit more
                                                         representative of how this
-                                                        would look in a real-world application.</div>
+                                                        would look in a real-world application.
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="accordion-item">
                                                 <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="plans-collapseSix"
-                                                    aria-expanded="false">
+                                                        data-bs-toggle="collapse" data-bs-target="plans-collapseSix"
+                                                        aria-expanded="false">
                                                     Суббота
                                                 </button>
                                                 <div id="plans-collapseSix" class="accordion-collapse collapse"
-                                                    data-bs-parent="#accordionPlans">
+                                                     data-bs-parent="#accordionPlans">
                                                     <div class="accordion-body">Placeholder content for this accordion,
                                                         which is intended to
                                                         demonstrate the <code>.accordion-plans</code> class. This is the
                                                         third item's accordion
-                                                        body. Nothing more exciting happening here in terms of content, but
+                                                        body. Nothing more exciting happening here in terms of content,
+                                                        but
                                                         just filling up the
                                                         space to make it look, at least at first glance, a bit more
                                                         representative of how this
-                                                        would look in a real-world application.</div>
+                                                        would look in a real-world application.
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="accordion-item">
                                                 <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="plans-collapseSeven"
-                                                    aria-expanded="false">
+                                                        data-bs-toggle="collapse" data-bs-target="plans-collapseSeven"
+                                                        aria-expanded="false">
                                                     Воскресенье
                                                 </button>
                                                 <div id="plans-collapseSeven" class="accordion-collapse collapse"
-                                                    data-bs-parent="#accordionPlans">
+                                                     data-bs-parent="#accordionPlans">
                                                     <div class="accordion-body">Placeholder content for this accordion,
                                                         which is intended to
                                                         demonstrate the <code>.accordion-plans</code> class. This is the
                                                         third item's accordion
-                                                        body. Nothing more exciting happening here in terms of content, but
+                                                        body. Nothing more exciting happening here in terms of content,
+                                                        but
                                                         just filling up the
                                                         space to make it look, at least at first glance, a bit more
                                                         representative of how this
-                                                        would look in a real-world application.</div>
+                                                        would look in a real-world application.
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -170,10 +183,12 @@
                             <h3>1-й ПРИЁМ ПИЩИ</h3>
                             Ингредиенты:
                             <ul>
-                                <li>Творог 5% - 200 гр </li>
+                                <li>Творог 5% - 200 гр</li>
                                 <li>Помидоры (средние) – 2-3 шт.</li>
-                                <li>Зелень (укроп, кинза, базилик), можно всего понемногу или что-то одно – количество на
-                                    ваше усмотрение.</li>
+                                <li>Зелень (укроп, кинза, базилик), можно всего понемногу или что-то одно – количество
+                                    на
+                                    ваше усмотрение.
+                                </li>
                                 <li>Огурец (средний) – 1 шт.</li>
                                 <li>Тыквенные семечки – 10 гр.</li>
                                 <li>Грецкий орех – 20 гр.</li>
@@ -189,15 +204,10 @@
                                 Дополнительные специи можно добавить на ваше усмотрение.
                             </p>
 
+                        </div>
                     </div>
-
-
-
                 </div>
-            </div>
-        </section>
-
-
-
-    </div>
-</main></template>
+            </section>
+        </div>
+    </main>
+</template>

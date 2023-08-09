@@ -1,6 +1,7 @@
 <template>
     <nuxt-layout data-bs-theme="dark">
         <nuxt-page></nuxt-page>
+        <login-modal/>
         <video-viewer/>
         <result-modal/>
     </nuxt-layout>
@@ -10,6 +11,7 @@
 import "~/assets/sass/style.scss"
 import VideoViewer from "~/components/modals/VideoViewer.vue";
 import ResultModal from "./components/modals/ResultModal.vue";
+import LoginModal from "~/components/modals/LoginModal.vue";
 
 useHead({
     link: [

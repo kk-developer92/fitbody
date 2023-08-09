@@ -52,12 +52,5 @@
     </main>
 </template>
 
-<script type="ts">
-
-import {defineComponent} from "vue";
-import VideoViewer from "~/components/modals/VideoViewer.vue";
-
-export default defineComponent({
-    components: {VideoViewer}
-})
+<script lang="ts" setup>
 </script>
