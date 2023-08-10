@@ -29,7 +29,7 @@ async function submit() {
         fm.append('password', user.value.password)
 
         // await axios.post(`${import.meta.env.VITE_API_URL}/register`, user.value);
-        const a = await fetch(`${import.meta.env.VITE_API_URL}/login`, {
+        const a = await fetch(`http://127.0.0.1:8000/login`, {
             method: 'POST',
             body: fm
         });
