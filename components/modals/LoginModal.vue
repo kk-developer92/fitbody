@@ -10,7 +10,7 @@
                        placeholder="Пароль">
                 <label for="floatingSet">Пароль</label>
             </div>
-            <button type="submit" class="btn btn-primary button mt-3">Зарегистрироваться</button>
+            <button type="submit" class="btn btn-primary button mt-3">Купить</button>
         </form>
     </modal>
 </template>

@@ -40,6 +40,9 @@
                                     <div class="col-md-10">
                                         <div class="list-group list-group-flush">
                                             <train-block/>
+                                            <train-block/>
+                                            <train-block/>
+                                            <train-block/>
                                         </div>
                                     </div>
                                 </div>

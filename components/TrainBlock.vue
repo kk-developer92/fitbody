@@ -5,6 +5,10 @@
         </div>
         <div class="list-group list-group-flush">
             <info-block/>
+            <info-block/>
+            <info-block/>
+            <info-block/>
+            <info-block/>
 
         </div>
     </div>
