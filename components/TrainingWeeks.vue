@@ -7,6 +7,9 @@
         </div>
         <div class="list-group">
             <training-days />
+            <training-days />
+            <training-days />
+            <training-days />
         </div>
     </div>
 </template>

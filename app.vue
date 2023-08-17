@@ -4,12 +4,14 @@
         <login-modal/>
         <video-viewer/>
         <result-modal/>
+        <image-modal/>
     </nuxt-layout>
 </template>
 
 <script setup lang="ts">
 import "~/assets/sass/style.scss"
 import VideoViewer from "~/components/modals/VideoViewer.vue";
+import ImageModal from "~/components/modals/ImageModal.vue";
 import ResultModal from "./components/modals/ResultModal.vue";
 import LoginModal from "~/components/modals/LoginModal.vue";
 

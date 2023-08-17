@@ -28,7 +28,7 @@
                 }"
     >
         <swiper-slide v-for="slide in props.data">
-            <a data-fancybox="diploms" :href="slide">
+            <a @click="openModal" data-bs-toggle="modal" href="#imageModal">
                 <span>
                     <!-- <img :src="slide"/> -->
                     <nuxt-img format="webp" :src="slide" sizes="sm:100vw md:50vw lg:300px"  />
@@ -43,6 +43,12 @@ import {Swiper, SwiperSlide} from "swiper/vue";
 import {Navigation} from "swiper";
 
 const props = defineProps<{ data: any, next: string, prev: string }>()
+
+const imageModal = useModal('imageModal')
+
+function openModal() {
+    imageModal.open()
+}
 
 </script>
 

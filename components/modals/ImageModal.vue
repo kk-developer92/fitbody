@@ -1,5 +1,5 @@
 <template>
-    <modal class="modal fade" id="videoModal" size="lg" @shown="shown">
+    <modal class="modal fade" id="imageModal" size="lg" @shown="shown">
         <img :src="image" alt="">
     </modal>
 </template>

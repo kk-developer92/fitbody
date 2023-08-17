@@ -1,15 +1,21 @@
 <template>
     <modal class="modal fade" id="resultModal" @shown="shown">
         <form class="form p-3">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Вес" inputmode="numeric">
-                <label for="floatingInput">Вес</label>
+            <div class="row" v-for="result in 3">
+                <div class="col-4">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Вес" inputmode="numeric">
+                        <label for="floatingInput">Вес</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="floatingSet" placeholder="Подходы" inputmode="numeric">
+                        <label for="floatingSet">Подходы</label>
+                    </div>
+                </div>
             </div>
-            <div class="form-floating">
-                <input type="text" class="form-control" id="floatingSet" placeholder="Подходы" inputmode="numeric">
-                <label for="floatingSet">Подходы. Например: 12,12,12</label>
-            </div>
-            <button type="submit" class="btn btn-primary button mt-3">Отправить</button>
+            <button type="submit" class="btn btn-primary button mt-3">сохранить</button>
         </form>
     </modal>
 </template>

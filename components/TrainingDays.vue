@@ -1,13 +1,19 @@
 <template>
-    <nuxt-link
-            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-            to="/account/trainings/6915">
+    <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+        to="/account/trainings/6915">
         <div>
             <small class="text-muted mb-0">тренировка</small>
             <h6 class="mb-0"> День 1 Плечи &amp; Трицепсы </h6>
         </div>
 
-        <span class="text-success">Пройдено</span>
+        <span class="text-success">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check2-all"
+                viewBox="0 0 16 16">
+                <path
+                    d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z" />
+                <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z" />
+            </svg>
+        </span>
 
     </nuxt-link>
 </template>
@@ -15,6 +21,4 @@
 <script lang="ts" setup>
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
