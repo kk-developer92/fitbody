@@ -1,8 +1,12 @@
 <template>
     <modal class="modal fade" id="loginModal" @shown="shown">
+        <template #header>
+            {{ text }}
+        </template>
         <form class="form p-3" @submit.prevent="submit">
             <div class="form-floating mb-3">
-                <input v-model="user.email" type="email" class="form-control" id="floatingInput" placeholder="Почта">
+                <input v-model="user.email" type="email" class="form-control" id="floatingInput"
+                       placeholder="Почта">
                 <label for="floatingInput">Почта</label>
             </div>
             <div class="form-floating">
@@ -19,26 +23,32 @@
 import Modal from "~/components/common/Modal.vue";
 import axios from "axios";
 
-const user = ref({password: '', email: ''});
+const user = ref({email: '', password: ''});
+const text = ref('')
+const showError = ref(false)
 
 async function submit() {
-
-    try {
-        let fm = new FormData();
-        fm.append('username', user.value.email)
-        fm.append('password', user.value.password)
-
-        // await axios.post(`${import.meta.env.VITE_API_URL}/register`, user.value);
-        const a = await fetch(`http://127.0.0.1:8000/login`, {
-            method: 'POST',
-            body: fm
+    if (text.value === 'Войти') {
+        login(user.value.email, user.value.password).then((response: any) => {
+            const token = useCookie('token');
+            token.value = response.data.accessToken;
+            if (response.status === 200 || response.status === 201) {
+                window.location.href = import.meta.env.VITE_HOST_URL
+            }
+        }).catch((e: any) => {
+            if (e.code === 401) {
+                showError.value = true;
+            }
         });
-        console.log(a)
-    } catch (e) {
+    } else {
+        axios.post(import.meta.env.VITE_API_URL + '/users', user.value).then(r => {
+            console.log(r)
+        })
     }
 }
 
 function shown(data: any) {
+    text.value = data.text
 }
 
 </script>
