@@ -13,7 +13,6 @@ let text = 'Войти'
 
 onMounted(() => {
     const token = useCookie('token').value;
-    console.log(token)
     if (!token) {
         text = 'Регистрация'
     }

@@ -24,7 +24,7 @@
                             {{ current_course.description }}
                         </div>
 
-                        <button class="btn btn-primary button">Купить за {{current_course.price}} тыс. сум</button>
+                        <purchase-button class="btn btn-primary button">Купить за {{current_course.price}} тыс. сум</purchase-button>
                     </div>
 
                 </div>
@@ -38,7 +38,7 @@
                         <h2>О ПРОГРАММЕ</h2>
                         <div v-html="current_course.about_program"></div>
 
-                        <button class="btn btn-primary button mt-4">Купить за {{ current_course.price }} тыс. сум</button>
+                        <purchase-button class="btn btn-primary button mt-4">Купить за {{ current_course.price }} тыс. сум</purchase-button>
 
                     </div>
                 </div>
