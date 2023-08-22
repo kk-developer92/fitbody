@@ -14,6 +14,9 @@
                        placeholder="Пароль">
                 <label for="floatingSet">Пароль</label>
             </div>
+            <div class="mt-4 cursor-pointer">
+                <span @click="changeStrategy">{{ text === 'Войти' ? 'Регестрация' : 'Войти' }}</span>
+            </div>
             <button type="submit" class="btn btn-primary button mt-3">Купить</button>
         </form>
     </modal>
@@ -42,7 +45,11 @@ async function submit() {
         });
     } else {
         axios.post(import.meta.env.VITE_API_URL + '/users', user.value).then(r => {
-            console.log(r)
+            const token = useCookie('token');
+            token.value = r.data.accessToken;
+            if (r.status === 200 || r.status === 201) {
+                window.location.href = import.meta.env.VITE_HOST_URL
+            }
         })
     }
 }
@@ -51,6 +58,9 @@ function shown(data: any) {
     text.value = data.text
 }
 
+function changeStrategy(e: any) {
+    text.value = text.value === 'Войти' ? 'Регистрация' : 'Войти'
+}
 </script>
 
 <style scoped></style>
