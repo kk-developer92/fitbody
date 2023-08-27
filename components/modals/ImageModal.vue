@@ -1,6 +1,6 @@
 <template>
     <modal class="modal fade" id="imageModal" size="lg" @shown="shown">
-        <img :src="image" alt="">
+        <img class="w-100" :src="image" alt="">
     </modal>
 </template>
 

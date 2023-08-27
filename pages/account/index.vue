@@ -1,12 +1,15 @@
 <template>
-  <h1>Auth route</h1>
+  {{ user }}
 </template>
 
 <script lang="ts" setup>
 definePageMeta({
     authRoute: true,
     middleware: 'auth'
-})
+});
+
+const user: any = useCookie('user').value
+
 </script>
 
 <style scoped>

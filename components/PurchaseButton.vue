@@ -9,14 +9,7 @@ const props = defineProps<{ price: { type: number } }>();
 
 const loginModal = useModal('loginModal');
 const dtId = ref('#loginModal');
-let text = 'Войти'
-
-onMounted(() => {
-    const token = useCookie('token').value;
-    if (!token) {
-        text = 'Регистрация'
-    }
-})
+let text = 'Регистрация'
 
 function openModal() {
     loginModal.open({text})
