@@ -22,7 +22,7 @@
                             {{ current_train.description }}
                         </div>
 
-                        <button class="btn btn-primary button">Купить за {{ current_train.price }} тыс. сум</button>
+                        <purchase-button>Купить за {{ current_train.price }} тыс. сум</purchase-button>
                     </div>
 
                 </div>
@@ -36,8 +36,7 @@
                         <h2>О ПРОГРАММЕ</h2>
                         <div v-html="current_train.about_program"></div>
 
-                        <button class="btn btn-primary button mt-4">Купить за {{ current_train.price }} тыс. сум</button>
-
+                        <purchase-button class="btn btn-primary button">Купить за {{ current_train.price }} тыс. сум</purchase-button>
                     </div>
                 </div>
             </section>

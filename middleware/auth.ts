@@ -1,5 +1,5 @@
 export default defineNuxtRouteMiddleware((to, from) => {
-    const cookies = useCookie('bonds');
+    const cookies = useCookie('token');
 
     if (cookies.value) {
         return;

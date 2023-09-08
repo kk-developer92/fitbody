@@ -28,10 +28,10 @@
                 }"
     >
         <swiper-slide v-for="slide in props.data">
-            <a @click="openModal" data-bs-toggle="modal" href="#imageModal">
+            <a @click="openModal(slide)" data-bs-toggle="modal" href="#imageModal">
                 <span>
                     <!-- <img :src="slide"/> -->
-                    <nuxt-img format="webp" :src="slide" sizes="sm:100vw md:50vw lg:300px"  />
+                    <nuxt-img format="webp" :src="slide" sizes="sm:100vw md:50vw lg:300px"/>
                 </span>
             </a>
         </swiper-slide>
@@ -46,8 +46,8 @@ const props = defineProps<{ data: any, next: string, prev: string }>()
 
 const imageModal = useModal('imageModal')
 
-function openModal() {
-    imageModal.open()
+function openModal(slide: string) {
+    imageModal.open(slide)
 }
 
 </script>
