@@ -870,29 +870,7 @@ h2.head-nav {
 .opacity-hover:hover {
     opacity: .8;
 }
-#navbarNotification::after {
-    content: none !important;
-}
 
-
-#main-navbar .badge {
-    position: absolute;
-    font-size: .6rem;
-    margin-top: -.1rem;
-    margin-left: -.5rem;
-    padding: .2em .45em;
-}
-
-
-#main-navbar .nav-link {
-    color: rgba(0, 0, 0, .55) !important;
-    font-size: 1rem !important;
-    font-weight: 400;
-}
-
-#main-navbar .nav-link :hover {
-    color: rgb(76, 76, 76);
-}
 .cursor-pointer {
     cursor: pointer;
 }
