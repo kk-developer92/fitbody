@@ -98,6 +98,9 @@
 
 const user: any = useCookie('user').value
 
+console.log(user);
+
+
 </script>
 
 <style scoped></style>
