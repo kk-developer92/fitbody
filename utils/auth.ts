@@ -26,7 +26,7 @@ export function setToken(token: string) {
 }
 
 export function login(email: string, password: string): any {
-    return axios.post(import.meta.env.VITE_API_URL + '/authentication', {
+    return axios.post(import.meta.env.VITE_API_URL + '/authorization', {
         role: 'user',
         strategy: 'local',
         email,

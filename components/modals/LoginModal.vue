@@ -42,7 +42,7 @@ async function submit() {
         login(user.value.email, user.value.password).then((response: any) => {
             const token = useCookie('token');
             const user = useCookie('user');
-            token.value = response.data.accessToken;
+            token.value = response.data.token;
             user.value = response.data.user;
             if (response.status === 200 || response.status === 201) {
                 window.location.href = import.meta.env.VITE_HOST_URL
@@ -56,7 +56,8 @@ async function submit() {
     axios.post(import.meta.env.VITE_API_URL + '/users', user.value).then(r => {
         const token = useCookie('token');
         const user = useCookie('user');
-        token.value = r.data.accessToken;
+        console.log(r);
+        token.value = r.data.token;
         user.value = r.data.user;
         if (r.status === 200 || r.status === 201) {
             window.location.href = import.meta.env.VITE_HOST_URL;
