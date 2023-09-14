@@ -117,4 +117,5 @@ const image = ref(current_train.value.type === "men" ? '/_nuxt/assets/img/servic
 const others = ref(nutrions.plans.filter((i: { type: any; }) => i.type === current_train.value.type))
 const others_course = ref(courses.trains.filter((i: { type: any; }) => i.type === current_train.value.type))
 
+
 </script>

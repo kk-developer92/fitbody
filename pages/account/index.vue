@@ -17,21 +17,19 @@
 			<!-- Collapsible wrapper -->
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<!-- Navbar brand -->
-				<a class="navbar-brand mt-2 mt-lg-0 bg-light" href="#">
+				<nuxt-link class="navbar-brand mt-2 mt-lg-0 bg-light" to="/">
 					<img src="@/assets/appImages/logo.png" height="47" alt="MDB Logo" loading="lazy" />
-
-
-				</a>
+				</nuxt-link>
 				<!-- Left links -->
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a class="nav-link" href="#">Главная</a>
+						<nuxt-link class="nav-link" href="/account">Главная</nuxt-link>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Результаты</a>
+						<nuxt-link class="nav-link" href="/results">Результаты</nuxt-link>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Еще что-то </a>
+						<nuxt-link class="nav-link" href="/">Еще что-то</nuxt-link>
 					</li>
 				</ul>
 				<!-- Left links -->

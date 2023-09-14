@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{ price: { type: number } }>();
+const props = defineProps<{ price: number }>();
 
 const loginModal = useModal('loginModal');
 const dtId = ref('#loginModal');
