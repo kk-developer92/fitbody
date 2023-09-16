@@ -59,9 +59,9 @@
                                     <div class="row gy-4 justify-content-md-center">
                                         <div v-for="train in train_beginner" class="col-6 col-md-4">
                                             <!-- service-item -->
-                                            <nuxt-link :to="'/trainings/' + train.id" class="service">
+                                            <nuxt-link :to="'/trainings/' + train._id" class="service">
                                                 <!-- <img class="img-fluid" :src="train.media.images.full" alt=""> -->
-                                                <nuxt-img class="img-fluid" format="webp" :src="train.media.images.full || '/_nuxt/assets/img/services/service_man.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
+                                                <nuxt-img class="img-fluid" format="webp" :src="train.image || '/_nuxt/assets/img/services/service_man.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
                                                 
                                                 <div class="service__wrapper">
 
@@ -87,9 +87,9 @@
                                     <div class="row gy-4 justify-content-md-center">
                                         <div v-for="train in train_master" class="col-6 col-md-4">
                                             <!-- service-item -->
-                                            <nuxt-link :to="'trainings/' + train.id" class="service">
+                                            <nuxt-link :to="'trainings/' + train._id" class="service">
                                                 <!-- <img class="img-fluid" :src="train.media.images.full || '/_nuxt/assets/img/services/lead_man.jpg'" alt=""> -->
-                                                <nuxt-img class="img-fluid" format="webp" :src="train.media.images.full || '/_nuxt/assets/img/services/lead_man.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
+                                                <nuxt-img class="img-fluid" format="webp" :src="train.image || '/_nuxt/assets/img/services/lead_man.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
                                                 <div class="service__wrapper">
 
                                                     <h3 class="service__title">{{ train.title }}</h3>
@@ -133,9 +133,9 @@
                                     <div class="row gy-4">
                                         <div v-for="train in train_beginner_w" class="col-6 col-md-4">
                                             <!-- service-item -->
-                                            <nuxt-link :to="'/trainings/' + train.id" class="service">
+                                            <nuxt-link :to="'/trainings/' + train._id" class="service">
                                                 <!-- <img class="img-fluid" :src="train.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" alt=""> -->
-                                                <nuxt-img class="img-fluid" format="webp" :src="train.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
+                                                <nuxt-img class="img-fluid" format="webp" :src="train.image || '/_nuxt/assets/img/services/junior_woman.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
                                                
                                                 <div class="service__wrapper">
 
@@ -159,9 +159,9 @@
                                     <div class="row gy-4">
                                         <div v-for="train in train_advanced_w" class="col-6 col-md-4">
                                             <!-- service-item -->
-                                            <nuxt-link :to="'/trainings/' + train.id" class="service">
+                                            <nuxt-link :to="'/trainings/' + train._id" class="service">
                                                 <!-- <img class="img-fluid" :src="train.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" alt=""> -->
-                                                <nuxt-img class="img-fluid" format="webp" :src="train.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
+                                                <nuxt-img class="img-fluid" format="webp" :src="train.image || '/_nuxt/assets/img/services/junior_woman.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
 
                                                 <div class="service__wrapper">
 
@@ -204,6 +204,7 @@
 
 <script lang="ts" setup>
 
+import axios from "axios";
 import {trainings} from "~/data";
 
 useHead({
@@ -213,18 +214,16 @@ useHead({
     ]
 })
 
-const train_beginner = computed(() => trainings.trains.filter((i: {
-    type: string; complexity: string;
-}) => i.complexity == 'beginner' && i.type == 'men'))
-const train_master = computed(() => trainings.trains.filter((i: {
-    type: string; complexity: string;
-}) => i.complexity == 'advanced' && i.type == 'men'))
-const train_beginner_w = computed(() => trainings.trains.filter((i: {
-    type: string; complexity: string;
-}) => i.complexity == 'beginner' && i.type == 'women'))
-const train_advanced_w = computed(() => trainings.trains.filter((i: {
-    type: string; complexity: string;
-}) => i.complexity == 'advanced' && i.type == 'women'))
+async function getTrainin(type: string, complexity: string) {
+    const { data } = await axios.get(import.meta.env.VITE_API_URL + '/trainings');
+
+    return data.data.filter((i: any) => i.complexity === complexity && i.type === type);
+}
+
+const train_beginner = ref(await getTrainin('men', 'beginner'));
+const train_master = ref(await getTrainin('men', 'advanced'));
+const train_beginner_w = ref(await getTrainin('women', 'beginner'));
+const train_advanced_w = ref(await getTrainin('women', 'advanced'));
 </script>
 
 <style scoped></style>

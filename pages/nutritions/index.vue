@@ -39,9 +39,9 @@
                             <div class="row gy-4">
                                 <div v-for="nut in nutrition" class="col-6 col-md-4">
                                     <!-- service-item -->
-                                    <nuxt-link :to="'/nutritions/' + nut.id" class="service">
+                                    <nuxt-link :to="'/nutritions/' + nut._id" class="service">
                                         <!-- <img class="img-fluid" :src="nut.media.images.full || '/_nuxt/assets/img/services/service_man.jpg'" alt=""> -->
-                                        <nuxt-img class="img-fluid" format="webp" :src="nut.media.images.full || '/_nuxt/assets/img/services/service_man.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
+                                        <nuxt-img class="img-fluid" format="webp" :src="nut.image || '/_nuxt/assets/img/services/service_man.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
                                         
                                         <div class="service__wrapper">
 
@@ -65,9 +65,9 @@
                             <div class="row gy-4">
                                 <div v-for="nut in nutrition_w" class="col-6 col-md-4">
                                     <!-- service-item -->
-                                    <nuxt-link :to="'/nutritions/' + nut.id" class="service">
+                                    <nuxt-link :to="'/nutritions/' + nut._id" class="service">
                                         <!-- <img class="img-fluid" :src="nut.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" alt=""> -->
-                                        <nuxt-img class="img-fluid" format="webp" :src="nut.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
+                                        <nuxt-img class="img-fluid" format="webp" :src="nut.image || '/_nuxt/assets/img/services/junior_woman.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
                                         <div class="service__wrapper">
 
                                             <h3 class="service__title">{{ nut.title }}</h3>
@@ -114,12 +114,8 @@ useHead({
     ]
 })
 
-const nutrition = computed(() => nutrions.plans.filter((i: {
-    type: string; complexity: string;
-}) => i.type == 'men'))
-const nutrition_w = computed(() => nutrions.plans.filter((i: {
-    type: string; complexity: string;
-}) => i.type == 'women'))
+const nutrition = ref(await getNutrions('men'))
+const nutrition_w = ref(await getNutrions('women'))
 
 </script>
 

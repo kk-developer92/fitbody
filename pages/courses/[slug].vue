@@ -9,8 +9,7 @@
                 <div class="promo__wrapper row align-items-center">
                     <div class="promo__image col-lg-5 col-xl-5 order-lg-last text-lg-end">
                         <!-- <img :src="current_course.media.images.full || '/_nuxt/assets/img/services/page_img.jpg' " alt=""> -->
-                        <nuxt-img :src="current_course.media.images.full" />
-
+                        <nuxt-img :src="current_course.image" />
                     </div>
                     <div class="col-lg-7 col-xl-7">
                         <button @click="$router.go(-1)" class="page-nav">
@@ -24,7 +23,7 @@
                             {{ current_course.description }}
                         </div>
 
-                        <purchase-button class="btn btn-primary button">Купить за {{current_course.price}} тыс. сум</purchase-button>
+                        <purchase-button :price="current_course.price" class="btn btn-primary button" />
                     </div>
 
                 </div>
@@ -38,8 +37,7 @@
                         <h2>О ПРОГРАММЕ</h2>
                         <div v-html="current_course.about_program"></div>
 
-                        <purchase-button class="btn btn-primary button mt-4">Купить за {{ current_course.price }} тыс. сум</purchase-button>
-
+                        <purchase-button :price="current_course.price" class="btn btn-primary button" />
                     </div>
                 </div>
             </section>
@@ -49,10 +47,10 @@
                 <div class="py-4">
                     <h2 class="text-center mb-md-4">Питание</h2>
                     <div class="row justify-content-center">
-                        <div v-for="nutrition in others.splice(0, 2)" class="col-6 col-md-4">
+                        <div v-for="nutrition in nutrions.splice(0, 2)" class="col-6 col-md-4">
                             <!-- service-item -->
-                            <nuxt-link :to="'/nutritions/' + nutrition.id" class="service">
-                                <img class="img-fluid" :src="nutrition.media.images.full || image" alt="">
+                            <nuxt-link :to="'/nutritions/' + nutrition._id" class="service">
+                                <img class="img-fluid" :src="nutrition.image || image" alt="">
                                 <div class="service__wrapper">
 
                                     <h3 class="service__title">{{ nutrition.title }}</h3>
@@ -73,10 +71,10 @@
                 <div class="py-4">
                     <h2 class="text-center mb-md-4">Тренировки</h2>
                     <div class="row justify-content-center">
-                        <div v-for="train in others_trainings.splice(0, 2)" class="col-6 col-md-4">
+                        <div v-for="train in trainings.splice(0, 2)" class="col-6 col-md-4">
                             <!-- service-item -->
-                            <nuxt-link :to="'/trainings/' + train.id" class="service">
-                                <img class="img-fluid" :src="train.media.images.full || image" alt="">
+                            <nuxt-link :to="'/trainings/' + train._id" class="service">
+                                <img class="img-fluid" :src="train.image || image" alt="">
                                 <div class="service__wrapper">
 
                                     <div>
@@ -103,12 +101,13 @@
 </template>
 
 <script setup lang="ts">
-
-import {courses, nutrions, trainings} from "~/data";
 const route = useRoute()
 
-const current_course = computed(() => courses.trains.find((i: { id: number; }) => i.id === +route.params.slug))
+const current_course = ref(await getCurrent(route.params.slug, '/courses'))
+console.log(current_course.value);
+
 const image = ref(current_course.value.type === "men" ? '/_nuxt/assets/img/services/service_man.jpg' : '/_nuxt/assets/img/services/service_woman.jpg')
-const others = ref(nutrions.plans.filter((i: { type: any; }) => i.type === current_course.value.type))
-const others_trainings = ref(trainings.trains.filter((i: { type: any; }) => i.type === current_course.value.type))
+
+const nutrions = ref(await getNutrions())
+const trainings = ref(await getTrainings())
 </script>

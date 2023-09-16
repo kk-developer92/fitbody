@@ -39,9 +39,9 @@
                             <div class="row gy-4">
                                 <div v-for="c in course" class="col-6 col-md-4">
                                     <!-- service-item -->
-                                    <nuxt-link :to="'/courses/' + c.id" class="service">
+                                    <nuxt-link :to="'/courses/' + c._id" class="service">
                                         <!-- <img class="img-fluid" :src="c.media.images.full || '/_nuxt/assets/img/services/service_man.jpg'" alt=""> -->
-                                        <nuxt-img class="img-fluid" format="webp" :src="c.media.images.full || '/_nuxt/assets/img/services/service_man.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
+                                        <nuxt-img class="img-fluid" format="webp" :src="c.image || '/_nuxt/assets/img/services/service_man.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
                                         
                                         <div class="service__wrapper">
                                             
@@ -69,9 +69,9 @@
                             <div class="row gy-4">
                                 <div v-for="c in course_w" class="col-6 col-md-4">
                                     <!-- service-item -->
-                                    <nuxt-link :to="'/courses/' + c.id" class="service">
+                                    <nuxt-link :to="'/courses/' + c._id" class="service">
                                         <!-- <img class="img-fluid" :src="c.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" alt=""> -->
-                                        <nuxt-img class="img-fluid" format="webp" :src="c.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
+                                        <nuxt-img class="img-fluid" format="webp" :src="c.image || '/_nuxt/assets/img/services/junior_woman.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
                                         
                                         <div class="service__wrapper">
 
@@ -123,12 +123,8 @@ useHead({
     ]
 })
 
-const course = computed(() => courses.trains.filter((i: {
-    type: string; complexity: string;
-}) => i.type == 'men'))
-const course_w = computed(() => courses.trains.filter((i: {
-    type: string; complexity: string;
-}) => i.type == 'women'))
+const course = ref(await getCourses('men'))
+const course_w = ref(await getCourses('women'))
 
 </script>
 

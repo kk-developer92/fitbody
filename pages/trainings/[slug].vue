@@ -8,7 +8,7 @@
             <div class="container py-3">
                 <div class="promo__wrapper row align-items-center">
                     <div class="promo__image col-lg-5 col-xl-5 order-lg-last text-lg-end">
-                        <img :src="current_train.media.images.full || '/_nuxt/assets/img/services/page_img.jpg' " alt="">
+                        <img :src="current_train.image || '/_nuxt/assets/img/services/page_img.jpg' " alt="">
                     </div>
                     <div class="col-lg-7 col-xl-7">
                         <button @click="$router.go(-1)" class="page-nav">
@@ -22,7 +22,7 @@
                             {{ current_train.description }}
                         </div>
 
-                        <purchase-button>Купить за {{ current_train.price }} тыс. сум</purchase-button>
+                        <purchase-button :price="current_train.price" class="btn btn-primary button" />
                     </div>
 
                 </div>
@@ -36,7 +36,7 @@
                         <h2>О ПРОГРАММЕ</h2>
                         <div v-html="current_train.about_program"></div>
 
-                        <purchase-button class="btn btn-primary button">Купить за {{ current_train.price }} тыс. сум</purchase-button>
+                        <purchase-button :price="current_train.price" class="btn btn-primary button" />
                     </div>
                 </div>
             </section>
@@ -46,10 +46,10 @@
                 <div class="py-4">
                     <h2 class="text-center mb-md-4">Питание</h2>
                     <div class="row justify-content-center">
-                        <div v-for="nutrition in others.splice(0, 2)" class="col-6 col-md-4">
+                        <div v-for="nutrition in nutrions.splice(0, 2)" class="col-6 col-md-4">
                             <!-- service-item -->
-                            <nuxt-link :to="'/nutritions/' + nutrition.id" class="service">
-                                <img class="img-fluid" :src="nutrition.media.images.full || image" alt="">
+                            <nuxt-link :to="'/nutritions/' + nutrition._id" class="service">
+                                <img class="img-fluid" :src="nutrition.image || image" alt="">
                                 <div class="service__wrapper">
 
                                     <h3 class="service__title">{{ nutrition.title }}</h3>
@@ -70,10 +70,10 @@
                 <div class="py-4">
                     <h2 class="text-center mb-md-4">Курсы</h2>
                     <div class="row justify-content-center">
-                        <div v-for="course in others_course.splice(0, 2)" class="col-6 col-md-4">
+                        <div v-for="course in courses.splice(0, 2)" class="col-6 col-md-4">
                             <!-- service-item -->
-                            <nuxt-link :to="'/courses/' + course.id" class="service">
-                                <img class="img-fluid" :src="course.media.images.full || image" alt="">
+                            <nuxt-link :to="'/courses/' + course._id" class="service">
+                                <img class="img-fluid" :src="course.image || image" alt="">
                                 <div class="service__wrapper">
 
                                     <div>
@@ -108,14 +108,13 @@
 
 <script setup lang="ts">
 
-import {courses, nutrions, trainings} from "~/data";
 const route = useRoute()
 
-const current_train = computed(() => trainings.trains.find((i: { id: number; }) => i.id === +route.params.slug))
+const current_train = ref(await getCurrent(route.params.slug, '/trainings'))
+
 const image = ref(current_train.value.type === "men" ? '/_nuxt/assets/img/services/service_man.jpg' : '/_nuxt/assets/img/services/service_woman.jpg')
 
-const others = ref(nutrions.plans.filter((i: { type: any; }) => i.type === current_train.value.type))
-const others_course = ref(courses.trains.filter((i: { type: any; }) => i.type === current_train.value.type))
-
+const nutrions = ref(await getNutrions())
+const courses = ref(await getCourses())
 
 </script>
