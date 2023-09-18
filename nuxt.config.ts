@@ -1,12 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     // @ts-ignore
-    devtools: {enabled: false},
+    devtools: { enabled: false },
     modules: [
         '@nuxt/image',
     ],
     image: {
-        provider: ['netlify', 'heroku']
+        provider: 'netlify',
+        netlify: {
+            baseURl: process.env.IMAGES_URL
+        }
     },
     ssr: true,
     app: {
