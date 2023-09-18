@@ -5,9 +5,6 @@ export default defineNuxtConfig({
     modules: [
         '@nuxt/image',
     ],
-    image: {
-        provider: 'netlify'
-    },
     ssr: true,
     app: {
         head: {
