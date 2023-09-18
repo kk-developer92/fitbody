@@ -56,7 +56,6 @@ async function submit() {
     axios.post(import.meta.env.VITE_API_URL + '/users', user.value).then(r => {
         const token = useCookie('token');
         const user = useCookie('user');
-        console.log(r);
         token.value = r.data.token;
         user.value = r.data.user;
         if (r.status === 200 || r.status === 201) {

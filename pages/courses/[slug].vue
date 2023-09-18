@@ -104,7 +104,6 @@
 const route = useRoute()
 
 const current_course = ref(await getCurrent(route.params.slug, '/courses'))
-console.log(current_course.value);
 
 const image = ref(current_course.value.type === "men" ? '/_nuxt/assets/img/services/service_man.jpg' : '/_nuxt/assets/img/services/service_woman.jpg')
 

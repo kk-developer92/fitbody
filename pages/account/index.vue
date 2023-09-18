@@ -104,7 +104,6 @@
 
 const user: any = useCookie('user').value
 
-console.log(user);
 
 import { trainings } from "~/data";
 
