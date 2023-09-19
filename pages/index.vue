@@ -4,7 +4,7 @@
             <div class="promo__wrapper row align-items-center">
                 <div class="promo__image col-lg-5 col-xl-6 order-lg-last text-lg-end">
                     <!-- <img class="img-fluid" src="@/assets/img/promo_bg.png" alt=""> -->
-                    <nuxt-img format="webp" src="/img/promo_bg.png" sizes="sm:100vw md:50vw lg:600px" />
+                    <nuxt-img format="webp" :src="promo" sizes="sm:100vw md:50vw lg:600px" />
 
                 </div>
                 <div class="promo__text col-lg-7 col-xl-6">
@@ -183,9 +183,9 @@ import TabBlock from "~/components/common/TabBlock.vue";
 import About from "~/components/About.vue";
 import CategoriesMain from "~/components/common/categories/CategoriesMain.vue";
 
-const slides = ref(["/img/diploms/diplom-1.jpg", "/img/diploms/diplom-2.jpg", "/img/diploms/diplom-3.jpg", "/img/diploms/diplom-4.jpg", "/img/diploms/diplom-5.jpg", "/img/diploms/diplom-6.jpg", "/img/diploms/diplom-4.jpg", "/img/diploms/diplom-5.jpg", "/img/diploms/diplom-6.jpg", "/img/diploms/diplom-7.jpg"])
-const reviews = ref(["/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png"])
-
+const slides = ref(["/uploads/diploms/diplom-1.jpg", "/uploads/diploms/diplom-2.jpg", "/uploads/diploms/diplom-3.jpg", "/uploads/diploms/diplom-4.jpg", "/uploads/diploms/diplom-5.jpg", "/uploads/diploms/diplom-6.jpg", "/img/diploms/diplom-4.jpg", "/uploads/diploms/diplom-5.jpg", "/uploads/diploms/diplom-6.jpg", "/uploads/diploms/diplom-7.jpg"])
+const reviews = ref(["/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/img/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png"])
+const promo = ref(process.env.VITE_API_URL + '/uploads/promo_bg.png');
 
 const train_beginner = ref(await getTrainings('men'));
 const train_beginner_w = ref(await getTrainings('women'));

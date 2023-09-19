@@ -5,12 +5,6 @@ export default defineNuxtConfig({
     modules: [
         '@nuxt/image',
     ],
-    image: {
-        provider: 'netlify',
-        netlify: {
-            baseURl: process.env.IMAGES_URL
-        }
-    },
     ssr: true,
     app: {
         head: {
@@ -23,6 +17,6 @@ export default defineNuxtConfig({
             ]
         }
     }
-})
+});
 
 

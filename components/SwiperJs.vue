@@ -31,7 +31,7 @@
             <a @click="openModal(slide)" data-bs-toggle="modal" href="#imageModal">
                 <span>
                     <!-- <img :src="slide"/> -->
-                    <nuxt-img format="webp" :src="slide" sizes="sm:100vw md:50vw lg:300px"/>
+                    <nuxt-img format="webp" :src="getSlide(slide)" sizes="sm:100vw md:50vw lg:300px"/>
                 </span>
             </a>
         </swiper-slide>
@@ -47,7 +47,11 @@ const props = defineProps<{ data: any, next: string, prev: string }>()
 const imageModal = useModal('imageModal')
 
 function openModal(slide: string) {
-    imageModal.open(slide)
+    imageModal.open(process.env.VITE_API_URL + slide)
+}
+
+function getSlide(slide: string) {
+    return process.env.VITE_API_URL + slide
 }
 
 </script>
