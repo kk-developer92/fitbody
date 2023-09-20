@@ -46,12 +46,12 @@ const props = defineProps<{ data: any, next: string, prev: string }>()
 
 const imageModal = useModal('imageModal')
 
-function openModal(slide: string) {
-    imageModal.open(process.env.VITE_API_URL + slide)
+function openModal(slide: string) {    
+    imageModal.open(slide)
 }
 
 function getSlide(slide: string) {
-    return process.env.VITE_API_URL + slide
+    return 'https://fitbody-4f554e8ece98.herokuapp.com' + slide
 }
 
 </script>

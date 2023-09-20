@@ -22,7 +22,7 @@
                             {{ current_train.description }}
                         </div>
 
-                        <purchase-button :price="current_train.price" class="btn btn-primary button" />
+                        <purchase-button :price="current_train.price" :id="current_train._id" place="trainings" class="btn btn-primary button" />
                     </div>
 
                 </div>
@@ -36,7 +36,7 @@
                         <h2>О ПРОГРАММЕ</h2>
                         <div v-html="current_train.about_program"></div>
 
-                        <purchase-button :price="current_train.price" class="btn btn-primary button" />
+                        <purchase-button :price="current_train.price" :id="current_train.price" place="trainings" class="btn btn-primary button" />
                     </div>
                 </div>
             </section>

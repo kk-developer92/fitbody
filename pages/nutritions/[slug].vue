@@ -22,7 +22,7 @@
                             {{ current_nutrion.description }}
                         </div>
 
-                        <purchase-button :price="current_nutrion.price" />
+                        <purchase-button :price="current_nutrion.price" :id="current_nutrion._id" place="nutrition" />
                     </div>
 
                 </div>
@@ -36,7 +36,7 @@
                         <h2>О ПРОГРАММЕ</h2>
                         <div v-html="current_nutrion.about_program"></div>
 
-                        <purchase-button :price="current_nutrion.price" />
+                        <purchase-button :price="current_nutrion.price" :id="current_nutrion._id" place="nutrition" />
 
                     </div>
                 </div>

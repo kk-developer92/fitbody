@@ -69,12 +69,15 @@
 		<div class="container">
 			<h1 class="mb-5">Мои покупки</h1>
 			<div class="row gy-4 justify-content-md-center">
-				<div v-for="train in train_beginner" class="col-6 col-md-4">
+				<div v-if="!user.trainings?.length">
+					<h1 style="text-align: center; font-size: 24px;">У вас пока ничего нет 😢</h1>
+				</div>
+				<div v-else v-for="train in user.trainings" class="col-6 col-md-4">
 					<!-- service-item -->
-					<nuxt-link :to="'/trainings/' + train.id" class="service">
+					<nuxt-link :to="'/trainings/' + train._id" class="service">
 						<!-- <img class="img-fluid" :src="train.media.images.full" alt=""> -->
 						<nuxt-img class="img-fluid" format="webp"
-							:src="train.media.images.full || '/_nuxt/assets/img/services/service_man.jpg'"
+							:src="train.image || '/_nuxt/assets/img/services/service_man.jpg'"
 							sizes="sm:100vw md:100vw lg:600px" />
 	
 						<span class="badge bg-secondary position-absolute top-0 start-0 m-3">Питание</span>
@@ -97,29 +100,12 @@
 </template>
 
 <script lang="ts" setup>
-// definePageMeta({
-//     authRoute: true,
-//     middleware: 'auth'
-// });
-
-const user: any = useCookie('user').value
-
-
-import { trainings } from "~/data";
-
-const train_beginner = computed(() => trainings.trains.filter((i: {
-	type: string; complexity: string;
-}) => i.complexity == 'beginner' && i.type == 'men'))
-const train_master = computed(() => trainings.trains.filter((i: {
-	type: string; complexity: string;
-}) => i.complexity == 'advanced' && i.type == 'men'))
-const train_beginner_w = computed(() => trainings.trains.filter((i: {
-	type: string; complexity: string;
-}) => i.complexity == 'beginner' && i.type == 'women'))
-const train_advanced_w = computed(() => trainings.trains.filter((i: {
-	type: string; complexity: string;
-}) => i.complexity == 'advanced' && i.type == 'women'))
-
+definePageMeta({
+    authRoute: true,
+    middleware: 'auth'
+});
+const storage: any = localStorage.getItem('user')
+const user: any = JSON.parse(storage);
 
 </script>
 

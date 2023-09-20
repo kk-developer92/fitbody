@@ -23,7 +23,7 @@
                             {{ current_course.description }}
                         </div>
 
-                        <purchase-button :price="current_course.price" class="btn btn-primary button" />
+                        <purchase-button :price="current_course.price" :id="current_course._id" place="courses" class="btn btn-primary button" />
                     </div>
 
                 </div>
@@ -37,7 +37,7 @@
                         <h2>О ПРОГРАММЕ</h2>
                         <div v-html="current_course.about_program"></div>
 
-                        <purchase-button :price="current_course.price" class="btn btn-primary button" />
+                        <purchase-button :price="current_course.price" :id="current_course._id" place="courses" class="btn btn-primary button" />
                     </div>
                 </div>
             </section>

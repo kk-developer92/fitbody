@@ -3,7 +3,7 @@
         <div class="about__wrapper row align-items-center">
             <div class="about__image text-center col-lg-4">
                 <!-- <img class="img-fluid" src="~/assets/img/about_img.png" alt=""> -->
-                <nuxt-img format="webp" :src="about_img" sizes="sm:100vw md:50vw lg:600px"  />
+                <img :src="about_img" />
             </div>
             <div class="about__text col-lg-8">
                 <h2 class="about__title">Рамис Сахибов</h2>
@@ -30,7 +30,7 @@
 </template>
 
 <script lang="ts" setup>
-const about_img = ref(process.env.VITE_API_URL + '/uploads/about_img.png');
+const about_img = ref('https://fitbody-4f554e8ece98.herokuapp.com' + '/uploads/about_img.png');
 
 </script>
 

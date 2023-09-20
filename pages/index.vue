@@ -4,7 +4,7 @@
             <div class="promo__wrapper row align-items-center">
                 <div class="promo__image col-lg-5 col-xl-6 order-lg-last text-lg-end">
                     <!-- <img class="img-fluid" src="@/assets/img/promo_bg.png" alt=""> -->
-                    <nuxt-img format="webp" :src="promo" sizes="sm:100vw md:50vw lg:600px" />
+                    <img :src="promo" />
 
                 </div>
                 <div class="promo__text col-lg-7 col-xl-6">
@@ -185,7 +185,7 @@ import CategoriesMain from "~/components/common/categories/CategoriesMain.vue";
 
 const slides = ref(["/uploads/diploms/diplom-1.jpg", "/uploads/diploms/diplom-2.jpg", "/uploads/diploms/diplom-3.jpg", "/uploads/diploms/diplom-4.jpg", "/uploads/diploms/diplom-5.jpg", "/uploads/diploms/diplom-6.jpg", "/img/diploms/diplom-4.jpg", "/uploads/diploms/diplom-5.jpg", "/uploads/diploms/diplom-6.jpg", "/uploads/diploms/diplom-7.jpg"])
 const reviews = ref(["/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/img/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png"])
-const promo = ref(process.env.VITE_API_URL + '/uploads/promo_bg.png');
+const promo = ref('https://fitbody-4f554e8ece98.herokuapp.com' + '/uploads/promo_bg.png');
 
 const train_beginner = ref(await getTrainings('men'));
 const train_beginner_w = ref(await getTrainings('women'));
