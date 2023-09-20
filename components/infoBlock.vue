@@ -4,15 +4,14 @@
             <div class="position-relative mr-3 flex-shrink-0 overlay opacity-hover" data-bs-target="#videoModal"
                 data-bs-toggle="modal" @click="openModal">
                 <img class="rounded" width="128" height="72"
-                    src="https://i.vimeocdn.com/video/1701250328-8d85b1493b149f26c7bb622f0a22dd87a09b447bcfb5d13f0046784fa7299199-d_320x180?r=pad"
+                    :src="props.train.image"
                     alt="Exercise image">
                 <play-button />
             </div>
             <div class="flex-grow-1 ms-3">
                 <div class="row">
                     <div class="col-sm">
-                        <h6 class="mb-0 text-white">Low Plank To High Plank
-                        </h6>
+                        <h6 class="mb-0 text-white">{{ props.train.title }}</h6>
                         <p class="mb-0">7 reps each</p>
                     </div>
                     <div class="col-sm-auto flex-shrink-0 d-flex gap-3 align-items-center justify-content-between">
@@ -37,12 +36,14 @@ import EditBtn from "~/components/icons/editBtn.vue";
 import PlayButton from "~/components/icons/PlayButton.vue";
 import { useModal } from "~/composables/useModal";
 
+const props = defineProps<{ train: any }>()
 
 const modal = useModal('videoModal');
 const resmodal = useModal('resultModal');
 
+
 function openModal() {
-    modal.open('https://www.youtube.com/embed/dvkozMW37Qc?rel=0')
+    modal.open(props.train.video)
 }
 
 function openResModal() {

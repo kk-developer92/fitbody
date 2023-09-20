@@ -68,31 +68,41 @@
 	<div class="training__programs">
 		<div class="container">
 			<h1 class="mb-5">Мои покупки</h1>
-			<div class="row gy-4 justify-content-md-center">
-				<div v-if="!user.trainings?.length">
+			<div class="gy-4">
+				<div v-if="!all.length">
 					<h1 style="text-align: center; font-size: 24px;">У вас пока ничего нет 😢</h1>
 				</div>
-				<div v-else v-for="train in user.trainings" class="col-6 col-md-4">
-					<!-- service-item -->
-					<nuxt-link :to="'/trainings/' + train._id" class="service">
-						<!-- <img class="img-fluid" :src="train.media.images.full" alt=""> -->
-						<nuxt-img class="img-fluid" format="webp"
-							:src="train.image || '/_nuxt/assets/img/services/service_man.jpg'"
-							sizes="sm:100vw md:100vw lg:600px" />
-	
-						<span class="badge bg-secondary position-absolute top-0 start-0 m-3">Питание</span>
-						<div class="service__wrapper">
-	
-							<h3 class="service__title">{{ train.title }}</h3>
-							<svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
-								xmlns="http://www.w3.org/2000/svg">
-								<circle cx="15" cy="15" r="15" fill="#F52626" />
-								<path d="M13 9L19 15L13 21" stroke="white" stroke-width="2" stroke-linejoin="round" />
-							</svg>
-	
+				<div v-else class="row gy-4">
+					<div class="row gy-4" v-if="user.trainings?.length">
+						<h1 style="font-size: 24px;">Тренировки</h1>
+						<div v-for="training in user.trainings" class="col-6 col-md-4 cursor-pointer">
+							<div @click="navigate('/account/trainings', training)" class="service">
+								<nuxt-img class="img-fluid" format="webp"
+									:src="training.image || '/_nuxt/assets/img/services/service_man.jpg'"
+									sizes="sm:100vw md:100vw lg:400px" />
+
+								<div class="service__wrapper">
+									<div>
+										<h3 class="service__title">{{ training.title }}</h3>
+									</div>
+									<svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<circle cx="15" cy="15" r="15" fill="#F52626" />
+										<path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
+											stroke-linejoin="round" />
+									</svg>
+								</div>
+							</div>
 						</div>
-					</nuxt-link>
-					<!-- end service-item -->
+					</div>
+					<div class="row gy-4" v-if="user.nutrition?.length">
+						<h1 style="font-size: 24px;">Питание</h1>
+						<tab-block v-for="data in user.nutrition" route="account/nutrition" :section="data"></tab-block>
+					</div>
+					<div class="row gy-4" v-if="user.courses?.length">
+						<h1 style="font-size: 24px;">Курсы</h1>
+						<tab-block v-for="courses in user.courses" route="account/courses" :section="courses"></tab-block>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -100,12 +110,41 @@
 </template>
 
 <script lang="ts" setup>
+import TabBlock from '~/components/common/TabBlock.vue';
+
 definePageMeta({
-    authRoute: true,
-    middleware: 'auth'
+	authRoute: true,
+	middleware: 'auth'
 });
-const storage: any = localStorage.getItem('user')
-const user: any = JSON.parse(storage);
+
+
+let storage: any = '';
+const user: any = ref({});
+const all: any = ref([]);
+
+onMounted(() => {
+	storage = localStorage.getItem('user');
+
+	user.value = JSON.parse(storage) || {};
+
+	all.value = [...user.value.trainings, ...user.value.nutrition, ...user.value.courses];
+});
+
+
+function navigate(to: string, data: any) {
+	if (to.includes('trainings')) {
+		localStorage.setItem('trainings', JSON.stringify(data));
+	}
+	if (to.includes('courses')) {
+		localStorage.setItem('courses', JSON.stringify(data));
+	}
+	if (to.includes('nutrition')) {
+		localStorage.setItem('nutrition', JSON.stringify(data));
+	}
+
+	navigateTo(to)
+}
+
 
 </script>
 

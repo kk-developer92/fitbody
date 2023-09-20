@@ -15,13 +15,9 @@
                             </svg>
                             Назад
                         </button>
-                        <h1>Day 1 Chest & Triceps</h1>
+                        <h1>{{ training?.name }}</h1>
                         <div class="promo__text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quidem velit fugit odit.
-                            Aperiam,
-                            suscipit doloremque? Ab, ad! Sed, repellendus! Magni porro perspiciatis voluptatibus
-                            ratione,
-                            neque provident veniam ipsam officiis.
+                            <!-- {{ training?.description }} -->
                         </div>
 
                     </div>
@@ -39,10 +35,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-10">
                                         <div class="list-group list-group-flush">
-                                            <train-block/>
-                                            <train-block/>
-                                            <train-block/>
-                                            <train-block/>
+                                            <train-block v-for="data in training?.trainings" :data="data"/>
                                         </div>
                                     </div>
                                 </div>
@@ -56,4 +49,14 @@
 </template>
 
 <script lang="ts" setup>
+
+const training = ref();
+
+onMounted(() => {
+    const storage: any = localStorage.getItem('day');
+    training.value = JSON.parse(storage);
+});
+
+
+
 </script>
