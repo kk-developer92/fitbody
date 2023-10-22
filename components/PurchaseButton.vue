@@ -11,7 +11,7 @@ const props = defineProps<{ price: number, id: string, place: string }>();
 
 let storage: any = '';
 const user: any = ref({});
-
+const route = useRoute().params.slug;
 
 onMounted(() => {
     storage = localStorage.getItem('user');
@@ -20,7 +20,11 @@ onMounted(() => {
 });
 
 const purchase = async () => {
-    const { data } = await axios.get(`https://fitbody-4f554e8ece98.herokuapp.com/${props.place}/${props.id}`);
+    if (!user.value.phone) {
+        return navigateTo('/signup');
+    }
+
+    const { data } = await axios.get(`https://fitbody-4f554e8ece98.herokuapp.com/${props.place}/${route}`);
 
     await axios.patch(`http://localhost:3030/users/${user.value._id}`, { [props.place]: [...user.value[props.place], data] });
     

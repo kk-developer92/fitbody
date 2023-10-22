@@ -76,7 +76,7 @@
 					<div class="row gy-4" v-if="user.trainings?.length">
 						<h1 style="font-size: 24px;">Тренировки</h1>
 						<div v-for="training in user.trainings" class="col-6 col-md-4 cursor-pointer">
-							<div @click="navigate('/account/trainings', training)" class="service">
+							<nuxt-link :to="`/trainings/${training._id}`" class="service">
 								<nuxt-img class="img-fluid" format="webp"
 									:src="training.image || '/_nuxt/assets/img/services/service_man.jpg'"
 									sizes="sm:100vw md:100vw lg:400px" />
@@ -92,16 +92,16 @@
 											stroke-linejoin="round" />
 									</svg>
 								</div>
-							</div>
+							</nuxt-link>
 						</div>
 					</div>
 					<div class="row gy-4" v-if="user.nutrition?.length">
 						<h1 style="font-size: 24px;">Питание</h1>
-						<tab-block v-for="data in user.nutrition" route="account/nutrition" :section="data"></tab-block>
+						<tab-block v-for="data in user.nutrition" route="nutrition" :section="data"></tab-block>
 					</div>
 					<div class="row gy-4" v-if="user.courses?.length">
 						<h1 style="font-size: 24px;">Курсы</h1>
-						<tab-block v-for="courses in user.courses" route="account/courses" :section="courses"></tab-block>
+						<tab-block v-for="courses in user.courses" route="courses" :section="courses"></tab-block>
 					</div>
 				</div>
 			</div>
@@ -129,22 +129,6 @@ onMounted(() => {
 
 	all.value = [...user.value.trainings, ...user.value.nutrition, ...user.value.courses];
 });
-
-
-function navigate(to: string, data: any) {
-	if (to.includes('trainings')) {
-		localStorage.setItem('trainings', JSON.stringify(data));
-	}
-	if (to.includes('courses')) {
-		localStorage.setItem('courses', JSON.stringify(data));
-	}
-	if (to.includes('nutrition')) {
-		localStorage.setItem('nutrition', JSON.stringify(data));
-	}
-
-	navigateTo(to)
-}
-
 
 </script>
 

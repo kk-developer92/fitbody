@@ -1,6 +1,7 @@
 <template>
-    <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center cursor-pointer"
-        @click="navigate('/account/trainings/' + training._id)">
+    <nuxt-link class="list-group-item list-group-item-action d-flex justify-content-between align-items-center cursor-pointer"
+               :to="router.fullPath + '/' + props.day._id"
+        >
         <div>
             <small class="text-muted mb-0">тренировка</small>
             <h6 class="mb-0"> {{ props.day.name }} </h6>
@@ -15,24 +16,13 @@
             </svg>
         </span>
 
-    </div>
+    </nuxt-link>
 </template>
 
 <script lang="ts" setup>
 const props = defineProps<{ day: any }>();
+const router = useRoute();
 
-const training = ref();
-
-onMounted(() => {
-    const storage: any = localStorage.getItem('trainings');
-    training.value = JSON.parse(storage);
-});
-
-
-function navigate(to: string) {
-    localStorage.setItem('day', JSON.stringify(props.day));
-    navigateTo(to);
-}
 </script>
 
 <style scoped></style>

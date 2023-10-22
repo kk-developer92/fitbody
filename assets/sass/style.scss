@@ -894,10 +894,18 @@ h2.head-nav {
         backdrop-filter: blur(15px);
 
         form {
-            width: 30%;
+            width: 40%;
             background: $bg-dark;
             padding: 25px !important;
             border-radius: 15px;
+
+            @media (max-width: 919px) {
+                width: 60%;
+            }
+
+            @media (max-width: 475px) {
+                width: 90%;
+            }
 
             button {
                 width: 100%;

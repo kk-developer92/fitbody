@@ -36,7 +36,7 @@ async function submit() {
     axios.post(import.meta.env.VITE_API_URL + '/users', user.value).then(r => {
         const token = useCookie('token');
         token.value = r.data.token;
-        localStorage.setItem('user', JSON.stringify(user.value));
+        localStorage.setItem('user', JSON.stringify(r.data.user));
         if (r.status === 200 || r.status === 201) {
             window.location.href = import.meta.env.VITE_HOST_URL;
         }
@@ -45,6 +45,7 @@ async function submit() {
         showError.value = true;
     });
 }
+
 function closeError() {
     showError.value = false;
 }
