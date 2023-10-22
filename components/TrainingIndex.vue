@@ -5,18 +5,19 @@
                 <div class="promo__wrapper row align-items-center">
                     <div class="promo__image col-lg-5 col-xl-5 order-lg-last text-lg-end">
                         <img :src="training?.image"
-                            alt="">
+                             alt="">
                     </div>
                     <div class="promo__text col-lg-7 col-xl-7">
                         <button class="page-nav">
-                            <svg width="19" height="8" viewBox="0 0 19 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 4H19M1 4L4 1M1 4L4 7" stroke="currentColor" />
+                            <svg width="19" height="8" viewBox="0 0 19 8" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 4H19M1 4L4 1M1 4L4 7" stroke="currentColor"/>
                             </svg>
                             Личный кабинет
                         </button>
                         <h1>{{ training?.title }}</h1>
-                        <div class="promo__text">
-                            {{ training?.description }}
+                        <div v-html="training?.description" class="promo__text">
+
                         </div>
 
                     </div>
@@ -34,7 +35,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-10">
                                         <div class="list-group list-group-flush">
-                                            <training-weeks v-for="week in training?.exercises" :data="week" />
+                                            <training-weeks v-for="week in training?.exercises" :data="week"/>
                                         </div>
                                     </div>
                                 </div>
@@ -50,7 +51,8 @@
 
 <script lang="ts" setup>
 
+const props = defineProps<{ path: string }>()
 const route = useRoute().params.slug;
-const training = ref(await getCurrent(route, '/trainings'));
+const training = ref(await getCurrent(route, `/${props.path}`));
 
 </script>

@@ -17,10 +17,6 @@
                             Назад
                         </button>
                         <h1>{{ training?.name }}</h1>
-                        <div class="promo__text">
-                            <!-- {{ training?.description }} -->
-                        </div>
-
                     </div>
 
                 </div>
@@ -50,9 +46,21 @@
 </template>
 
 <script lang="ts" setup>
+import checkPurchased from "~/utils/checkPurchased";
+
+const props = defineProps<{ path: string }>()
 const route = useRoute().params;
-const weeks = ref(await getCurrent(route.slug, '/trainings'));
+const weeks = ref(await getCurrent(route.slug, `/${props.path}`));
 const training = ref();
+
+
+onMounted(() => {
+    const isPurchased = checkPurchased(props.path, route.slug);
+
+    if (!isPurchased) {
+        navigateTo('/')
+    }
+});
 
 function getDay() {
     for (let week of weeks.value.exercises) {

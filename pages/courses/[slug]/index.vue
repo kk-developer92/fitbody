@@ -1,7 +1,7 @@
 <template>
     <Head>
-        <Title>Программа тренировок {{ current_train.title }} - Fitbody</Title>
-        <Meta name="description" :content="current_train.description"/>
+        <Title>Курсы {{ current_course.title }} - Fitbody</Title>
+        <Meta name="description" :content="current_course.description"/>
     </Head>
     <div class="">
         <main v-if="!isPurchased" class="page">
@@ -9,7 +9,8 @@
                 <div class="container py-3">
                     <div class="promo__wrapper row align-items-center">
                         <div class="promo__image col-lg-5 col-xl-5 order-lg-last text-lg-end">
-                            <img :src="current_train.image || '/_nuxt/assets/img/services/page_img.jpg' " alt="">
+                            <!-- <img :src="current_course.media.images.full || '/_nuxt/assets/img/services/page_img.jpg' " alt=""> -->
+                            <nuxt-img :src="current_course.image"/>
                         </div>
                         <div class="col-lg-7 col-xl-7">
                             <button @click="$router.go(-1)" class="page-nav">
@@ -19,11 +20,12 @@
                                 </svg>
                                 Назад
                             </button>
-                            <h1>{{ current_train.title }}</h1>
+                            <h1>{{ current_course.title }}</h1>
                             <div class="promo__text">
-                                {{ current_train.description }}
+                                {{ current_course.description }}
                             </div>
-                            <purchase-button :price="current_train.price" :id="current_train._id" place="trainings"
+
+                            <purchase-button :price="current_course.price" :id="current_course._id" place="courses"
                                              class="btn btn-primary button"/>
                         </div>
 
@@ -36,9 +38,9 @@
                     <div class="row">
                         <div class="col-lg-8 mx-auto">
                             <h2>О ПРОГРАММЕ</h2>
-                            <div v-html="current_train.about_program"></div>
+                            <div v-html="current_course.about_program"></div>
 
-                            <purchase-button :price="current_train.price" :id="current_train.price" place="trainings"
+                            <purchase-button :price="current_course.price" :id="current_course._id" place="courses"
                                              class="btn btn-primary button"/>
                         </div>
                     </div>
@@ -71,17 +73,16 @@
                     </div>
 
                     <div class="py-4">
-                        <h2 class="text-center mb-md-4">Курсы</h2>
+                        <h2 class="text-center mb-md-4">Тренировки</h2>
                         <div class="row justify-content-center">
-                            <div v-for="course in courses.splice(0, 2)" class="col-6 col-md-4">
+                            <div v-for="train in trainings.splice(0, 2)" class="col-6 col-md-4">
                                 <!-- service-item -->
-                                <nuxt-link :to="'/courses/' + course._id" class="service">
-                                    <img class="img-fluid" :src="course.image || image" alt="">
+                                <nuxt-link :to="'/trainings/' + train._id" class="service">
+                                    <img class="img-fluid" :src="train.image || image" alt="">
                                     <div class="service__wrapper">
 
                                         <div>
-                                            <h3 class="service__title">{{ course.title }}</h3>
-                                            <div class="service__desc">{{ course.short_description }}</div>
+                                            <h3 class="service__title">{{ train.title }}</h3>
                                         </div>
                                         <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30"
                                              fill="none"
@@ -97,43 +98,34 @@
                             </div>
                         </div>
 
-                        <nuxt-link to="/courses" class="btn btn-link btn-more">
-                            Посмотреть все курсы
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="8" cy="8" r="8" transform="rotate(90 8 8)" fill="#F52626"/>
-                                <path d="M11 7L8 10L5 7" stroke="white" stroke-width="0.933333"
-                                      stroke-linejoin="round"/>
-                            </svg>
-                        </nuxt-link>
+
                     </div>
                 </section>
             </div>
         </main>
         <div v-else>
-            <training-index path="trainings"/>
+            <training-index path="courses"/>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-
-import TrainingIndex from "~/components/TrainingIndex.vue";
 import checkPurchased from "~/utils/checkPurchased";
+import TrainingIndex from "~/components/TrainingIndex.vue";
 
 const route = useRoute()
 
-const current_train = ref(await getCurrent(route.params.slug, '/trainings'))
+const current_course = ref(await getCurrent(route.params.slug, '/courses'))
 
-const image = ref(current_train.value.type === "men" ? '/_nuxt/assets/img/services/service_man.jpg' : '/_nuxt/assets/img/services/service_woman.jpg')
+const image = ref(current_course.value.type === "men" ? '/_nuxt/assets/img/services/service_man.jpg' : '/_nuxt/assets/img/services/service_woman.jpg')
 
-const nutrions = ref(await getNutrions());
-const courses = ref(await getCourses());
-
+const nutrions = ref(await getNutrions())
+const trainings = ref(await getTrainings())
 const isPurchased: Ref<boolean | undefined> = ref(false);
+console.log(isPurchased.value);
 
 onMounted(() => {
-    isPurchased.value = checkPurchased('trainings', route.params.slug);
+    isPurchased.value = checkPurchased('courses', route.params.slug);
 });
 
 

@@ -4,7 +4,7 @@
         <Meta name="description" :content="current_train.description"/>
     </Head>
     <div class="">
-        <trainings-slug path="trainings"/>
+        <trainings-slug path="courses"/>
     </div>
 </template>
 

@@ -10,8 +10,8 @@ export default function (path: string, id: any) {
         return false;
     }
     
-    for (let training of user.trainings) {
-        if (training._id === id) {
+    for (let el of user[path]) {
+        if (el._id === id) {
             return true;
         } else {
             return false;
