@@ -14,7 +14,7 @@
                            placeholder="Пароль">
                     <label for="floatingSet">Пароль</label>
                 </div>
-                <button type="submit" class="btn btn-primary button mt-3">Купить</button>
+                <button type="submit" class="btn btn-primary button mt-3">Войти</button>
             </form>
         </div>
     </div>

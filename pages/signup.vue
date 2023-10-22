@@ -14,7 +14,7 @@
                            placeholder="Пароль">
                     <label for="floatingSet">Пароль</label>
                 </div>
-                <button type="submit" class="btn btn-primary button mt-3">Купить</button>
+                <button type="submit" class="btn btn-primary button mt-3">Зарегестрироваться</button>
             </form>
         </div>
     </div>
@@ -25,7 +25,7 @@ import axios from "axios";
 
 const user = ref({phone: '', password: ''});
 const showError = ref(false);
-const error = ref('')
+const error = ref('');
 
 async function submit() {
     if (!user.value.phone || !user.value.phone) {
