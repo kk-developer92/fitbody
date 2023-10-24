@@ -917,3 +917,18 @@ h2.head-nav {
     }
 }
 
+.redirect-btn {
+    margin-top: 10px;
+    background: transparent;
+    border: none;
+    padding: 0 !important;
+    display: flex;
+    align-items: start !important;
+    justify-content: start !important;
+    color: $main-color;
+    gap: 5px;
+
+    a {
+        text-decoration: none !important;
+    }
+}

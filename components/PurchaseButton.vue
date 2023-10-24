@@ -21,7 +21,7 @@ onMounted(() => {
 
 const purchase = async () => {
     if (!user.value.phone) {
-        return navigateTo('/signup');
+        return navigateTo('/payment');
     }
 
     const { data } = await axios.get(`https://fitbody-4f554e8ece98.herokuapp.com/${props.place}/${route}`);

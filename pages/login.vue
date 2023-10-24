@@ -14,6 +14,9 @@
                            placeholder="Пароль">
                     <label for="floatingSet">Пароль</label>
                 </div>
+                <button type="button" class="redirect-btn"><span>Пока нет аккаунта ?</span>
+                    <nuxt-link to="/signup" class="text-none">Нажмите сюда</nuxt-link>
+                </button>
                 <button type="submit" class="btn btn-primary button mt-3">Войти</button>
             </form>
         </div>
@@ -26,6 +29,8 @@ const showError = ref(false);
 const error = ref('')
 
 async function submit() {
+    error.value = ''
+    showError.value = false;
     if (!user.value.phone || !user.value.phone) {
         showError.value = true;
         error.value = 'Пожалуйста заполните все поля.';
@@ -34,6 +39,11 @@ async function submit() {
     login(user.value.phone, user.value.password).then((response: any) => {
         const token = useCookie('token');
         token.value = response.data.token;
+        if (response.data.message === 'Incorrect password') {
+            error.value = 'Пожалуйста перепроверьте номер и пароль.'
+            showError.value = true;
+            return;
+        }
         localStorage.setItem('user', JSON.stringify(user.value));
         if (response.status === 200 || response.status === 201) {
             window.location.href = import.meta.env.VITE_HOST_URL;

@@ -14,6 +14,9 @@
                            placeholder="Пароль">
                     <label for="floatingSet">Пароль</label>
                 </div>
+                <button type="button" class="redirect-btn"><span>Уже есть аккаунт ?</span>
+                    <nuxt-link to="/login" class="text-none">Нажмите сюда</nuxt-link>
+                </button>
                 <button type="submit" class="btn btn-primary button mt-3">Зарегестрироваться</button>
             </form>
         </div>
@@ -28,6 +31,8 @@ const showError = ref(false);
 const error = ref('');
 
 async function submit() {
+    error.value = ''
+    showError.value = false;
     if (!user.value.phone || !user.value.phone) {
         showError.value = true;
         error.value = 'Пожалуйста заполните все поля.';
@@ -41,7 +46,7 @@ async function submit() {
             window.location.href = import.meta.env.VITE_HOST_URL;
         }
     }).catch((e: any) => {
-        error.value = 'Пожалуйста перепроверьте номер и пароль.'
+        error.value = e?.response?.data?.message || 'Что то пошло не так';
         showError.value = true;
     });
 }

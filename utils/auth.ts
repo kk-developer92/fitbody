@@ -25,11 +25,11 @@ export function setToken(token: string) {
     localStorage.setItem('token', token);
 }
 
-export function login(email: string, password: string): any {
+export function login(phone: string, password: string): any {
     return axios.post(import.meta.env.VITE_API_URL + '/authorization', {
         role: 'user',
         strategy: 'local',
-        email,
+        phone,
         password
     });
 }
