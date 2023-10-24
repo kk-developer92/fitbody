@@ -8,8 +8,7 @@
             <div class="service__wrapper">
                 <div>
                     <h3 class="service__title">{{ props.section.title }}</h3>
-                    <div class="service__desc" v-if="props.section.shortDescription">
-                        {{ props.section.shortDescription }}
+                    <div class="service__desc" v-html="props.section.shortDescription">
                     </div>
                 </div>
                 <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
