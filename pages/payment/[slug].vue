@@ -18,6 +18,10 @@ function closeError() {
     showError.value = false;
 }
 
+async function payment() {
+
+}
+
 </script>
 
 <style scoped>
