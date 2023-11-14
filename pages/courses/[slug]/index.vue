@@ -128,5 +128,9 @@ onMounted(() => {
     isPurchased.value = checkPurchased('courses', route.params.slug);
 });
 
+onMounted(() => {
+    localStorage.setItem('route', 'courses');
+    localStorage.setItem('price', current_course.value.price);
 
+});
 </script>

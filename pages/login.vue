@@ -44,7 +44,7 @@ async function submit() {
             showError.value = true;
             return;
         }
-        localStorage.setItem('user', JSON.stringify(user.value));
+        localStorage.setItem('user', JSON.stringify(response.data.user));
         if (response.status === 200 || response.status === 201) {
             window.location.href = import.meta.env.VITE_HOST_URL;
         }

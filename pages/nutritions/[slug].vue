@@ -119,5 +119,8 @@ const image = ref(current_nutrion.value.type === "men" ? '/_nuxt/assets/img/serv
 const trainigs = ref(await getTrainings())
 const courses = ref(await getCourses())
 
-
+onMounted(() => {
+    localStorage.setItem('route', 'nutrition')
+    localStorage.setItem('price', current_nutrion.value.price);
+});
 </script>
