@@ -53,6 +53,7 @@ const route = useRoute().params;
 const weeks = ref(await getCurrent(route.slug, `/${props.path}`));
 const training = ref();
 
+console.log('asdasdad');
 
 onMounted(() => {
     const isPurchased = checkPurchased(props.path, route.slug);

@@ -9,12 +9,8 @@ export default function (path: string, id: any) {
     if (!user[path]?.length) {
         return false;
     }
+    const arr = user[path];
     
-    for (let el of user[path]) {
-        if (el._id === id) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    const res = arr.filter((el: any) => el._id === id);
+    return res.length > 0;
 }

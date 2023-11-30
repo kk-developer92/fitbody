@@ -15,7 +15,11 @@
                     <label for="floatingSet">Пароль</label>
                 </div>
                 <button type="button" class="redirect-btn"><span>Пока нет аккаунта ?</span>
-                    <nuxt-link to="/signup" class="text-none">Нажмите сюда</nuxt-link>
+                    <span @click="navigateTo({
+                        path: '/signup',
+                        query
+                    })" class="text-white">Нажмите сюда
+                    </span>
                 </button>
                 <button type="submit" class="btn btn-primary button mt-3">Войти</button>
             </form>
@@ -24,9 +28,17 @@
 </template>
 
 <script lang="ts" setup>
+import axios from "axios";
+
 const user = ref({phone: '', password: ''});
 const showError = ref(false);
 const error = ref('')
+
+const query = useRoute().query;
+
+if (!query.id) {
+    navigateTo('/');
+}
 
 async function submit() {
     error.value = ''
@@ -36,7 +48,7 @@ async function submit() {
         error.value = 'Пожалуйста заполните все поля.';
     }
 
-    login(user.value.phone, user.value.password).then((response: any) => {
+    login(user.value.phone, user.value.password).then(async (response: any) => {
         const token = useCookie('token');
         token.value = response.data.token;
         if (response.data.message === 'Incorrect password') {
@@ -45,6 +57,7 @@ async function submit() {
             return;
         }
         localStorage.setItem('user', JSON.stringify(response.data.user));
+        await addPurchase(response.data.user);
         if (response.status === 200 || response.status === 201) {
             window.location.href = import.meta.env.VITE_HOST_URL;
         }
@@ -53,6 +66,17 @@ async function submit() {
         showError.value = true;
     });
 }
+
+async function addPurchase(user: any) {
+    const purchased = await axios.get(import.meta.env.VITE_API_URL + `/${query.place}/${query.id}`);
+    // @ts-ignore
+    const trainings = [...user[query.place], purchased.data];
+    // @ts-ignore
+    await axios.patch(import.meta.env.VITE_API_URL + `/users/${user._id}`, {[query.place]: trainings});
+    const usr = await axios.get(import.meta.env.VITE_API_URL + `/users/${user._id}`);
+    localStorage.setItem('user', JSON.stringify(usr.data));
+}
+
 
 function closeError() {
     showError.value = false;

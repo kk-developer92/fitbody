@@ -15,7 +15,11 @@
                     <label for="floatingSet">Пароль</label>
                 </div>
                 <button type="button" class="redirect-btn"><span>Уже есть аккаунт ?</span>
-                    <nuxt-link to="/login" class="text-none">Нажмите сюда</nuxt-link>
+                    <span class="text-white" @click="navigateTo({
+                        path: '/login',
+                        query
+                    })">Нажмите сюда
+                    </span>
                 </button>
                 <button type="submit" class="btn btn-primary button mt-3">Зарегестрироваться</button>
             </form>
@@ -31,6 +35,10 @@ const showError = ref(false);
 const error = ref('');
 
 const query = useRoute().query;
+
+if (!query.id) {
+    navigateTo('/');
+}
 
 async function submit() {
     error.value = ''

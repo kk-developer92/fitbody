@@ -134,10 +134,8 @@ const isPurchased: Ref<boolean | undefined> = ref(false);
 
 onMounted(() => {
     isPurchased.value = checkPurchased('trainings', route.params.slug);
-});
-
-onMounted(() => {
     localStorage.setItem('route', 'trainings');
     localStorage.setItem('price', current_train.value.price);
 });
+
 </script>
