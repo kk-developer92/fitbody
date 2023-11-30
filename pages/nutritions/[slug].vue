@@ -34,7 +34,7 @@
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
                         <h2>О ПРОГРАММЕ</h2>
-                        <div v-html="current_nutrion.about_program"></div>
+                        <div v-html="current_nutrion?.about_program"></div>
 
                         <purchase-button :price="current_nutrion.price" :id="current_nutrion._id" place="nutrition" />
 
@@ -114,7 +114,7 @@ const route = useRoute()
 
 const current_nutrion = ref(await getCurrent(route.params.slug, '/nutrition'));
 
-const image = ref(current_nutrion.value.type === "men" ? '/_nuxt/assets/img/services/service_man.jpg' : '/_nuxt/assets/img/services/service_woman.jpg')
+const image = ref(current_nutrion.value?.type === "men" ? '/_nuxt/assets/img/services/service_man.jpg' : '/_nuxt/assets/img/services/service_woman.jpg')
 
 const trainigs = ref(await getTrainings())
 const courses = ref(await getCourses())

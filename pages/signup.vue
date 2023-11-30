@@ -30,6 +30,8 @@ const user = ref({phone: '', password: ''});
 const showError = ref(false);
 const error = ref('');
 
+const query = useRoute().query;
+
 async function submit() {
     error.value = ''
     showError.value = false;
@@ -38,10 +40,11 @@ async function submit() {
         error.value = 'Пожалуйста заполните все поля.';
     }
 
-    axios.post(import.meta.env.VITE_API_URL + '/users', user.value).then(r => {
+    axios.post(import.meta.env.VITE_API_URL + '/users', user.value).then(async r => {
         const token = useCookie('token');
         token.value = r.data.token;
         localStorage.setItem('user', JSON.stringify(r.data.user));
+        await addPurchase(r.data.user);
         if (r.status === 200 || r.status === 201) {
             window.location.href = import.meta.env.VITE_HOST_URL;
         }
@@ -49,6 +52,16 @@ async function submit() {
         error.value = e?.response?.data?.message || 'Что то пошло не так';
         showError.value = true;
     });
+}
+
+async function addPurchase(user: any) {
+    const purchased = await axios.get(import.meta.env.VITE_API_URL + `/${query.place}/${query.id}`);
+    // @ts-ignore
+    const trainings = [...user[query.place], purchased.data];
+    // @ts-ignore
+    await axios.patch(import.meta.env.VITE_API_URL + `/users/${user._id}`, {[query.place]: trainings});
+    const usr = await axios.get(import.meta.env.VITE_API_URL + `/users/${user._id}`);
+    localStorage.setItem('user', JSON.stringify(usr.data));
 }
 
 function closeError() {

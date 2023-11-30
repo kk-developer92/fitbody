@@ -38,7 +38,7 @@
                     <div class="row">
                         <div class="col-lg-8 mx-auto">
                             <h2>О ПРОГРАММЕ</h2>
-                            <div v-html="current_course.about_program"></div>
+                            <div v-html="current_course?.about_program"></div>
 
                             <purchase-button :price="current_course.price" :id="current_course._id" place="courses"
                                              class="btn btn-primary button"/>
@@ -122,15 +122,14 @@ const image = ref(current_course.value.type === "men" ? '/_nuxt/assets/img/servi
 const nutrions = ref(await getNutrions())
 const trainings = ref(await getTrainings())
 const isPurchased: Ref<boolean | undefined> = ref(false);
-console.log(isPurchased.value);
 
 onMounted(() => {
+    console.log(isPurchased);
     isPurchased.value = checkPurchased('courses', route.params.slug);
 });
 
 onMounted(() => {
     localStorage.setItem('route', 'courses');
     localStorage.setItem('price', current_course.value.price);
-
 });
 </script>
