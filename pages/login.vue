@@ -37,8 +37,6 @@ const showError = ref(false);
 const error = ref('')
 const isLoading = ref(false);
 
-// const url = ref(import.meta.env.VITE_API_URL);
-
 async function submit() {
     isLoading.value = true;
     error.value = ''
@@ -54,12 +52,6 @@ async function submit() {
     showError.value = message.showError;
     error.value = message.errorMessage;
 }
-
-// async function addPurchase(user: any) {
-//     const training = await axios.get(`${url.value}/${query.place}/${query.id}`);
-//     console.log(training);
-// }
-
 
 function closeError() {
     showError.value = false;
