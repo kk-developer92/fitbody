@@ -1,7 +1,8 @@
 <template>
     <div class="loginBlock">
+        <loading v-if="isLoading"/>
         <div class="blur">
-            <form class="form p-3" @submit.prevent="submit">
+            <form class="form p-3">
                 <h1 class="mb-4">Войти</h1>
                 <error-block @close="closeError" class="mb-4" v-if="showError" :text="error"/>
                 <div class="form-floating mb-3">
@@ -15,67 +16,49 @@
                     <label for="floatingSet">Пароль</label>
                 </div>
                 <button type="button" class="redirect-btn"><span>Пока нет аккаунта ?</span>
-                    <span @click="navigateTo({
-                        path: '/signup',
-                        query
-                    })" class="text-white">Нажмите сюда
+                    <span @click="navigateTo({path: '/signup'})" class="text-white">Нажмите сюда
                     </span>
                 </button>
-                <button type="submit" class="btn btn-primary button mt-3">Войти</button>
+                <button type="button" @click="submit" class="btn btn-primary button mt-3">Войти</button>
             </form>
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
-import axios from "axios";
+import {login} from "~/utils/auth";
+
+definePageMeta({
+    layout: false
+});
 
 const user = ref({phone: '', password: ''});
 const showError = ref(false);
 const error = ref('')
+const isLoading = ref(false);
 
-const query = useRoute().query;
-
-if (!query.id) {
-    navigateTo('/');
-}
+// const url = ref(import.meta.env.VITE_API_URL);
 
 async function submit() {
+    isLoading.value = true;
     error.value = ''
     showError.value = false;
+
     if (!user.value.phone || !user.value.phone) {
         showError.value = true;
         error.value = 'Пожалуйста заполните все поля.';
     }
 
-    login(user.value.phone, user.value.password).then(async (response: any) => {
-        const token = useCookie('token');
-        token.value = response.data.token;
-        if (response.data.message === 'Incorrect password') {
-            error.value = 'Пожалуйста перепроверьте номер и пароль.'
-            showError.value = true;
-            return;
-        }
-        localStorage.setItem('user', JSON.stringify(response.data.user));
-        await addPurchase(response.data.user);
-        if (response.status === 200 || response.status === 201) {
-            window.location.href = import.meta.env.VITE_HOST_URL;
-        }
-    }).catch((e: any) => {
-        error.value = 'Пожалуйста перепроверьте номер и пароль.'
-        showError.value = true;
-    });
+    const message = login(user.value.phone, user.value.password, isLoading);
+
+    showError.value = message.showError;
+    error.value = message.errorMessage;
 }
 
-async function addPurchase(user: any) {
-    const purchased = await axios.get(import.meta.env.VITE_API_URL + `/${query.place}/${query.id}`);
-    // @ts-ignore
-    const trainings = [...user[query.place], purchased.data];
-    // @ts-ignore
-    await axios.patch(import.meta.env.VITE_API_URL + `/users/${user._id}`, {[query.place]: trainings});
-    const usr = await axios.get(import.meta.env.VITE_API_URL + `/users/${user._id}`);
-    localStorage.setItem('user', JSON.stringify(usr.data));
-}
+// async function addPurchase(user: any) {
+//     const training = await axios.get(`${url.value}/${query.place}/${query.id}`);
+//     console.log(training);
+// }
 
 
 function closeError() {

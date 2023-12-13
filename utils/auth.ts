@@ -1,5 +1,8 @@
 import {useCookie} from "#build/imports";
 import axios from "axios";
+import {Ref} from "vue";
+
+const pushRoute = import.meta.env.VITE_HOST_URL;
 
 function decodeBase64(data: string): string {
     if (process.server) {
@@ -15,22 +18,52 @@ export function parseJwt(token: string): { iat: number, exp: number, sub: string
     const jsonPayload = decodeURIComponent(decodeBase64(base64).split('').map(function (c) {
         return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
     }).join(''));
-
+    
     return JSON.parse(jsonPayload);
 }
 
-export function setToken(token: string) {
-    const cookie = useCookie('token');
-    cookie.value = token;
-    localStorage.setItem('token', token);
-}
-
-export function login(phone: string, password: string): any {
-    return axios.post(import.meta.env.VITE_API_URL + '/authorization', {
+export function login(phone: string, password: string, isLoading: Ref<boolean>) {
+    const result = {
+        showError: false,
+        errorMessage: '',
+    };
+    axios.post(import.meta.env.VITE_API_URL + '/authorization', {
         role: 'user',
-        strategy: 'local',
         phone,
         password
+    }).then(async (response) => {
+        const token = useCookie('token');
+        token.value = response.data.token;
+        isLoading.value = false;
+        await useRouter().push(pushRoute);
+    }).catch((e) => {
+        result.errorMessage = 'Пожалуйста перепроверьте номер и пароль.'
+        result.showError = true;
+        isLoading.value = false;
     });
+    
+    return result;
 }
 
+export function signup(phone: string, password: string, isLoading: Ref<boolean>) {
+    const result = {
+        showError: false,
+        errorMessage: '',
+    };
+    axios.post(import.meta.env.VITE_API_URL + '/users', {
+        role: 'user',
+        phone,
+        password
+    }).then(async (response) => {
+        const token = useCookie('token');
+        token.value = response.data.token;
+        isLoading.value = false;
+        await useRouter().push(pushRoute);
+    }).catch((e) => {
+        result.errorMessage = e.message;
+        result.showError = true;
+        isLoading.value = false;
+    });
+    
+    return result;
+}
