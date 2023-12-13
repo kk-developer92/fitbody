@@ -6,6 +6,11 @@
                 <h1 class="mb-4">Регестрация</h1>
                 <error-block @close="closeError" class="mb-4" v-if="showError" :text="error"/>
                 <div class="form-floating mb-3">
+                    <input v-model="user.name" type="text" class="form-control" id="floatingInput"
+                           placeholder="Имя">
+                    <label for="floatingInput">Имя</label>
+                </div>
+                <div class="form-floating mb-3">
                     <input v-model="user.phone" type="text" class="form-control" id="floatingInput"
                            placeholder="Номер телефона">
                     <label for="floatingInput">Номер телефона</label>
@@ -32,7 +37,7 @@ definePageMeta({
     layout: false
 });
 
-const user = ref({phone: '', password: ''});
+const user = ref({phone: '', password: '', name: ''});
 const showError = ref(false);
 const error = ref('');
 const isLoading = ref(false);
@@ -42,12 +47,12 @@ async function submit() {
     error.value = ''
     showError.value = false;
 
-    if (!user.value.phone || !user.value.phone) {
+    if (!user.value.phone || !user.value.phone || !user.value.name) {
         showError.value = true;
         error.value = 'Пожалуйста заполните все поля.';
     }
 
-    signup(user.value.phone, user.value.password, isLoading)
+    signup(user.value.phone, user.value.password, user.value.name, isLoading)
         .catch((e) => {
             console.log(e);
             error.value = 'Пожалуйста перепроверьте номер и пароль.'

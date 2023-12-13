@@ -39,7 +39,7 @@ export function login(phone: string, password: string, isLoading: Ref<boolean>) 
     })
 }
 
-export function signup(phone: string, password: string, isLoading: Ref<boolean>) {
+export function signup(phone: string, password: string, name: string, isLoading: Ref<boolean>) {
     const result = {
         showError: false,
         errorMessage: '',
@@ -47,7 +47,8 @@ export function signup(phone: string, password: string, isLoading: Ref<boolean>)
     return axios.post(import.meta.env.VITE_API_URL + '/users', {
         role: 'user',
         phone,
-        password
+        password,
+        name
     }).then(async (response) => {
         const token = useCookie('token');
         token.value = response.data.token;
