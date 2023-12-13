@@ -1,5 +1,4 @@
 <template>
-    <navbar />
     <div class="training__programs">
         <div class="container">
             <h1 class="mb-5">Мои покупки</h1>

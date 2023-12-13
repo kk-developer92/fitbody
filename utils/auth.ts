@@ -27,7 +27,7 @@ export function login(phone: string, password: string, isLoading: Ref<boolean>) 
         showError: false,
         errorMessage: '',
     };
-    axios.post(import.meta.env.VITE_API_URL + '/authorization', {
+    return axios.post(import.meta.env.VITE_API_URL + '/authorization', {
         role: 'user',
         phone,
         password
@@ -36,13 +36,7 @@ export function login(phone: string, password: string, isLoading: Ref<boolean>) 
         token.value = response.data.token;
         isLoading.value = false;
         await useRouter().push(pushRoute);
-    }).catch((e) => {
-        result.errorMessage = 'Пожалуйста перепроверьте номер и пароль.'
-        result.showError = true;
-        isLoading.value = false;
-    });
-    
-    return result;
+    })
 }
 
 export function signup(phone: string, password: string, isLoading: Ref<boolean>) {
@@ -50,7 +44,7 @@ export function signup(phone: string, password: string, isLoading: Ref<boolean>)
         showError: false,
         errorMessage: '',
     };
-    axios.post(import.meta.env.VITE_API_URL + '/users', {
+    return axios.post(import.meta.env.VITE_API_URL + '/users', {
         role: 'user',
         phone,
         password
@@ -59,11 +53,5 @@ export function signup(phone: string, password: string, isLoading: Ref<boolean>)
         token.value = response.data.token;
         isLoading.value = false;
         await useRouter().push(pushRoute);
-    }).catch((e) => {
-        result.errorMessage = e.message;
-        result.showError = true;
-        isLoading.value = false;
-    });
-    
-    return result;
+    })
 }

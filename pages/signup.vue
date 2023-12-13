@@ -47,10 +47,13 @@ async function submit() {
         error.value = 'Пожалуйста заполните все поля.';
     }
 
-    const message = signup(user.value.phone, user.value.password, isLoading);
-
-    showError.value = message.showError;
-    error.value = message.errorMessage;
+    signup(user.value.phone, user.value.password, isLoading)
+        .catch((e) => {
+            console.log(e);
+            error.value = 'Пожалуйста перепроверьте номер и пароль.'
+            showError.value = true;
+            isLoading.value = false;
+        });
 }
 
 function closeError() {

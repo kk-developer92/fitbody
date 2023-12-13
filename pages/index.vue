@@ -1,6 +1,5 @@
 <template>
     <section class="promo">
-        <navbar/>
         <div class="container">
             <div class="promo__wrapper row align-items-center">
                 <div class="promo__image col-lg-5 col-xl-6 order-lg-last text-lg-end">

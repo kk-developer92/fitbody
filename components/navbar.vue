@@ -1,7 +1,7 @@
 <template>
     <nav id="main-navbar " class="navbar navbar-expand-lg navbar-light bg-dark pt-2">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="container-fluid flex">
+            <div id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <nuxt-link class="nav-link" href="/">Главная</nuxt-link>
@@ -68,5 +68,11 @@ a {
     gap: 15px;
     align-items: center;
     justify-content: center;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 </style>
