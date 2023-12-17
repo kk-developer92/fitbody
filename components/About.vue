@@ -30,7 +30,7 @@
 </template>
 
 <script lang="ts" setup>
-const about_img = ref('https://fitbody-4f554e8ece98.herokuapp.com' + '/uploads/about_img.png');
+const about_img = ref('https://storage.cloud.google.com/amadea/about_img.png');
 
 </script>
 

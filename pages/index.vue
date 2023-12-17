@@ -192,7 +192,7 @@ import CategoriesMain from "~/components/common/categories/CategoriesMain.vue";
 
 const slides = ref(["/uploads/diploms/diplom-1.jpg", "/uploads/diploms/diplom-2.jpg", "/uploads/diploms/diplom-3.jpg", "/uploads/diploms/diplom-4.jpg", "/uploads/diploms/diplom-5.jpg", "/uploads/diploms/diplom-6.jpg", "/img/diploms/diplom-4.jpg", "/uploads/diploms/diplom-5.jpg", "/uploads/diploms/diplom-6.jpg", "/uploads/diploms/diplom-7.jpg"])
 const reviews = ref(["/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/img/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png"])
-const promo = ref('https://fitbody-4f554e8ece98.herokuapp.com' + '/uploads/promo_bg.png');
+const promo = ref('https://storage.cloud.google.com/amadea/promo_bg.png');
 
 const train_beginner = ref(await getTrainings('men'));
 const train_beginner_w = ref(await getTrainings('women'));

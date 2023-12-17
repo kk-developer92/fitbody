@@ -51,7 +51,7 @@ function openModal(slide: string) {
 }
 
 function getSlide(slide: string) {
-    return 'https://fitbody-4f554e8ece98.herokuapp.com' + slide
+    return 'https://storage.cloud.google.com/amadea' + slide
 }
 
 </script>
