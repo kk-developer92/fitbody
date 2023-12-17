@@ -10,7 +10,7 @@ import Modal from "~/components/common/Modal.vue";
 const image: any = ref();
 
 function shown(data: any) {
-    image.value = 'https://fitbody-4f554e8ece98.herokuapp.com' + data
+    image.value = 'https://storage.cloud.google.com/amadea' + data
 }
 
 </script>

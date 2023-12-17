@@ -46,7 +46,8 @@ const props = defineProps<{ data: any, next: string, prev: string }>()
 
 const imageModal = useModal('imageModal')
 
-function openModal(slide: string) {    
+function openModal(slide: string) {
+    console.log(slide);
     imageModal.open(slide)
 }
 
