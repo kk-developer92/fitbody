@@ -18,8 +18,8 @@ export default async function (user: any, props: any) {
             path: `/payment/${training._id}`,
             query: {
                 model_name: props.place,
+                user_id: usr.data._id,
                 price: training.price,
-                user_id: usr._id
             }
         });
     }
