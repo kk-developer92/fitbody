@@ -123,13 +123,9 @@ const nutrions = ref(await getNutrions())
 const trainings = ref(await getTrainings())
 const isPurchased: Ref<boolean | undefined> = ref(false);
 
-onMounted(() => {
-    console.log(isPurchased);
-    isPurchased.value = checkPurchased('courses', route.params.slug);
+onMounted(async () => {
+    isPurchased.value = await checkPurchased('courses', route.params.slug);
+    console.log(isPurchased.value, route.params.slug);
 });
 
-onMounted(() => {
-    localStorage.setItem('route', 'courses');
-    localStorage.setItem('price', current_course.value.price);
-});
 </script>

@@ -1,16 +1,22 @@
-export default function (path: string, id: any) {
-    const storage: any = localStorage.getItem('user');
-    const user = JSON.parse(storage);
+import axios from "axios";
+
+export default async function (path: string, id: any) {
+    const url = import.meta.env.VITE_API_URL;
+    const token: any = useCookie('token');
     
-    if (!user.phone) {
+    if (!token.value) {
         return false;
     }
     
-    if (!user[path]?.length) {
-        return false;
-    }
-    const arr = user[path];
+    const _id: any = parseJwt(token.value);
+    const user: any = await axios.get(url + `/users/${_id._id}`);
     
-    const res = arr.filter((el: any) => el._id === id);
-    return res.length > 0;
+    let purchased = [];
+    for (let i of user.data[path]) {
+        if (i._id === id) {
+            purchased.push(i)
+        }
+    }
+    
+    return Boolean(purchased.length);
 }

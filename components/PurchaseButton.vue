@@ -6,14 +6,27 @@
 
 <script lang="ts" setup>
 
+import purchaseCourse from "~/utils/purchaseCourse";
+
 const props = defineProps<{ price: number, id: string, place: string }>();
 
-const user: any = ref({});
 const route = useRoute().params.slug;
 
 const redirect = async () => {
-    if (!user.value.phone) {
+    const token: any = useCookie('token');
+
+    const user: any = parseJwt(token.value);
+
+    if (!user._id) {
         navigateTo({path: '/login'});
+        return;
+    }
+
+    try {
+        await purchaseCourse(user, props);
+        navigateTo('/account');
+    } catch (e) {
+        console.log(e);
     }
 }
 

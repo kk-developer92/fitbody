@@ -123,7 +123,7 @@ import checkPurchased from "~/utils/checkPurchased";
 
 const route = useRoute()
 
-const current_train = ref(await getCurrent(route.params.slug, '/trainings'))
+const current_train: any = ref(await getCurrent(route.params.slug, '/trainings'))
 
 const image = ref(current_train.value.type === "men" ? '/_nuxt/assets/img/services/service_man.jpg' : '/_nuxt/assets/img/services/service_woman.jpg')
 
@@ -132,10 +132,8 @@ const courses = ref(await getCourses());
 
 const isPurchased: Ref<boolean | undefined> = ref(false);
 
-onMounted(() => {
-    isPurchased.value = checkPurchased('trainings', route.params.slug);
-    localStorage.setItem('route', 'trainings');
-    localStorage.setItem('price', current_train.value.price);
+onMounted(async () => {
+    isPurchased.value = await checkPurchased('trainings', route.params.slug);
 });
 
 </script>
