@@ -51,7 +51,7 @@
                     <div class="py-4">
                         <h2 class="text-center mb-md-4">Питание</h2>
                         <div class="row justify-content-center">
-                            <div v-for="nutrition in nutrions.splice(0, 2)" class="col-6 col-md-4">
+                            <div v-for="nutrition in filterByGender(nutrions).splice(0, 2)" class="col-6 col-md-4">
                                 <!-- service-item -->
                                 <nuxt-link :to="'/nutritions/' + nutrition._id" class="service">
                                     <img class="img-fluid" :src="nutrition.image || image" alt="">
@@ -75,7 +75,7 @@
                     <div class="py-4">
                         <h2 class="text-center mb-md-4">Тренировки</h2>
                         <div class="row justify-content-center">
-                            <div v-for="train in trainings.splice(0, 2)" class="col-6 col-md-4">
+                            <div v-for="train in filterByGender(trainings).splice(0, 2)" class="col-6 col-md-4">
                                 <!-- service-item -->
                                 <nuxt-link :to="'/trainings/' + train._id" class="service">
                                     <img class="img-fluid" :src="train.image || image" alt="">
@@ -97,8 +97,6 @@
                                 <!-- end service-item -->
                             </div>
                         </div>
-
-
                     </div>
                 </section>
             </div>
@@ -119,13 +117,16 @@ const current_course = ref(await getCurrent(route.params.slug, '/courses'))
 
 const image = ref(current_course.value.type === "men" ? '/_nuxt/assets/img/services/service_man.jpg' : '/_nuxt/assets/img/services/service_woman.jpg')
 
-const nutrions = ref(await getNutrions())
-const trainings = ref(await getTrainings())
+const nutrions = ref(await getNutrions());
+const trainings = ref(await getTrainings());
 const isPurchased: Ref<boolean | undefined> = ref(false);
 
 onMounted(async () => {
     isPurchased.value = await checkPurchased('courses', route.params.slug);
-    console.log(isPurchased.value, route.params.slug);
 });
+
+function filterByGender(arr: any) {
+    return arr.filter((el: any) => el.type === current_course.value.type && el._id !== current_course.value._id);
+}
 
 </script>

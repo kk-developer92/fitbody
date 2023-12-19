@@ -49,7 +49,7 @@
                     <div class="py-4">
                         <h2 class="text-center mb-md-4">Питание</h2>
                         <div class="row justify-content-center">
-                            <div v-for="nutrition in nutrions.splice(0, 2)" class="col-6 col-md-4">
+                            <div v-for="nutrition in filterByGender(nutrions).splice(0, 2)" class="col-6 col-md-4">
                                 <!-- service-item -->
                                 <nuxt-link :to="'/nutritions/' + nutrition._id" class="service">
                                     <img class="img-fluid" :src="nutrition.image || image" alt="">
@@ -73,7 +73,7 @@
                     <div class="py-4">
                         <h2 class="text-center mb-md-4">Курсы</h2>
                         <div class="row justify-content-center">
-                            <div v-for="course in courses.splice(0, 2)" class="col-6 col-md-4">
+                            <div v-for="course in filterByGender(courses).splice(0, 2)" class="col-6 col-md-4">
                                 <!-- service-item -->
                                 <nuxt-link :to="'/courses/' + course._id" class="service">
                                     <img class="img-fluid" :src="course.image || image" alt="">
@@ -135,5 +135,9 @@ const isPurchased: Ref<boolean | undefined> = ref(false);
 onMounted(async () => {
     isPurchased.value = await checkPurchased('trainings', route.params.slug);
 });
+
+function filterByGender(arr: any) {
+    return arr.filter((el: any) => el.type === current_train.value.type && el._id !== current_train.value._id);
+}
 
 </script>

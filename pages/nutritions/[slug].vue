@@ -47,7 +47,7 @@
                 <div class="py-4">
                     <h2 class="text-center mb-md-4">Тренировки</h2>
                     <div class="row justify-content-center">
-                        <div v-for="train in trainigs.splice(0, 2)" class="col-6 col-md-4">
+                        <div v-for="train in filterByGender(trainigs).splice(0, 2)" class="col-6 col-md-4">
                             <!-- service-item -->
                             <nuxt-link :to="'/trainings/' + train._id" class="service">
                                 <img class="img-fluid" :src="train.image || image" alt="">
@@ -71,7 +71,7 @@
                 <div class="py-4">
                     <h2 class="text-center mb-md-4">Курсы</h2>
                     <div class="row justify-content-center">
-                        <div v-for="course in courses.splice(0, 2)" class="col-6 col-md-4">
+                        <div v-for="course in filterByGender(courses).splice(0, 2)" class="col-6 col-md-4">
                             <!-- service-item -->
                             <nuxt-link :to="'/courses/' + course._id" class="service">
                                 <img class="img-fluid" :src="course.image || image" alt="">
@@ -119,4 +119,7 @@ const image = ref(current_nutrion.value?.type === "men" ? '/_nuxt/assets/img/ser
 const trainigs = ref(await getTrainings())
 const courses = ref(await getCourses())
 
+function filterByGender(arr: any) {
+    return arr.filter((el: any) => el.type === current_nutrion.value.type && el._id !== current_nutrion.value._id);
+}
 </script>
