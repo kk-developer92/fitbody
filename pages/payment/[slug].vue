@@ -25,13 +25,13 @@ const user: any = ref({});
 const model_name: any = ref('');
 const price = ref();
 
-onMounted(async () => {
-    let storage: any = localStorage.getItem('user');
-    model_name.value = localStorage.getItem('route');
-    price.value = localStorage.getItem('price');
-    console.log(price.value);
-    user.value = JSON.parse(storage)[0] || {};
-});
+async function fetch() {
+    const route = useRoute().query;
+    model_name.value = route.model_name;
+    price.value = route.price;
+}
+
+fetch();
 
 function closeError() {
     showError.value = false;

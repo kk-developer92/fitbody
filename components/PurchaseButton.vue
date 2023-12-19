@@ -24,7 +24,6 @@ const redirect = async () => {
 
     try {
         await purchaseCourse(user, props);
-        navigateTo('/account');
     } catch (e) {
         console.log(e);
     }
