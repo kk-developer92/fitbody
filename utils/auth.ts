@@ -35,7 +35,8 @@ export function login(phone: string, password: string, isLoading: Ref<boolean>) 
         const token = useCookie('token');
         token.value = response.data.token;
         isLoading.value = false;
-        await useRouter().push(pushRoute);
+        const route: any = useCookie('route').value;
+        await useRouter().push(route);
     })
 }
 
@@ -53,6 +54,7 @@ export function signup(phone: string, password: string, name: string, isLoading:
         const token = useCookie('token');
         token.value = response.data.token;
         isLoading.value = false;
-        await useRouter().push(pushRoute);
+        const route: any = useCookie('route').value;
+        await useRouter().push(route);
     })
 }

@@ -15,9 +15,13 @@ const route = useRoute().params.slug;
 const redirect = async () => {
     const token: any = useCookie('token');
 
-    const user: any = parseJwt(token.value);
+    let user: any
 
-    if (!user._id) {
+    if (token.value) {
+        user = parseJwt(token?.value || '');
+    }
+
+    if (!user?._id) {
         navigateTo({path: '/login'});
         return;
     }
