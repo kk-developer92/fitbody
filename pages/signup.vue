@@ -54,8 +54,7 @@ async function submit() {
 
     signup(user.value.phone, user.value.password, user.value.name, isLoading)
         .catch((e) => {
-            console.log(e);
-            error.value = 'Пожалуйста перепроверьте номер и пароль.'
+            error.value = e.response.data.message;
             showError.value = true;
             isLoading.value = false;
         });

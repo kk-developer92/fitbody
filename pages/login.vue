@@ -50,7 +50,7 @@ async function submit() {
 
     login(user.value.phone, user.value.password, isLoading)
         .catch((e) => {
-            error.value = 'Пожалуйста перепроверьте номер и пароль.'
+            error.value = e.response.data.message;
             showError.value = true;
             isLoading.value = false;
         });
