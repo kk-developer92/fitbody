@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const refresh = () => {
+    navigateTo('/');
     window.location.reload();
 }
 </script>
