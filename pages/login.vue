@@ -2,16 +2,17 @@
     <div class="loginBlock">
         <loading v-if="isLoading"/>
         <div class="blur">
-            <form class="form p-3">
+            <form class="form p-3" autocomplete="off">
                 <h1 class="mb-4">Войти</h1>
                 <error-block @close="closeError" class="mb-4" v-if="showError" :text="error"/>
                 <div class="form-floating mb-3">
-                    <input v-model="user.phone" type="text" class="form-control" id="floatingInput"
+                    <input autocomplete="off" v-model="user.phone" type="text" class="form-control" id="floatingInput"
                            placeholder="Номер телефона">
                     <label for="floatingInput">Номер телефона</label>
                 </div>
                 <div class="form-floating">
-                    <input v-model="user.password" type="password" class="form-control" id="floatingSet"
+                    <input autocomplete="off" v-model="user.password" type="password" class="form-control"
+                           id="floatingSet"
                            placeholder="Пароль">
                     <label for="floatingSet">Пароль</label>
                 </div>
@@ -61,4 +62,5 @@ function closeError() {
 
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>
