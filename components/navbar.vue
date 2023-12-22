@@ -11,7 +11,9 @@
             <div class="d-flex align-items-center p-2">
                 <div class="">
                     <div class="header-reg" v-if="user.name">
-                        <logout class="cursor-pointer"/>
+                        <client-only>
+                            <logout class="cursor-pointer"/>
+                        </client-only>
                         <nuxt-link class="account" to="/account">
                             <span class="name">{{ user.name }}</span>
                             <img class="placeholder"
