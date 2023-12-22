@@ -8,7 +8,7 @@
                             alt="">
                     </div>
                     <div class="promo__text col-lg-7 col-xl-7">
-                        <button class="page-nav">
+                        <button @click="navigateTo('/account')" class="page-nav">
                             <svg width="19" height="8" viewBox="0 0 19 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 4H19M1 4L4 1M1 4L4 7" stroke="currentColor" />
                             </svg>

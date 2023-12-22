@@ -1,6 +1,7 @@
 <template>
-    <button class="btn btn-primary button" @click="redirect">Купить
-        за {{ props.price }} тыс. сум
+    <button class="btn btn-primary button" @click="redirect">
+        <span v-if="+props.price !== 0">Купить за {{ props.price }} тыс. сум</span>
+        <span v-else>Бесплатно</span>
     </button>
 </template>
 
