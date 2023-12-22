@@ -17,7 +17,6 @@
                         </button>
                         <h1>{{ training?.title }}</h1>
                         <div v-html="training?.description" class="promo__text">
-
                         </div>
 
                     </div>

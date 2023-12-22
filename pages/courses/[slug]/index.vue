@@ -21,9 +21,7 @@
                                 Назад
                             </button>
                             <h1>{{ current_course.title }}</h1>
-                            <div class="promo__text">
-                                {{ current_course.description }}
-                            </div>
+                            <div v-html="current_course.description" class="promo__text"></div>
 
                             <purchase-button :price="current_course.price" :id="current_course._id" place="courses"
                                              class="btn btn-primary button"/>

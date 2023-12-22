@@ -18,9 +18,7 @@
                             Назад
                         </button>
                         <h1>{{ current_nutrion.title }}</h1>
-                        <div class="promo__text">
-                            {{ current_nutrion.description }}
-                        </div>
+                        <div v-html="current_nutrion.description" class="promo__text"></div>
 
                         <purchase-button :price="current_nutrion.price" :id="current_nutrion._id" place="nutrition" />
                     </div>
