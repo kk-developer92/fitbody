@@ -1,9 +1,9 @@
 <template>
     <Head>
         <Title>Программа питание {{ current_nutrion.title }} - Fitbody</Title>
-        <Meta name="description" :content="current_nutrion.description" />
+        <Meta name="description" :content="current_nutrion.description"/>
     </Head>
-    <main class="page">
+    <main class="page" v-if="!isPurchased">
         <section class="promo page__promo py-3 py-md-5">
             <div class="container py-3">
                 <div class="promo__wrapper row align-items-center">
@@ -12,15 +12,16 @@
                     </div>
                     <div class="col-lg-7 col-xl-7">
                         <button @click="$router.go(-1)" class="page-nav">
-                            <svg width="19" height="8" viewBox="0 0 19 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 4H19M1 4L4 1M1 4L4 7" stroke="currentColor" />
+                            <svg width="19" height="8" viewBox="0 0 19 8" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 4H19M1 4L4 1M1 4L4 7" stroke="currentColor"/>
                             </svg>
                             Назад
                         </button>
                         <h1>{{ current_nutrion.title }}</h1>
                         <div v-html="current_nutrion.description" class="promo__text"></div>
 
-                        <purchase-button :price="current_nutrion.price" :id="current_nutrion._id" place="nutrition" />
+                        <purchase-button :price="current_nutrion.price" :id="current_nutrion._id" place="nutrition"/>
                     </div>
 
                 </div>
@@ -34,7 +35,7 @@
                         <h2>О ПРОГРАММЕ</h2>
                         <div v-html="current_nutrion?.about_program"></div>
 
-                        <purchase-button :price="current_nutrion.price" :id="current_nutrion._id" place="nutrition" />
+                        <purchase-button :price="current_nutrion.price" :id="current_nutrion._id" place="nutrition"/>
 
                     </div>
                 </div>
@@ -53,10 +54,10 @@
 
                                     <h3 class="service__title">{{ train.title }}</h3>
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="15" cy="15" r="15" fill="#F52626"/>
                                         <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                            stroke-linejoin="round" />
+                                              stroke-linejoin="round"/>
                                     </svg>
 
                                 </div>
@@ -80,10 +81,10 @@
                                         <div class="service__desc">{{ course.short_description }}</div>
                                     </div>
                                     <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="15" cy="15" r="15" fill="#F52626"/>
                                         <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                            stroke-linejoin="round" />
+                                              stroke-linejoin="round"/>
                                     </svg>
 
                                 </div>
@@ -95,18 +96,20 @@
                     <nuxt-link to="/courses" class="btn btn-link btn-more">
                         Посмотреть все курсы
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="8" cy="8" r="8" transform="rotate(90 8 8)" fill="#F52626" />
-                            <path d="M11 7L8 10L5 7" stroke="white" stroke-width="0.933333" stroke-linejoin="round" />
+                            <circle cx="8" cy="8" r="8" transform="rotate(90 8 8)" fill="#F52626"/>
+                            <path d="M11 7L8 10L5 7" stroke="white" stroke-width="0.933333" stroke-linejoin="round"/>
                         </svg>
                     </nuxt-link>
                 </div>
             </section>
         </div>
     </main>
+    <nutrition-purchased v-else/>
 </template>
 
 <script setup lang="ts">
 import PurchaseButton from "~/components/PurchaseButton.vue";
+import checkPurchased from "~/utils/checkPurchased";
 
 const route = useRoute()
 
@@ -116,6 +119,7 @@ const image = ref(current_nutrion.value?.type === "men" ? '/_nuxt/assets/img/ser
 
 const trainigs = ref(await getTrainings())
 const courses = ref(await getCourses())
+const isPurchased = ref(await checkPurchased('nutrition', route.params.slug));
 
 function filterByGender(arr: any) {
     return arr.filter((el: any) => el.type === current_nutrion.value.type && el._id !== current_nutrion.value._id);

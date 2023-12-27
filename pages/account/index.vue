@@ -31,7 +31,7 @@
                     </div>
                     <div class="row gy-4" v-if="user.nutrition?.length">
                         <h1 style="font-size: 24px;">Питание</h1>
-                        <tab-block v-for="data in user.nutrition" route="nutrition" :section="data"></tab-block>
+                        <tab-block v-for="data in user.nutrition" route="nutritions" :section="data"></tab-block>
                     </div>
                     <div class="row gy-4" v-if="user.courses?.length">
                         <h1 style="font-size: 24px;">Курсы</h1>
@@ -46,7 +46,6 @@
 <script lang="ts" setup>
 import TabBlock from '~/components/common/TabBlock.vue';
 import axios from "axios";
-import Navbar from "~/components/navbar.vue";
 
 definePageMeta({
     authRoute: true,
