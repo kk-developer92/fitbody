@@ -21,7 +21,7 @@
                     <label for="floatingSet">Пароль</label>
                 </div>
                 <button type="button" class="redirect-btn"><span>Уже есть аккаунт ?</span>
-                    <span class="text-white" @click="navigateTo({path: '/signup'})">Нажмите сюда
+                    <span class="text-white" @click="navigateTo({path: '/login'})">Нажмите сюда
                     </span>
                 </button>
                 <button type="submit" class="btn btn-primary button mt-3">Зарегестрироваться</button>
