@@ -44,8 +44,12 @@ const user: any = ref({});
 async function fetchUser() {
     if (cookie.value) {
         const token: any = parseJwt(cookie.value);
-        const usr = await axios.get(url + '/users/' + token._id);
-        user.value = usr.data;
+        try {
+            const usr = await axios.get(url + '/users/' + token._id);
+            user.value = usr.data;
+        } catch (e) {
+            user.value = {};
+        }
     }
 }
 
