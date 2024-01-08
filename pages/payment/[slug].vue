@@ -4,7 +4,7 @@
             <form method="POST" class="form p-3" action="https://test.paycom.uz">
                 <h1 class="mb-4">Оплата</h1>
                 <error-block @close="closeError" class="mb-4" v-if="showError" :text="error"/>
-                <input type="hidden" name="merchant" value="6512a3ad2918d26924fd13ca"/>
+                <input type="hidden" name="merchant" value="658ea2865c8188fb6e915fb1"/>
                 <input type="hidden" name="amount" :value="doThousand(price)"/>
                 <input type="hidden" name="account[model]" :value="model_name"/>
                 <input type="hidden" name="account[order_id]" :value="Math.floor(Math.random() * 10000000000)"/>
@@ -19,6 +19,10 @@
 <script setup lang="ts">
 const showError = ref(false);
 const error = ref('');
+
+definePageMeta({
+   layout: false
+});
 
 const product_id = useRoute().params.slug;
 const user: any = ref('');
