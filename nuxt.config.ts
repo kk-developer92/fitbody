@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     modules: [
         '@nuxt/image',
     ],
-    ssr: true,
+    ssr: false,
     app: {
         head: {
             title: "Тренировки, питание, курсы",
