@@ -5,13 +5,13 @@
                 <div class="col-4">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="floatingInput" placeholder="Вес" inputmode="numeric">
-                        <label for="floatingInput">Вес</label>
+                        <label for="floatingInput" :style="{color: 'gray'}">Вес</label>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-floating">
                         <input type="text" class="form-control" id="floatingSet" placeholder="Подходы" inputmode="numeric">
-                        <label for="floatingSet">Подходы</label>
+                        <label for="floatingSet" :style="{color: 'gray'}">Повторения</label>
                     </div>
                 </div>
             </div>
