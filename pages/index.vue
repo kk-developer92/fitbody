@@ -3,9 +3,7 @@
         <div class="container">
             <div class="promo__wrapper row align-items-center">
                 <div class="promo__image col-lg-5 col-xl-6 order-lg-last text-lg-end">
-                    <!-- <img class="img-fluid" src="@/assets/img/promo_bg.png" alt=""> -->
-                    <img :src="promo"/>
-
+                    <nuxt-img format="webp" class="img-fluid" :src="promo"/>
                 </div>
                 <div class="promo__text col-lg-7 col-xl-6">
                     <h1>ЖИРОСЖИГАНИЕ <br>и РОСТ МЫШЦ <span>НАУЧНЫЙ ПОДХОД</span></h1>
