@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-sm">
                         <h6 class="mb-0 text-white">{{ props.train.title }}</h6>
-                        <p class="mb-0">{{ props.train.repEach || 12 }} раза</p>
+                        <p class="mb-0">{{ props.train.repEach || 12 }} раз</p>
                     </div>
                     <div class="col-sm-auto flex-shrink-0 d-flex gap-3 align-items-center justify-content-between">
                         <div>
