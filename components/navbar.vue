@@ -16,7 +16,7 @@
                         </client-only>
                         <nuxt-link class="account" to="/account">
                             <span class="name">{{ user.name }}</span>
-                            <img class="placeholder"
+                            <img class="placeholder_account"
                                  src="https://avatars.mds.yandex.net/i?id=1263002c81e51f3c256d8cafee645c0e0fd34fc1-10803272-images-thumbs&n=13"
                                  alt="">
                         </nuxt-link>
@@ -69,7 +69,7 @@ a {
     text-decoration: none;
 }
 
-.placeholder {
+.placeholder_account {
     border-radius: 100%;
     width: 40px;
 }
