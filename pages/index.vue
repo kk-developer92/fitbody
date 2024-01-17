@@ -3,7 +3,7 @@
         <div class="container">
             <div class="promo__wrapper row align-items-center">
                 <div class="promo__image col-lg-5 col-xl-6 order-lg-last text-lg-end">
-                    <img alt="promo_bg" class="img-fluid" src="~/assets/img/promo_bg.webp"/>
+                    <img alt="promo_bg" class="img-fluid" src="/img/promo_bg.webp"/>
                 </div>
                 <div class="promo__text col-lg-7 col-xl-6">
                     <h1>ЖИРОСЖИГАНИЕ <br>и РОСТ МЫШЦ <span>НАУЧНЫЙ ПОДХОД</span></h1>
@@ -197,8 +197,8 @@ import TabBlock from "~/components/common/TabBlock.vue";
 import About from "~/components/About.vue";
 import CategoriesMain from "~/components/common/categories/CategoriesMain.vue";
 
-const slides = ref(["/_nuxt/assets/img/diploms/diplom-1.webp", "/_nuxt/assets/img/diploms/diplom-2.webp", "/_nuxt/assets/img/diploms/diplom-3.webp", "/_nuxt/assets/img/diploms/diplom-4.webp", "/_nuxt/assets/img/diploms/diplom-5.webp", "/_nuxt/assets/img/diploms/diplom-6.webp", "/_nuxt/assets/img/diploms/diplom-7.webp", "/_nuxt/assets/img/diploms/diplom-5.webp", "/_nuxt/assets/img/diploms/diplom-6.webp", "/_nuxt/assets/img/diploms/diplom-7.webp"])
-const reviews = ref(["/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png"])
+const slides = ref(["/_nuxt/img/diploms/diplom-1.webp", "/_nuxt/img/diploms/diplom-2.webp", "/_nuxt/img/diploms/diplom-3.webp", "/_nuxt/img/diploms/diplom-4.webp", "/_nuxt/assets/img/diploms/diplom-5.webp", "/_nuxt/assets/img/diploms/diplom-6.webp", "/_nuxt/assets/img/diploms/diplom-7.webp", "/_nuxt/assets/img/diploms/diplom-5.webp", "/_nuxt/assets/img/diploms/diplom-6.webp", "/_nuxt/assets/img/diploms/diplom-7.webp"])
+const reviews = ref(["/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png"])
 
 const train_beginner = ref(await getTrainings('men'));
 const train_beginner_w = ref(await getTrainings('women'));
