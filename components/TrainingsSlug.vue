@@ -47,10 +47,24 @@
 
 <script lang="ts" setup>
 import checkPurchased from "~/utils/checkPurchased";
+import axios from "axios";
 
 const props = defineProps<{ path: string }>()
 const route = useRoute().params;
-const weeks = ref(await getCurrent(route.slug, `/${props.path}`));
+const weeks = ref();
+const cookie = useCookie('token');
+
+if (cookie.value) {
+    const token: any = parseJwt(cookie.value);
+    const user = await axios.get(`${import.meta.env.VITE_API_URL}/users/${token._id}`);
+
+    for (let i of user.data[props.path]) {
+        if (i._id.toString() === route.slug) {
+            weeks.value = i;
+        }
+    }
+}
+
 const training = ref();
 
 onMounted(() => {

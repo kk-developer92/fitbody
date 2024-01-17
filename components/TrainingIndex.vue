@@ -50,8 +50,22 @@
 
 <script lang="ts" setup>
 
+import axios from "axios";
+
 const props = defineProps<{ path: string }>()
 const route = useRoute().params.slug;
-const training = ref(await getCurrent(route, `/${props.path}`));
+const cookie = useCookie('token');
+const training = ref();
+
+if (cookie.value) {
+    const token: any = parseJwt(cookie.value);
+    const user = await axios.get(`${import.meta.env.VITE_API_URL}/users/${token._id}`);
+
+    for (let i of user.data[props.path]) {
+        if (i._id.toString() === route) {
+            training.value = i;
+        }
+    }
+}
 
 </script>
