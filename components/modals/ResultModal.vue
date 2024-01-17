@@ -56,12 +56,11 @@ async function fetch() {
         } catch (e) {
             user.value = {};
         }
-    }
-
-    for (let i of user.value[path]) {
-        if (i._id === slug) {
-            training.value = i;
-            getDay();
+        for (let i of user.value[path]) {
+            if (i._id === slug) {
+                training.value = i;
+                getDay();
+            }
         }
     }
 }

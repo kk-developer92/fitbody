@@ -3,7 +3,6 @@
         <nuxt-page></nuxt-page>
         <video-viewer/>
         <nuxt-loading-indicator/>
-        <result-modal/>
         <image-modal/>
     </nuxt-layout>
 </template>
@@ -12,7 +11,6 @@
 import "~/assets/sass/style.scss"
 import VideoViewer from "~/components/modals/VideoViewer.vue";
 import ImageModal from "~/components/modals/ImageModal.vue";
-import ResultModal from "./components/modals/ResultModal.vue";
 
 useHead({
     link: [

@@ -29,6 +29,7 @@
                 </div>
             </div>
         </div>
+        <result-modal />
     </div>
 </template>
 
@@ -37,6 +38,7 @@
 import EditBtn from "~/components/icons/editBtn.vue";
 import PlayButton from "~/components/icons/PlayButton.vue";
 import {useModal} from "~/composables/useModal";
+import ResultModal from "~/components/modals/ResultModal.vue";
 
 const props = defineProps<{ train: any }>()
 
