@@ -197,8 +197,8 @@ import TabBlock from "~/components/common/TabBlock.vue";
 import About from "~/components/About.vue";
 import CategoriesMain from "~/components/common/categories/CategoriesMain.vue";
 
-const slides = ref(["/_nuxt/img/diploms/diplom-1.webp", "/_nuxt/img/diploms/diplom-2.webp", "/_nuxt/img/diploms/diplom-3.webp", "/_nuxt/img/diploms/diplom-4.webp", "/_nuxt/assets/img/diploms/diplom-5.webp", "/_nuxt/assets/img/diploms/diplom-6.webp", "/_nuxt/assets/img/diploms/diplom-7.webp", "/_nuxt/assets/img/diploms/diplom-5.webp", "/_nuxt/assets/img/diploms/diplom-6.webp", "/_nuxt/assets/img/diploms/diplom-7.webp"])
-const reviews = ref(["/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png", "/_nuxt/img/reviews/review-1.png"])
+const slides = ref(["/img/diploms/diplom-1.webp", "/img/diploms/diplom-2.webp", "/img/diploms/diplom-3.webp", "/img/diploms/diplom-4.webp", "/img/diploms/diplom-5.webp", "/img/diploms/diplom-6.webp", "/img/diploms/diplom-7.webp", "/img/diploms/diplom-5.webp", "/img/diploms/diplom-6.webp", "/img/diploms/diplom-7.webp"])
+const reviews = ref(["/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png"])
 
 const train_beginner = ref(await getTrainings('men'));
 const train_beginner_w = ref(await getTrainings('women'));
