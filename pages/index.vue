@@ -197,8 +197,8 @@ import TabBlock from "~/components/common/TabBlock.vue";
 import About from "~/components/About.vue";
 import CategoriesMain from "~/components/common/categories/CategoriesMain.vue";
 
-const slides = ref(["/_nuxt/assets/img/diploms/diplom-1.webp", "/_nuxt/assets/img/diploms/diplom-2.webp", "/_nuxt/assets/img/diploms/diplom-3.webp", "/_nuxt/assets/img/diploms/diplom-4.webp", "/_nuxt/assets/img/diploms/diplom-5.webp", "/_nuxt/assets/img/diploms/diplom-6.webp", "/_nuxt/assets/img/diploms/diplom-7.webp", "/_nuxt/assets/img/diploms/diplom-5.webp", "/_nuxt/assets/img/diploms/diplom-6.webp", "/_nuxt/assets/img/diploms/diplom-7.webp"])
-const reviews = ref(["/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp"])
+const slides = ref(["/_nuxt/assets/img/diploms/diplom-1.jpg", "/_nuxt/assets/img/diploms/diplom-2.jpg", "/_nuxt/assets/img/diploms/diplom-3.jpg", "/_nuxt/assets/img/diploms/diplom-4.jpg", "/_nuxt/assets/img/diploms/diplom-5.jpg", "/_nuxt/assets/img/diploms/diplom-6.jpg", "/_nuxt/assets/img/diploms/diplom-7.jpg", "/_nuxt/assets/img/diploms/diplom-5.jpg", "/_nuxt/assets/img/diploms/diplom-6.jpg", "/_nuxt/assets/img/diploms/diplom-7.jpg"])
+const reviews = ref(["/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png", "/_nuxt/assets/img/reviews/review-1.png"])
 
 const train_beginner = ref(await getTrainings('men'));
 const train_beginner_w = ref(await getTrainings('women'));
