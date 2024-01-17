@@ -15,7 +15,6 @@
 
                     <a class="btn btn-primary button" href="#programs">Выбрать программу тренировок</a>
                 </div>
-
             </div>
         </div>
     </section>

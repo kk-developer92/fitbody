@@ -14,7 +14,7 @@ export default defineNuxtConfig({
             enabled: true,
         }
     },
-    ssr: false,
+    ssr: true,
     app: {
         head: {
             title: "Тренировки, питание, курсы",
