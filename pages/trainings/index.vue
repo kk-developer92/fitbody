@@ -61,7 +61,7 @@
                                             <!-- service-item -->
                                             <nuxt-link :to="'/trainings/' + train._id" class="service">
                                                 <!-- <img class="img-fluid" :src="train.media.images.full" alt=""> -->
-                                                <nuxt-img class="img-fluid" format="webp" :src="train.image || '/_nuxt/assets/img/services/service_man.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
+                                                <img alt="" class="img-fluid" format="webp" :src="train.image || '/_nuxt/assets/img/services/service_man.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
                                                 
                                                 <div class="service__wrapper">
 
@@ -89,7 +89,7 @@
                                             <!-- service-item -->
                                             <nuxt-link :to="'trainings/' + train._id" class="service">
                                                 <!-- <img class="img-fluid" :src="train.media.images.full || '/_nuxt/assets/img/services/lead_man.jpg'" alt=""> -->
-                                                <nuxt-img class="img-fluid" format="webp" :src="train.image || '/_nuxt/assets/img/services/lead_man.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
+                                                <img alt="" class="img-fluid" format="webp" :src="train.image || '/_nuxt/assets/img/services/lead_man.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
                                                 <div class="service__wrapper">
 
                                                     <h3 class="service__title">{{ train.title }}</h3>
@@ -135,7 +135,7 @@
                                             <!-- service-item -->
                                             <nuxt-link :to="'/trainings/' + train._id" class="service">
                                                 <!-- <img class="img-fluid" :src="train.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" alt=""> -->
-                                                <nuxt-img class="img-fluid" format="webp" :src="train.image || '/_nuxt/assets/img/services/junior_woman.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
+                                                <img alt="" class="img-fluid" format="webp" :src="train.image || '/_nuxt/assets/img/services/junior_woman.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
                                                
                                                 <div class="service__wrapper">
 
@@ -161,7 +161,7 @@
                                             <!-- service-item -->
                                             <nuxt-link :to="'/trainings/' + train._id" class="service">
                                                 <!-- <img class="img-fluid" :src="train.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" alt=""> -->
-                                                <nuxt-img class="img-fluid" format="webp" :src="train.image || '/_nuxt/assets/img/services/junior_woman.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
+                                                <img alt="" class="img-fluid" format="webp" :src="train.image || '/_nuxt/assets/img/services/junior_woman.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
 
                                                 <div class="service__wrapper">
 

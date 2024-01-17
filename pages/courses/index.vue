@@ -41,7 +41,7 @@
                                     <!-- service-item -->
                                     <nuxt-link :to="'/courses/' + c._id" class="service">
                                         <!-- <img class="img-fluid" :src="c.media.images.full || '/_nuxt/assets/img/services/service_man.jpg'" alt=""> -->
-                                        <nuxt-img class="img-fluid" format="webp" :src="c.image || '/_nuxt/assets/img/services/service_man.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
+                                        <img alt="" class="img-fluid" format="webp" :src="c.image || '/_nuxt/assets/img/services/service_man.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
                                         
                                         <div class="service__wrapper">
                                             
@@ -71,7 +71,7 @@
                                     <!-- service-item -->
                                     <nuxt-link :to="'/courses/' + c._id" class="service">
                                         <!-- <img class="img-fluid" :src="c.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" alt=""> -->
-                                        <nuxt-img class="img-fluid" format="webp" :src="c.image || '/_nuxt/assets/img/services/junior_woman.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
+                                        <img alt="" class="img-fluid" format="webp" :src="c.image || '/_nuxt/assets/img/services/junior_woman.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
                                         
                                         <div class="service__wrapper">
 

@@ -31,7 +31,7 @@
             <a @click="openModal(slide)" data-bs-toggle="modal" href="#imageModal">
                 <span>
                     <!-- <img :src="slide"/> -->
-                    <nuxt-img format="webp" :src="getSlide(slide)" sizes="sm:100vw md:50vw lg:300px"/>
+                    <img alt="" :src="getSlide(slide)" sizes="sm:100vw md:50vw lg:300px"/>
                 </span>
             </a>
         </swiper-slide>

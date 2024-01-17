@@ -1,7 +1,7 @@
 <template>
     <div class="col-6 col-md-4">
         <nuxt-link :to="`/${props.route}/` + props.section._id" class="service">
-            <nuxt-img class="img-fluid" format="webp"
+            <img alt="" class="img-fluid"
                 :src="props.section.image || '/_nuxt/assets/img/services/service_man.jpg'"
                 sizes="sm:100vw md:100vw lg:400px" />
 

@@ -11,7 +11,7 @@
                         <h1 style="font-size: 24px;">Тренировки</h1>
                         <div v-for="training in user.trainings" class="col-6 col-md-4 cursor-pointer">
                             <nuxt-link :to="`/trainings/${training._id}`" class="service">
-                                <nuxt-img class="img-fluid" format="webp"
+                                <img alt="" class="img-fluid" format="webp"
                                           :src="training.image || '/_nuxt/assets/img/services/service_man.jpg'"
                                           sizes="sm:100vw md:100vw lg:400px"/>
 
