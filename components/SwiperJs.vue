@@ -31,7 +31,7 @@
             <a @click="openModal(slide)" data-bs-toggle="modal" href="#imageModal">
                 <span>
                     <!-- <img :src="slide"/> -->
-                    <img alt="" :src="getSlide(slide)" sizes="sm:100vw md:50vw lg:300px"/>
+                    <img alt="" :src="slide" sizes="sm:100vw md:50vw lg:300px"/>
                 </span>
             </a>
         </swiper-slide>
@@ -47,13 +47,9 @@ const props = defineProps<{ data: any, next: string, prev: string }>()
 const imageModal = useModal('imageModal')
 
 function openModal(slide: string) {
-    console.log(slide);
     imageModal.open(slide)
 }
 
-function getSlide(slide: string) {
-    return 'https://storage.cloud.google.com/amadea' + slide
-}
 
 </script>
 

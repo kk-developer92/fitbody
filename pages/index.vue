@@ -3,7 +3,7 @@
         <div class="container">
             <div class="promo__wrapper row align-items-center">
                 <div class="promo__image col-lg-5 col-xl-6 order-lg-last text-lg-end">
-                    <img alt="" format="webp" class="img-fluid" :src="promo"/>
+                    <img alt="promo_bg" class="img-fluid" src="~/assets/img/promo_bg.webp"/>
                 </div>
                 <div class="promo__text col-lg-7 col-xl-6">
                     <h1>ЖИРОСЖИГАНИЕ <br>и РОСТ МЫШЦ <span>НАУЧНЫЙ ПОДХОД</span></h1>
@@ -20,25 +20,29 @@
         </div>
     </section>
     <!-- traiing -->
-    <section id="programs" v-for="section in sections" class="traning pb-3 pb-lg-5 ">
-        <div class="container">
-            <h2 class="text-center mb-md-4">{{ section.title }}</h2>
-            <tab-header :dataTarget="section.target"></tab-header>
-            <!-- tab1 -->
-            <div class="tab-content" id="training">
-                <div class="tab-pane fade show active" :id="section.target.man" role="tabpanel" tabindex="0">
-                    <div class="row justify-content-center">
-                        <tab-block v-for="course in section.man" :route="section.route" :section="course"></tab-block>
+    <render-cacheable>
+        <section id="programs" v-for="section in sections" class="traning pb-3 pb-lg-5 ">
+            <div class="container">
+                <h2 class="text-center mb-md-4">{{ section.title }}</h2>
+                <tab-header :dataTarget="section.target"></tab-header>
+                <!-- tab1 -->
+                <div class="tab-content" id="training">
+                    <div class="tab-pane fade show active" :id="section.target.man" role="tabpanel" tabindex="0">
+                        <div class="row justify-content-center">
+                            <tab-block v-for="course in section.man" :route="section.route"
+                                       :section="course"></tab-block>
+                        </div>
                     </div>
-                </div>
-                <div class="tab-pane fade" :id="section.target.woman" role="tabpanel" tabindex="0">
-                    <div class="row justify-content-center">
-                        <tab-block v-for="course in section.woman" :route="section.route" :section="course"></tab-block>
+                    <div class="tab-pane fade" :id="section.target.woman" role="tabpanel" tabindex="0">
+                        <div class="row justify-content-center">
+                            <tab-block v-for="course in section.woman" :route="section.route"
+                                       :section="course"></tab-block>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </render-cacheable>
     <section class="about py-md-5">
         <about></about>
     </section>
@@ -52,7 +56,9 @@
         </div>
     </section>
     <section class="categories py-3 py-md-5">
-        <categories-main></categories-main>
+        <render-cacheable>
+            <categories-main></categories-main>
+        </render-cacheable>
     </section>
     <section class="diploms py-3 py-md-5">
         <div class="container py-3">
@@ -73,7 +79,9 @@
                     </button>
                 </div>
             </h2>
-            <swiper-js :data="slides" prev=".myPrev" next=".myNext"></swiper-js>
+            <render-cacheable>
+                <swiper-js :data="slides" prev=".myPrev" next=".myNext"></swiper-js>
+            </render-cacheable>
         </div>
     </section>
     <section class="video py-3">
@@ -102,8 +110,9 @@
                     </button>
                 </div>
             </h2>
-
-            <swiper-js :data="reviews" prev=".Prev" next=".Next"></swiper-js>
+            <render-cacheable>
+                <swiper-js :data="reviews" prev=".Prev" next=".Next"></swiper-js>
+            </render-cacheable>
         </div>
     </section>
     <section class="buttons py-4 py-md-5">
@@ -188,9 +197,8 @@ import TabBlock from "~/components/common/TabBlock.vue";
 import About from "~/components/About.vue";
 import CategoriesMain from "~/components/common/categories/CategoriesMain.vue";
 
-const slides = ref(["/uploads/diploms/diplom-1.jpg", "/uploads/diploms/diplom-2.jpg", "/uploads/diploms/diplom-3.jpg", "/uploads/diploms/diplom-4.jpg", "/uploads/diploms/diplom-5.jpg", "/uploads/diploms/diplom-6.jpg", "/img/diploms/diplom-4.jpg", "/uploads/diploms/diplom-5.jpg", "/uploads/diploms/diplom-6.jpg", "/uploads/diploms/diplom-7.jpg"])
-const reviews = ref(["/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/img/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png", "/uploads/reviews/review-1.png"])
-const promo = ref('https://storage.cloud.google.com/amadea/promo_bg.png');
+const slides = ref(["/_nuxt/assets/img/diploms/diplom-1.webp", "/_nuxt/assets/img/diploms/diplom-2.webp", "/_nuxt/assets/img/diploms/diplom-3.webp", "/_nuxt/assets/img/diploms/diplom-4.webp", "/_nuxt/assets/img/diploms/diplom-5.webp", "/_nuxt/assets/img/diploms/diplom-6.webp", "/_nuxt/assets/img/diploms/diplom-7.webp", "/_nuxt/assets/img/diploms/diplom-5.webp", "/_nuxt/assets/img/diploms/diplom-6.webp", "/_nuxt/assets/img/diploms/diplom-7.webp"])
+const reviews = ref(["/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp", "/_nuxt/assets/img/reviews/review-1.webp"])
 
 const train_beginner = ref(await getTrainings('men'));
 const train_beginner_w = ref(await getTrainings('women'));

@@ -21,6 +21,7 @@
     "@fancyapps/ui": "^5.0.19",
     "axios": "^1.4.0",
     "moment": "^2.29.4",
+    "nuxt-multi-cache": "^3.1.1",
     "swiper": "^9.4.1"
   }
 }

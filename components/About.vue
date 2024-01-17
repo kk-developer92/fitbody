@@ -3,7 +3,7 @@
         <div class="about__wrapper row align-items-center">
             <div class="about__image text-center col-lg-4">
                 <!-- <img class="img-fluid" src="~/assets/img/about_img.png" alt=""> -->
-                <img :src="about_img" />
+                <img src="~/assets/img/about_img.webp" />
             </div>
             <div class="about__text col-lg-8">
                 <h2 class="about__title">Рамис Сахибов</h2>
@@ -30,7 +30,6 @@
 </template>
 
 <script lang="ts" setup>
-const about_img = ref('https://storage.cloud.google.com/amadea/about_img.png');
 
 </script>
 
