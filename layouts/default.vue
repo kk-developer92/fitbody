@@ -3,9 +3,9 @@
         <span class="d-none">
             {{ useCookie('route').value = useRoute().path }}
         </span>
-        <render-cacheable :cache-tags="['navbar']">
+        <client-only>
             <navbar/>
-        </render-cacheable>
+        </client-only>
         <slot></slot>
         <footer-component></footer-component>
     </div>

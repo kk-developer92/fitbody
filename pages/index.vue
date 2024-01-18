@@ -19,7 +19,7 @@
         </div>
     </section>
     <!-- traiing -->
-    <render-cacheable>
+    <client-only>
         <section id="programs" v-for="section in sections" class="traning pb-3 pb-lg-5 ">
             <div class="container">
                 <h2 class="text-center mb-md-4">{{ section.title }}</h2>
@@ -41,7 +41,7 @@
                 </div>
             </div>
         </section>
-    </render-cacheable>
+    </client-only>
     <section class="about py-md-5">
         <about></about>
     </section>
@@ -55,9 +55,9 @@
         </div>
     </section>
     <section class="categories py-3 py-md-5">
-        <render-cacheable>
+        <client-only>
             <categories-main></categories-main>
-        </render-cacheable>
+        </client-only>
     </section>
     <section class="diploms py-3 py-md-5">
         <div class="container py-3">
@@ -78,9 +78,9 @@
                     </button>
                 </div>
             </h2>
-            <render-cacheable>
+            <client-only>
                 <swiper-js :data="slides" prev=".myPrev" next=".myNext"></swiper-js>
-            </render-cacheable>
+            </client-only>
         </div>
     </section>
     <section class="video py-3">
@@ -109,9 +109,9 @@
                     </button>
                 </div>
             </h2>
-            <render-cacheable>
+            <client-only>
                 <swiper-js :data="reviews" prev=".Prev" next=".Next"></swiper-js>
-            </render-cacheable>
+            </client-only>
         </div>
     </section>
     <section class="buttons py-4 py-md-5">
