@@ -19,29 +19,7 @@
         </div>
     </section>
     <!-- traiing -->
-    <client-only>
-        <section id="programs" v-for="section in sections" class="traning pb-3 pb-lg-5 ">
-            <div class="container">
-                <h2 class="text-center mb-md-4">{{ section.title }}</h2>
-                <tab-header :dataTarget="section.target"></tab-header>
-                <!-- tab1 -->
-                <div class="tab-content" id="training">
-                    <div class="tab-pane fade show active" :id="section.target.man" role="tabpanel" tabindex="0">
-                        <div class="row justify-content-center">
-                            <tab-block v-for="course in section.man" :route="section.route"
-                                       :section="course"></tab-block>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" :id="section.target.woman" role="tabpanel" tabindex="0">
-                        <div class="row justify-content-center">
-                            <tab-block v-for="course in section.woman" :route="section.route"
-                                       :section="course"></tab-block>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </client-only>
+
     <section class="about py-md-5">
         <about></about>
     </section>
