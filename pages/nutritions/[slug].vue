@@ -117,11 +117,11 @@ const current_nutrion = ref(await getCurrent(route.params.slug, '/nutrition'));
 
 const image = ref(current_nutrion.value?.type === "men" ? '/_nuxt/assets/img/services/service_man.jpg' : '/_nuxt/assets/img/services/service_woman.jpg')
 
-const trainigs = ref(await getTrainings())
-const courses = ref(await getCourses())
+const trainigs = ref(await getTrainings(current_nutrion.value.type, 2))
+const courses = ref(await getCourses(current_nutrion.value.type, 2))
 const isPurchased = ref(await checkPurchased('nutrition', route.params.slug));
 
 function filterByGender(arr: any) {
-    return arr.filter((el: any) => el.type === current_nutrion.value.type && el._id !== current_nutrion.value._id);
+    return arr.filter((el: any) => el._id !== current_nutrion.value._id);
 }
 </script>

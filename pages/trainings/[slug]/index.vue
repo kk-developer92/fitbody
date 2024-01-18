@@ -125,8 +125,8 @@ const current_train: any = ref(await getCurrent(route.params.slug, '/trainings')
 
 const image = ref(current_train.value.type === "men" ? '/_nuxt/assets/img/services/service_man.jpg' : '/_nuxt/assets/img/services/service_woman.jpg')
 
-const nutrions = ref(await getNutrions());
-const courses = ref(await getCourses());
+const nutrions = ref(await getNutrions(current_train.value.type, 2));
+const courses = ref(await getCourses(current_train.value.type, 2));
 
 const isPurchased: Ref<boolean | undefined> = ref(false);
 
@@ -135,7 +135,7 @@ onMounted(async () => {
 });
 
 function filterByGender(arr: any) {
-    return arr.filter((el: any) => el.type === current_train.value.type && el._id !== current_train.value._id);
+    return arr.filter((el: any) => el._id !== current_train.value._id);
 }
 
 </script>

@@ -7,7 +7,7 @@ export async function getCurrent(id: string | string[], route: string) {
 }
 
 
-export async function getNutrions(type?: string, limit?: number) {
+export async function getNutrions(type?: string, limit = 100) {
     const {data} = await axios.get(import.meta.env.VITE_API_URL + `/nutrition?limit=${limit}`);
     if (type) {
         return data.data.filter((i: any) => i.type === type);
@@ -16,7 +16,7 @@ export async function getNutrions(type?: string, limit?: number) {
     return data.data
 }
 
-export async function getTrainings(type?: string, limit?: number) {
+export async function getTrainings(type?: string, limit = 100) {
     const {data} = await axios.get(import.meta.env.VITE_API_URL + `/trainings?limit=${limit}`);
     
     if (type) {
@@ -26,7 +26,7 @@ export async function getTrainings(type?: string, limit?: number) {
     return data.data
 }
 
-export async function getCourses(type?: string, limit?: number) {
+export async function getCourses(type?: string, limit = 100) {
     const {data} = await axios.get(import.meta.env.VITE_API_URL + `/courses?limit=${limit}`);
     
     if (type) {
