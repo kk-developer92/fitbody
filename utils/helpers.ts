@@ -7,8 +7,8 @@ export async function getCurrent(id: string | string[], route: string) {
 }
 
 
-export async function getNutrions(type?: string) {
-    const {data} = await axios.get(import.meta.env.VITE_API_URL + '/nutrition');
+export async function getNutrions(type?: string, limit?: number) {
+    const {data} = await axios.get(import.meta.env.VITE_API_URL + `/nutrition?limit=${limit}`);
     if (type) {
         return data.data.filter((i: any) => i.type === type);
     }
@@ -16,8 +16,8 @@ export async function getNutrions(type?: string) {
     return data.data
 }
 
-export async function getTrainings(type?: string) {
-    const {data} = await axios.get(import.meta.env.VITE_API_URL + '/trainings');
+export async function getTrainings(type?: string, limit?: number) {
+    const {data} = await axios.get(import.meta.env.VITE_API_URL + `/trainings?limit=${limit}`);
     
     if (type) {
         return data.data.filter((i: any) => i.type == type);
@@ -26,8 +26,8 @@ export async function getTrainings(type?: string) {
     return data.data
 }
 
-export async function getCourses(type?: string) {
-    const {data} = await axios.get(import.meta.env.VITE_API_URL + '/courses');
+export async function getCourses(type?: string, limit?: number) {
+    const {data} = await axios.get(import.meta.env.VITE_API_URL + `/courses?limit=${limit}`);
     
     if (type) {
         return data.data.filter((i: any) => i.type == type);

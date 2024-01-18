@@ -19,7 +19,29 @@
         </div>
     </section>
     <!-- traiing -->
-
+    <client-only>
+        <section id="programs" v-for="section in sections" class="traning pb-3 pb-lg-5 ">
+            <div class="container">
+                <h2 class="text-center mb-md-4">{{ section.title }}</h2>
+                <tab-header :dataTarget="section.target"></tab-header>
+                <!-- tab1 -->
+                <div class="tab-content" id="training">
+                    <div class="tab-pane fade show active" :id="section.target.man" role="tabpanel" tabindex="0">
+                        <div class="row justify-content-center">
+                            <tab-block v-for="course in section.man" :route="section.route"
+                                       :section="course"></tab-block>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" :id="section.target.woman" role="tabpanel" tabindex="0">
+                        <div class="row justify-content-center">
+                            <tab-block v-for="course in section.woman" :route="section.route"
+                                       :section="course"></tab-block>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </client-only>
     <section class="about py-md-5">
         <about></about>
     </section>
@@ -177,14 +199,14 @@ import CategoriesMain from "~/components/common/categories/CategoriesMain.vue";
 const slides = ref(["/img/diploms/diplom-1.webp", "/img/diploms/diplom-2.webp", "/img/diploms/diplom-3.webp", "/img/diploms/diplom-4.webp", "/img/diploms/diplom-5.webp", "/img/diploms/diplom-6.webp", "/img/diploms/diplom-7.webp", "/img/diploms/diplom-5.webp", "/img/diploms/diplom-6.webp", "/img/diploms/diplom-7.webp"])
 const reviews = ref(["/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png"])
 
-const train_beginner = ref(await getTrainings('men'));
-const train_beginner_w = ref(await getTrainings('women'));
+const train_beginner = ref(await getTrainings('men', 2));
+const train_beginner_w = ref(await getTrainings('women', 2));
 
-const course_men = ref(await getCourses('men'));
-const course_women = ref(await getCourses('women'));
+const course_men = ref(await getCourses('men', 2));
+const course_women = ref(await getCourses('women', 2));
 
-const nutrition = ref(await getNutrions('men'));
-const nutrition_w = ref(await getNutrions('women'));
+const nutrition = ref(await getNutrions('men', 2));
+const nutrition_w = ref(await getNutrions('women', 2));
 
 const sections = ref([
     {
