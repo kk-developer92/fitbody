@@ -86,7 +86,14 @@ function getExercise() {
         for (let exercises of i.exercises) {
             if (result.value._id === exercises._id) {
                 exact.value = exercises
-                exact.value.result = {1: {reps: 0, weight: 0}, 2: {reps: 0, weight: 0}, 3: {reps: 0, weight: 0}, 4: {reps: 0, weight: 0}};
+                if (!exact.value.result) {
+                    exact.value.result = {
+                        1: {reps: 0, weight: 0},
+                        2: {reps: 0, weight: 0},
+                        3: {reps: 0, weight: 0},
+                        4: {reps: 0, weight: 0}
+                    };
+                }
             }
         }
     }
