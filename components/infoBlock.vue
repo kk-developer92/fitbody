@@ -18,7 +18,10 @@
                         <div>
                             <h6 class="mb-0 text-white">Результат:</h6>
                             <div class="results" v-for="rep in reps">
-                                <p class="mb-0 small">{{rep}}x{{ props.train?.result[rep] || 0}}раз</p>
+                                <p class="mb-0 small">
+                                    {{
+                                        props.train?.result[rep].weight ? props.train?.result[rep].weight + ' кг - ' : ''
+                                    }} {{ props.train?.result[rep].reps || 0 }} раз</p>
                             </div>
                         </div>
                         <button data-bs-target="#resultModal" data-bs-toggle="modal" @click="openResModal"
@@ -29,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <result-modal />
+        <result-modal/>
     </div>
 </template>
 
