@@ -5,7 +5,7 @@
                 <div class="promo__wrapper row align-items-center">
                     <div class="promo__image col-lg-5 col-xl-5 order-lg-last text-lg-end">
                         <img
-                            :src="'https://fitseven.ru/wp-content/uploads/2019/07/pitanie-pri-trenirovkah-na-massu.jpg'"
+                            src="~/assets/appImages/young-fitness-man-in-studio.jpg"
                             alt="">
                     </div>
                     <div class="promo__text col-lg-7 col-xl-7">
@@ -87,3 +87,6 @@ function getDay() {
 
 getDay();
 </script>
+
+<style>
+</style>
