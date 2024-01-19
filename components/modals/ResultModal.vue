@@ -41,7 +41,7 @@ const user: any = ref({});
 function shown(data: any) {
     result.value = data;
     getExercise();
-    reps.value = +exact.value.repEach.split('x')[0]
+    reps.value = +exact.value.repEach.split('x')[0];
 }
 
 const cookie: any = useCookie('token');
@@ -82,7 +82,6 @@ function getExercise() {
         for (let exercises of i.exercises) {
             if (result.value._id === exercises._id) {
                 exact.value = exercises
-                exact.value.result = {};
             }
         }
     }
