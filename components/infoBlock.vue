@@ -19,9 +19,7 @@
                             <h6 class="mb-0 text-white">Результат:</h6>
                             <div class="results" v-for="rep in reps">
                                 <p class="mb-0 small">
-                                    {{
-                                        props.train?.result[rep].weight ? props.train?.result[rep].weight + ' кг - ' : ''
-                                    }} {{ props.train?.result[rep].reps || 0 }} раз</p>
+                                    {{ makeText(rep) }}</p>
                             </div>
                         </div>
                         <button data-bs-target="#resultModal" data-bs-toggle="modal" @click="openResModal"
@@ -57,6 +55,18 @@ function openResModal() {
     resmodal.open(props.train);
 }
 
+function makeText(rep: any) {
+    let text = '';
+
+    if (props.train?.result) {
+        if (props.train?.result[rep].weight) {
+            text += props.train?.result[rep].weight + ' кг - ';
+        }
+        text += props.train?.result[rep].reps + ' раз' || 0;
+    }
+
+    return text;
+}
 
 </script>
 
