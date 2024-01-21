@@ -4,7 +4,7 @@
             {{ useCookie('route').value = useRoute().path }}
         </span>
         <client-only>
-            <navbar/>
+<!--            <navbar/>-->
         </client-only>
         <slot></slot>
         <footer-component></footer-component>

@@ -46,46 +46,20 @@
 </template>
 
 <script lang="ts" setup>
-import checkPurchased from "~/utils/checkPurchased";
-import axios from "axios";
+const props = defineProps<{ service: string }>()
+const route: any = useRoute().params;
+const training: any = ref({});
 
-const props = defineProps<{ path: string }>()
-const route = useRoute().params;
-const weeks = ref();
-const cookie = useCookie('token');
-
-if (cookie.value) {
-    const token: any = parseJwt(cookie.value);
-    const user = await axios.get(`${import.meta.env.VITE_API_URL}/users/${token._id}`);
-
-    for (let i of user.data[props.path]) {
-        if (i._id.toString() === route.slug) {
-            weeks.value = i;
-        }
-    }
-}
-
-const training = ref();
-
-onMounted(() => {
-    const isPurchased = checkPurchased(props.path, route.slug);
-
-    if (!isPurchased) {
-        navigateTo('/')
+const res = await useService('rpc').create({
+    method: 'GetDay',
+    data: {
+        service: props.service,
+        dayId: route.id,
+        courseId: route.slug
     }
 });
 
-function getDay() {
-    for (let week of weeks.value.exercises) {
-        for (let day of week.data) {
-            if (day._id === route.id) {
-                training.value = day
-            }
-        }
-    }
-}
-
-getDay();
+training.value = res.data;
 </script>
 
 <style>

@@ -11,7 +11,8 @@
 
 <script lang="ts" setup>
 import InfoBlock from "~/components/infoBlock.vue";
-const props = defineProps<{ data: any }>()
+const props = defineProps<{ data: any }>();
+
 </script>
 
 <style scoped>

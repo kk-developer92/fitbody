@@ -4,23 +4,22 @@
             <div class="position-relative mr-3 flex-shrink-0 overlay opacity-hover" data-bs-target="#videoModal"
                  data-bs-toggle="modal" @click="openModal">
                 <img class="rounded" width="128" height="72"
-                     :src="props.train.image || 'https://avatars.mds.yandex.net/i?id=77ea515802a34056dfa8b2e6bbb6588be2aa6806-5409727-images-thumbs&n=13'"
+                     :src="exercise.image"
                      alt="Exercise image">
                 <play-button/>
             </div>
             <div class="flex-grow-1 ms-3">
                 <div class="row d-flex align-items-center">
                     <div class="col-sm">
-                        <h6 class="mb-0 text-white">{{ props.train.title }}</h6>
-                        <p class="mb-0">{{ props.train.repEach || 12 }} раз</p>
+                        <h6 class="mb-0 text-white">{{ exercise.name }}</h6>
+                        <p class="mb-0">{{ exercise.reps }} раз</p>
                     </div>
                     <div class="col-sm-auto flex-shrink-0 d-flex gap-3 align-items-center justify-content-between">
                         <div>
                             <h6 class="mb-0 text-white">Результат:</h6>
-                            <div class="results" v-for="rep in reps">
-                                <p class="mb-0 small">
-                                    {{ makeText(rep) }}</p>
-                            </div>
+                                <div class="results" v-for="rep in exercise.results">
+                                    <p class="mb-0 small">{{rep.weight}} кг - {{rep.reps}} раз</p>
+                                </div>
                         </div>
                         <button data-bs-target="#resultModal" data-bs-toggle="modal" @click="openResModal"
                                 class="btn btn-link p-0 text-danger">
@@ -40,32 +39,38 @@ import EditBtn from "~/components/icons/editBtn.vue";
 import PlayButton from "~/components/icons/PlayButton.vue";
 import {useModal} from "~/composables/useModal";
 import ResultModal from "~/components/modals/ResultModal.vue";
+import {parseJwt} from "~/utils/auth";
 
-const props = defineProps<{ train: any }>()
+const props = defineProps<{ train: any }>();
 
 const modal = useModal('videoModal');
-const resmodal = useModal('resultModal');
-const reps = ref(+props.train.repEach.split('x')[0]);
+const resModal = useModal('resultModal');
+const exercise = ref({});
+const route = useRoute().params;
+const service = useRoute().fullPath.split('/')[1];
+const cookie: any = useCookie('token').value;
+const token = parseJwt(cookie);
+
+const rpcResult = await useService('rpc').create({
+    method: 'GetExercise',
+    data: {
+        service: service,
+        dayId: route.id,
+        courseId: route.slug,
+        exerciseId: props.train._id,
+        userId: token.sub
+    }
+});
+console.log(props.train._id);
+
+exercise.value = rpcResult.data;
 
 function openModal() {
     modal.open(props.train.video)
 }
 
 function openResModal() {
-    resmodal.open(props.train);
-}
-
-function makeText(rep: any) {
-    let text = '';
-
-    if (props.train?.result) {
-        if (props.train?.result[rep].weight) {
-            text += props.train?.result[rep].weight + ' кг - ';
-        }
-        text += props.train?.result[rep].reps + ' раз' || 0;
-    }
-
-    return text;
+    resModal.open(props.train);
 }
 
 </script>

@@ -1,22 +1,23 @@
-import axios from "axios";
+import {parseJwt} from "~/utils/auth";
 
-export default async function (path: string, id: any) {
-    const url = import.meta.env.VITE_API_URL;
-    const token: any = useCookie('token');
+export default async function (id: any) {
+    const cookie = useCookie('token');
+    let token: any = {};
     
-    if (!token.value) {
+    if (!cookie.value) {
         return false;
     }
     
-    const _id: any = parseJwt(token.value);
-    const user: any = await axios.get(url + `/users/${_id._id}`);
+    token = parseJwt(cookie.value);
     
-    let purchased = [];
-    for (let i of user.data[path]) {
-        if (i._id === id) {
-            purchased.push(i)
-        }
+    if (!token.sub) {
+        return false;
     }
     
-    return Boolean(purchased.length);
+    const res = await useService('rpc').create({
+        method: 'CheckPurchased',
+        data: {userId: token.sub, id}
+    });
+    
+    return res.data.isPurchased;
 }

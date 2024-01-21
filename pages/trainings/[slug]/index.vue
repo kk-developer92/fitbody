@@ -1,7 +1,7 @@
 <template>
     <Head>
-        <Title>Программа тренировок {{ current_train.title }} - Fitbody</Title>
-        <Meta name="description" :content="current_train.description"/>
+        <Title>Программа тренировок {{ training.title }} - Fitbody</Title>
+        <Meta name="description" :content="training.description"/>
     </Head>
     <div class="">
         <main v-if="!isPurchased" class="page">
@@ -9,7 +9,7 @@
                 <div class="container py-3">
                     <div class="promo__wrapper row align-items-center">
                         <div class="promo__image col-lg-5 col-xl-5 order-lg-last text-lg-end">
-                            <img :src="current_train.image || '/_nuxt/assets/img/services/page_img.jpg' " alt="">
+                            <img :src="training.image || '/_nuxt/assets/img/services/page_img.jpg' " alt="">
                         </div>
                         <div class="col-lg-7 col-xl-7">
                             <button @click="$router.go(-1)" class="page-nav">
@@ -19,9 +19,9 @@
                                 </svg>
                                 Назад
                             </button>
-                            <h1>{{ current_train.title }}</h1>
-                            <div v-html="current_train.description" class="promo__text"></div>
-                            <purchase-button :price="current_train.price" :id="current_train._id" place="trainings"
+                            <h1>{{ training.title }}</h1>
+                            <div v-html="training.description" class="promo__text"></div>
+                            <purchase-button :price="training.price" service="trainings"
                                              class="btn btn-primary button"/>
                         </div>
 
@@ -34,9 +34,9 @@
                     <div class="row">
                         <div class="col-lg-8 mx-auto">
                             <h2>О ПРОГРАММЕ</h2>
-                            <div v-html="current_train.about_program"></div>
+                            <div v-html="training.about_program"></div>
 
-                            <purchase-button :price="current_train.price" :id="current_train.price" place="trainings"
+                            <purchase-button :price="training.price" service="trainings"
                                              class="btn btn-primary button"/>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                             <div v-for="nutrition in filterByGender(nutrions).splice(0, 2)" class="col-6 col-md-4">
                                 <!-- service-item -->
                                 <nuxt-link :to="'/nutritions/' + nutrition._id" class="service">
-                                    <img class="img-fluid" :src="nutrition.image || image" alt="">
+                                    <img class="img-fluid" :src="nutrition.image" alt="">
                                     <div class="service__wrapper">
 
                                         <h3 class="service__title">{{ nutrition.title }}</h3>
@@ -74,7 +74,7 @@
                             <div v-for="course in filterByGender(courses).splice(0, 2)" class="col-6 col-md-4">
                                 <!-- service-item -->
                                 <nuxt-link :to="'/courses/' + course._id" class="service">
-                                    <img class="img-fluid" :src="course.image || image" alt="">
+                                    <img class="img-fluid" :src="course.image" alt="">
                                     <div class="service__wrapper">
 
                                         <div>
@@ -109,7 +109,7 @@
             </div>
         </main>
         <div v-else>
-            <training-index path="trainings"/>
+            <training-index service="trainings"/>
         </div>
     </div>
 </template>
@@ -119,23 +119,23 @@
 import TrainingIndex from "~/components/TrainingIndex.vue";
 import checkPurchased from "~/utils/checkPurchased";
 
-const route = useRoute()
+const route: any = useRoute().params.slug;
 
-const current_train: any = ref(await getCurrent(route.params.slug, '/trainings'))
+const res = await useService('trainings').get(route);
 
-const image = ref(current_train.value.type === "men" ? '/_nuxt/assets/img/services/service_man.jpg' : '/_nuxt/assets/img/services/service_woman.jpg')
+const training = ref(res.data);
 
-const nutrions = ref(await getNutrions(current_train.value.type, 2));
-const courses = ref(await getCourses(current_train.value.type, 2));
+const nutrions = ref(await getNutrions(training.value.type, 2));
+const courses = ref(await getCourses(training.value.type, 2));
 
 const isPurchased: Ref<boolean | undefined> = ref(false);
 
 onMounted(async () => {
-    isPurchased.value = await checkPurchased('trainings', route.params.slug);
+    isPurchased.value = await checkPurchased(route);
 });
 
 function filterByGender(arr: any) {
-    return arr.filter((el: any) => el._id !== current_train.value._id);
+    return arr.filter((el: any) => el._id !== training.value._id);
 }
 
 </script>

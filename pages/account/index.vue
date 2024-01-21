@@ -62,7 +62,11 @@ onMounted(async () => {
     const token: any = parseJwt(cookie.value);
     const usr = await axios.get(url + '/users/' + token._id);
     user.value = usr.data;
-    all.value = [...user.value.trainings, ...user.value.courses, ...user.value.nutrition];
+    // for () {
+    //
+    // }
+
+    // all.value = [...user.value.trainings, ...user.value.courses, ...user.value.nutrition];
 });
 
 </script>

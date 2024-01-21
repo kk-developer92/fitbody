@@ -5,7 +5,7 @@
                 <div class="d-flex flex-column align-items-sm-center justify-content-center gap-4 gap-am-5">
                     <nuxt-link to="/" class="page-nav">
                         <svg width="19" height="8" viewBox="0 0 19 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 4H19M1 4L4 1M1 4L4 7" stroke="currentColor" />
+                            <path d="M1 4H19M1 4L4 1M1 4L4 7" stroke="currentColor"/>
                         </svg>
                         На главную
                     </nuxt-link>
@@ -16,12 +16,13 @@
                         <ul class="nav nav-tabs tab-gender pt-2 justify-content-center" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#training-man"
-                                    type="button" role="tab" aria-selected="true">Для мужчин
+                                        type="button" role="tab" aria-selected="true">Для мужчин
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#training-woman" type="button"
-                                    role="tab" aria-selected="false">Для женщин
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#training-woman"
+                                        type="button"
+                                        role="tab" aria-selected="false">Для женщин
                                 </button>
                             </li>
                         </ul>
@@ -39,13 +40,14 @@
                             <ul class="nav nav-tabs train-tab-gender pt-2 justify-content-center" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#junior-man"
-                                        type="button" role="tab" aria-selected="true">
+                                            type="button" role="tab" aria-selected="true">
                                         НОВИЧКИ
                                     </button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lead-man" type="button"
-                                        role="tab" aria-selected="false">
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lead-man"
+                                            type="button"
+                                            role="tab" aria-selected="false">
                                         ОПЫТНЫЕ
                                     </button>
                                 </li>
@@ -61,16 +63,19 @@
                                             <!-- service-item -->
                                             <nuxt-link :to="'/trainings/' + train._id" class="service">
                                                 <!-- <img class="img-fluid" :src="train.media.images.full" alt=""> -->
-                                                <img alt="" class="img-fluid" format="webp" :src="train.image || '/_nuxt/assets/img/services/service_man.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
-                                                
+                                                <img alt="" class="img-fluid" format="webp"
+                                                     :src="train.image || '/_nuxt/assets/img/services/service_man.jpg'"
+                                                     sizes="sm:100vw md:100vw lg:600px"/>
+
                                                 <div class="service__wrapper">
 
                                                     <h3 class="service__title">{{ train.title }}</h3>
-                                                    <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
+                                                    <svg class="align-self-end" width="30" height="30"
+                                                         viewBox="0 0 30 30" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="15" cy="15" r="15" fill="#F52626"/>
                                                         <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                                            stroke-linejoin="round" />
+                                                              stroke-linejoin="round"/>
                                                     </svg>
 
                                                 </div>
@@ -89,15 +94,18 @@
                                             <!-- service-item -->
                                             <nuxt-link :to="'trainings/' + train._id" class="service">
                                                 <!-- <img class="img-fluid" :src="train.media.images.full || '/_nuxt/assets/img/services/lead_man.jpg'" alt=""> -->
-                                                <img alt="" class="img-fluid" format="webp" :src="train.image || '/_nuxt/assets/img/services/lead_man.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
+                                                <img alt="" class="img-fluid" format="webp"
+                                                     :src="train.image || '/_nuxt/assets/img/services/lead_man.jpg'"
+                                                     sizes="sm:100vw md:100vw lg:600px"/>
                                                 <div class="service__wrapper">
 
                                                     <h3 class="service__title">{{ train.title }}</h3>
-                                                    <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
+                                                    <svg class="align-self-end" width="30" height="30"
+                                                         viewBox="0 0 30 30" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="15" cy="15" r="15" fill="#F52626"/>
                                                         <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                                            stroke-linejoin="round" />
+                                                              stroke-linejoin="round"/>
                                                     </svg>
 
                                                 </div>
@@ -115,13 +123,14 @@
                             <ul class="nav nav-tabs train-tab-gender justify-content-center" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#junior-woman"
-                                        type="button" role="tab" aria-selected="true">
+                                            type="button" role="tab" aria-selected="true">
                                         НОВИЧКИ
                                     </button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lead-woman" type="button"
-                                        role="tab" aria-selected="false">
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lead-woman"
+                                            type="button"
+                                            role="tab" aria-selected="false">
                                         ОПЫТНЫЕ
                                     </button>
                                 </li>
@@ -135,16 +144,19 @@
                                             <!-- service-item -->
                                             <nuxt-link :to="'/trainings/' + train._id" class="service">
                                                 <!-- <img class="img-fluid" :src="train.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" alt=""> -->
-                                                <img alt="" class="img-fluid" format="webp" :src="train.image || '/_nuxt/assets/img/services/junior_woman.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
-                                               
+                                                <img alt="" class="img-fluid" format="webp"
+                                                     :src="train.image || '/_nuxt/assets/img/services/junior_woman.jpg'"
+                                                     sizes="sm:100vw md:100vw lg:600px"/>
+
                                                 <div class="service__wrapper">
 
                                                     <h3 class="service__title">{{ train.title }}</h3>
-                                                    <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
+                                                    <svg class="align-self-end" width="30" height="30"
+                                                         viewBox="0 0 30 30" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="15" cy="15" r="15" fill="#F52626"/>
                                                         <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                                            stroke-linejoin="round" />
+                                                              stroke-linejoin="round"/>
                                                     </svg>
 
                                                 </div>
@@ -161,16 +173,19 @@
                                             <!-- service-item -->
                                             <nuxt-link :to="'/trainings/' + train._id" class="service">
                                                 <!-- <img class="img-fluid" :src="train.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" alt=""> -->
-                                                <img alt="" class="img-fluid" format="webp" :src="train.image || '/_nuxt/assets/img/services/junior_woman.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
+                                                <img alt="" class="img-fluid" format="webp"
+                                                     :src="train.image || '/_nuxt/assets/img/services/junior_woman.jpg'"
+                                                     sizes="sm:100vw md:100vw lg:600px"/>
 
                                                 <div class="service__wrapper">
 
                                                     <h3 class="service__title">{{ train.title }}</h3>
-                                                    <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <circle cx="15" cy="15" r="15" fill="#F52626" />
+                                                    <svg class="align-self-end" width="30" height="30"
+                                                         viewBox="0 0 30 30" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="15" cy="15" r="15" fill="#F52626"/>
                                                         <path d="M13 9L19 15L13 21" stroke="white" stroke-width="2"
-                                                            stroke-linejoin="round" />
+                                                              stroke-linejoin="round"/>
                                                     </svg>
 
                                                 </div>
@@ -194,7 +209,7 @@
                 <div class="container">
                     <div class="ratio ratio-16x9">
                         <iframe src="https://www.youtube.com/embed/dvkozMW37Qc?rel=0" title="YouTube video"
-                            allowfullscreen></iframe>
+                                allowfullscreen></iframe>
                     </div>
                 </div>
             </section>
@@ -206,24 +221,28 @@
 
 import axios from "axios";
 import {trainings} from "~/data";
+import {loadFile} from "magicast";
 
 useHead({
     title: "Тренировки | FitBody",
     meta: [
-        {name: "description", content: "фитнес тренер, который составляет программы тренировок в тренажерном зале на основе ваших целей и силовых показателей."}
+        {
+            name: "description",
+            content: "фитнес тренер, который составляет программы тренировок в тренажерном зале на основе ваших целей и силовых показателей."
+        }
     ]
 })
 
-async function getTrainin(type: string, complexity: string) {
-    const { data } = await axios.get(import.meta.env.VITE_API_URL + '/trainings');
+const res = await useService('trainings').find();
 
-    return data.data.filter((i: any) => i.complexity === complexity && i.type === type);
+async function getTraining(type: string, complexity: string) {
+    return res.data.data.filter((i: any) => i.complexity === complexity && i.type === type);
 }
 
-const train_beginner = ref(await getTrainin('men', 'beginner'));
-const train_master = ref(await getTrainin('men', 'advanced'));
-const train_beginner_w = ref(await getTrainin('women', 'beginner'));
-const train_advanced_w = ref(await getTrainin('women', 'advanced'));
+const train_beginner = ref(await getTraining('men', 'beginner'));
+const train_master = ref(await getTraining('men', 'advanced'));
+const train_beginner_w = ref(await getTraining('women', 'beginner'));
+const train_advanced_w = ref(await getTraining('women', 'advanced'));
 </script>
 
 <style scoped></style>

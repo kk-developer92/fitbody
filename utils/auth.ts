@@ -1,8 +1,5 @@
 import {useCookie} from "#build/imports";
-import axios from "axios";
 import {Ref} from "vue";
-
-const pushRoute = import.meta.env.VITE_HOST_URL;
 
 function decodeBase64(data: string): string {
     if (process.server) {
@@ -23,17 +20,13 @@ export function parseJwt(token: string): { iat: number, exp: number, sub: string
 }
 
 export function login(phone: string, password: string, isLoading: Ref<boolean>) {
-    const result = {
-        showError: false,
-        errorMessage: '',
-    };
-    return axios.post(import.meta.env.VITE_API_URL + '/authorization', {
-        role: 'user',
+    return useService('authentication').create({
+        strategy: 'local',
         phone,
         password
     }).then(async (response) => {
         const token = useCookie('token');
-        token.value = response.data.token;
+        token.value = response.data.accessToken;
         isLoading.value = false;
         const route: any = useCookie('route').value;
         await useRouter().push(route);
@@ -41,18 +34,14 @@ export function login(phone: string, password: string, isLoading: Ref<boolean>) 
 }
 
 export function signup(phone: string, password: string, name: string, isLoading: Ref<boolean>) {
-    const result = {
-        showError: false,
-        errorMessage: '',
-    };
-    return axios.post(import.meta.env.VITE_API_URL + '/users', {
-        role: 'user',
+    return useService('users').create({
+        strategy: 'local',
         phone,
         password,
         name
     }).then(async (response) => {
         const token = useCookie('token');
-        token.value = response.data.token;
+        token.value = response.data.accessToken;
         isLoading.value = false;
         const route: any = useCookie('route').value;
         await useRouter().push(route);

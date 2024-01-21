@@ -1,5 +1,5 @@
 <template>
-    <button class="btn btn-primary button" @click="redirect">
+    <button class="btn btn-primary button" @click="purchase">
         <span v-if="+props.price !== 0">Купить за {{ props.price }} тыс. сум</span>
         <span v-else>Бесплатно</span>
     </button>
@@ -9,26 +9,25 @@
 
 import purchaseCourse from "~/utils/purchaseCourse";
 
-const props = defineProps<{ price: number, id: string, place: string }>();
+const props = defineProps<{ price: number, service: string }>();
 
-const route = useRoute().params.slug;
+const courseId = useRoute().params.slug;
 
-const redirect = async () => {
+async function purchase() {
     const token: any = useCookie('token');
 
     let user: any
 
     if (token.value) {
-        user = parseJwt(token?.value || '');
+        user = parseJwt(token?.value);
     }
 
-    if (!user?._id) {
-        navigateTo({path: '/login'});
-        return;
+    if (!user?.sub) {
+        return navigateTo({path: '/login'});
     }
 
     try {
-        await purchaseCourse(user, props);
+        await purchaseCourse(props.service, courseId, user.sub);
     } catch (e) {
         console.log(e);
     }

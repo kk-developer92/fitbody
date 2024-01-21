@@ -21,7 +21,7 @@
                         <h1>{{ current_nutrion.title }}</h1>
                         <div v-html="current_nutrion.description" class="promo__text"></div>
 
-                        <purchase-button :price="current_nutrion.price" :id="current_nutrion._id" place="nutrition"/>
+                        <purchase-button :price="current_nutrion.price" service="nutrition"/>
                     </div>
 
                 </div>
@@ -35,7 +35,7 @@
                         <h2>О ПРОГРАММЕ</h2>
                         <div v-html="current_nutrion?.about_program"></div>
 
-                        <purchase-button :price="current_nutrion.price" :id="current_nutrion._id" place="nutrition"/>
+                        <purchase-button :price="current_nutrion.price" service="nutrition"/>
 
                     </div>
                 </div>
@@ -119,7 +119,7 @@ const image = ref(current_nutrion.value?.type === "men" ? '/_nuxt/assets/img/ser
 
 const trainigs = ref(await getTrainings(current_nutrion.value.type, 2))
 const courses = ref(await getCourses(current_nutrion.value.type, 2))
-const isPurchased = ref(await checkPurchased('nutrition', route.params.slug));
+const isPurchased = ref(await checkPurchased(route.params.slug));
 
 function filterByGender(arr: any) {
     return arr.filter((el: any) => el._id !== current_nutrion.value._id);

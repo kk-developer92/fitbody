@@ -23,7 +23,7 @@
                             <h1>{{ current_course.title }}</h1>
                             <div v-html="current_course.description" class="promo__text"></div>
 
-                            <purchase-button :price="current_course.price" :id="current_course._id" place="courses"
+                            <purchase-button :price="current_course.price" service="courses"
                                              class="btn btn-primary button"/>
                         </div>
 
@@ -38,7 +38,7 @@
                             <h2>О ПРОГРАММЕ</h2>
                             <div v-html="current_course?.about_program"></div>
 
-                            <purchase-button :price="current_course.price" :id="current_course._id" place="courses"
+                            <purchase-button :price="current_course.price" service="courses"
                                              class="btn btn-primary button"/>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
             </div>
         </main>
         <div v-else>
-            <training-index path="courses"/>
+            <training-index service="courses"/>
         </div>
     </div>
 </template>
@@ -120,7 +120,7 @@ const trainings = ref(await getTrainings(current_course.value.type, 2));
 const isPurchased: Ref<boolean | undefined> = ref(false);
 
 onMounted(async () => {
-    isPurchased.value = await checkPurchased('courses', route.params.slug);
+    isPurchased.value = await checkPurchased(route.params.slug);
 });
 
 function filterByGender(arr: any) {
