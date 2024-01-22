@@ -8,4 +8,7 @@ export default async function (service: string, courseId: string | string[], use
         }
     });
     
+    if (res.data.message === 'all is okay') {
+        navigateTo('/account');
+    }
 }
