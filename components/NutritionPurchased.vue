@@ -4,7 +4,7 @@
             <div class="container py-3">
                 <div class="promo__wrapper row align-items-center">
                     <div class="promo__image col-lg-5 col-xl-5 order-lg-last text-lg-end">
-                        <img :src="current_nutrion.image || '/_nuxt/assets/img/services/page_img.jpg'" alt="">
+                        <img :src="current_nutrition.image || '/_nuxt/assets/img/services/page_img.jpg'" alt="">
                     </div>
                     <div class="col-lg-7 col-xl-7">
                         <button @click="$router.go(-1)" class="page-nav">
@@ -14,8 +14,8 @@
                             </svg>
                             Назад
                         </button>
-                        <h1>{{ current_nutrion.title }}</h1>
-                        <div v-html="current_nutrion.description" class="promo__text"></div>
+                        <h1>{{ current_nutrition.title }}</h1>
+                        <div v-html="current_nutrition.description" class="promo__text"></div>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                             <div class="container py-3">
                                 <div class="row justify-content-center">
                                     <div class="col-md-10">
-                                        <div v-for="content in current_nutrion.content"
+                                        <div v-for="content in current_nutrition.content"
                                              class="list-group list-group-flush">
                                             <h2 class="mb-5">{{ content.title }}</h2>
                                             <div
@@ -58,11 +58,15 @@
 
 <script setup lang="ts">
 
-const route = useRoute()
+const route: any = useRoute();
 
-const current_nutrion = ref(await getCurrent(route.params.slug, '/nutrition'));
+const current_nutrition: any = ref({});
 
-const image = ref(current_nutrion.value?.type === "men" ? '/_nuxt/assets/img/services/service_man.jpg' : '/_nuxt/assets/img/services/service_woman.jpg')
+const res = await useService('nutrition').get(route.params.slug);
+
+current_nutrition.value = res.data;
+
+const image = ref(current_nutrition.value?.type === "men" ? '/_nuxt/assets/img/services/service_man.jpg' : '/_nuxt/assets/img/services/service_woman.jpg')
 
 </script>
 

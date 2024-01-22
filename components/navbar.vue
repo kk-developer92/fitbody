@@ -33,27 +33,18 @@
 
 <script setup lang="ts">
 
-import axios from "axios";
 import Logout from "~/components/icons/logout.vue";
+import {parseJwt} from "~/utils/auth";
 
 const cookie: any = useCookie('token');
-const url = import.meta.env.VITE_API_URL;
 
 const user: any = ref({});
 
-async function fetchUser() {
-    if (cookie.value) {
-        const token: any = parseJwt(cookie.value);
-        try {
-            const usr = await axios.get(url + '/users/' + token._id);
-            user.value = usr.data;
-        } catch (e) {
-            user.value = {};
-        }
-    }
-}
+const token = parseJwt(cookie.value);
 
-fetchUser();
+const res = await useService('users').get(token.sub);
+
+user.value = res.data;
 
 </script>
 

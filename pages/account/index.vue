@@ -12,8 +12,8 @@
                         <div v-for="training in user.trainings" class="col-6 col-md-4 cursor-pointer">
                             <nuxt-link :to="`/trainings/${training._id}`" class="service">
                                 <img alt="" class="img-fluid" format="webp"
-                                          :src="training.image || '/_nuxt/assets/img/services/service_man.jpg'"
-                                          sizes="sm:100vw md:100vw lg:400px"/>
+                                     :src="training.image || '/_nuxt/assets/img/services/service_man.jpg'"
+                                     sizes="sm:100vw md:100vw lg:400px"/>
 
                                 <div class="service__wrapper">
                                     <div>
@@ -45,7 +45,6 @@
 
 <script lang="ts" setup>
 import TabBlock from '~/components/common/TabBlock.vue';
-import axios from "axios";
 
 definePageMeta({
     authRoute: true,
@@ -55,18 +54,38 @@ definePageMeta({
 
 const user: any = ref({});
 const all: any = ref([]);
-const url = import.meta.env.VITE_API_URL;
 
 onMounted(async () => {
     const cookie: any = useCookie('token');
     const token: any = parseJwt(cookie.value);
-    const usr = await axios.get(url + '/users/' + token._id);
-    user.value = usr.data;
-    // for () {
-    //
-    // }
+    const res = await useService('users').get(token.sub);
 
-    // all.value = [...user.value.trainings, ...user.value.courses, ...user.value.nutrition];
+    user.value = res.data;
+
+    const trainings = [];
+    const courses = [];
+    const nutrition = [];
+
+    for (let i of user.value.trainings) {
+        const response = await useService('trainings').get(i.courseId);
+        trainings.push(response.data)
+    }
+
+    for (let i of user.value.courses) {
+        const response = await useService('courses').get(i.courseId);
+        courses.push(response.data)
+    }
+
+    for (let i of user.value.nutrition) {
+        const response = await useService('nutrition').get(i);
+        nutrition.push(response.data)
+    }
+
+    user.value.trainings = trainings;
+    user.value.courses = courses;
+    user.value.nutrition = nutrition;
+
+    all.value = [...user.value.trainings, ...user.value.courses, ...user.value.nutrition];
 });
 
 </script>
