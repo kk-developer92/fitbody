@@ -40,12 +40,13 @@ const cookie: any = useCookie('token');
 
 const user: any = ref({});
 
-const token = parseJwt(cookie.value);
+if (cookie.value) {
+    const token = parseJwt(cookie.value);
 
-const res = await useService('users').get(token.sub);
+    const res = await useService('users').get(token.sub);
 
-user.value = res.data;
-
+    user.value = res.data;
+}
 </script>
 
 <style scoped>
