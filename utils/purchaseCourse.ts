@@ -1,4 +1,4 @@
-export default async function (service: string, courseId: string | string[], userId: string) {
+export default async function (service: string, courseId: any, userId: string) {
     const res = await useService('rpc').create({
         method: 'PurchaseCourse',
         data: {
@@ -10,5 +10,18 @@ export default async function (service: string, courseId: string | string[], use
     
     if (res.data.message === 'all is okay') {
         navigateTo('/account');
+    }
+    
+    if (res.data.message === 'course is not free') {
+        const res = await useService(service).get(courseId);
+        
+        navigateTo({
+            path: `/payment/${courseId}`,
+            query: {
+                model_name: service,
+                price: res.data.price,
+                user_id: userId,
+            }
+        });
     }
 }
