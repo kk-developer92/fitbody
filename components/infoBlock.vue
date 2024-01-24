@@ -3,7 +3,7 @@
         <div class="d-flex align-items-center">
             <div class="position-relative mr-3 flex-shrink-0 overlay opacity-hover" data-bs-target="#videoModal"
                  data-bs-toggle="modal" @click="openModal">
-                <img class="rounded" width="128" height="72"
+                <img class="rounded image" width="128" height="72"
                      :src="exercise.image"
                      alt="Exercise image">
                 <play-button/>
@@ -12,7 +12,7 @@
                 <div class="row d-flex align-items-center">
                     <div class="col-sm">
                         <h6 class="mb-0 text-white">{{ exercise.name }}</h6>
-                        <p class="mb-0">{{ exercise.repEach }} раз</p>
+                        <p class="mb-0">{{ exercise.reps }} раз</p>
                     </div>
                     <div class="col-sm-auto flex-shrink-0 d-flex gap-3 align-items-center justify-content-between">
                         <div>
@@ -74,4 +74,8 @@ function openResModal() {
 
 </script>
 
-<style scoped></style>
+<style scoped>
+.image {
+    object-fit: cover;
+}
+</style>
