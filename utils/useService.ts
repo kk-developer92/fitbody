@@ -25,10 +25,10 @@ export default (service: string) => {
             return axios.get(`${url}/${id}`);
         },
         patch(id: string, data: any) {
-            return axios.patch(`${url}/${id}`);
+            return axios.patch(`${url}/${id}`, data, config);
         },
         delete(id: string) {
-            return axios.delete(`${url}/${id}`);
+            return axios.delete(`${url}/${id}`, config);
         }
     };
 }
