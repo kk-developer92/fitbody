@@ -77,7 +77,6 @@ onMounted(async () => {
     }
 
     for (let i of user.value.nutrition) {
-        console.log(i);
         const response = await useService('nutrition').get(i);
         nutrition.push(response.data)
     }

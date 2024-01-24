@@ -12,7 +12,7 @@
                 <div class="row d-flex align-items-center">
                     <div class="col-sm">
                         <h6 class="mb-0 text-white">{{ exercise.name }}</h6>
-                        <p class="mb-0">{{ exercise.reps }} раз</p>
+                        <p class="mb-0">{{ exercise.repEach }} раз</p>
                     </div>
                     <div class="col-sm-auto flex-shrink-0 d-flex gap-3 align-items-center justify-content-between">
                         <div>
@@ -61,7 +61,6 @@ const rpcResult = await useService('rpc').create({
         userId: token.sub
     }
 });
-console.log(props.train._id);
 
 exercise.value = rpcResult.data;
 
