@@ -10,7 +10,7 @@
             </div>
             <div class="d-flex align-items-center p-2">
                 <div class="">
-                    <div class="header-reg" v-if="user.name">
+                    <div class="header-reg" v-if="user?.name">
                         <client-only>
                             <logout class="cursor-pointer"/>
                         </client-only>
@@ -43,8 +43,13 @@ const user: any = ref({});
 if (cookie.value) {
     const token = parseJwt(cookie.value);
 
-    const res = await useService('users').get(token.sub);
+    let res: any = {};
 
+    try {
+        res = await useService('users').get(token.sub);
+    } catch (e) {
+        console.log(e);
+    }
     user.value = res.data;
 }
 </script>
