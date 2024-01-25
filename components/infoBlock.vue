@@ -45,24 +45,11 @@ const props = defineProps<{ train: any }>();
 
 const modal = useModal('videoModal');
 const resModal = useModal('resultModal');
-const exercise = ref({});
+const exercise = ref(props.train);
 const route = useRoute().params;
 const service = useRoute().fullPath.split('/')[1];
 const cookie: any = useCookie('token').value;
 const token = parseJwt(cookie);
-
-const rpcResult = await useService('rpc').create({
-    method: 'GetExercise',
-    data: {
-        service: service,
-        dayId: route.id,
-        courseId: route.slug,
-        exerciseId: props.train._id,
-        userId: token.sub
-    }
-});
-
-exercise.value = rpcResult.data;
 
 function openModal() {
     modal.open(props.train.video)
