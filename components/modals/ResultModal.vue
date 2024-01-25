@@ -79,9 +79,6 @@ async function submit() {
         return window.location.reload();
     }
 
-    // if (res.data.error) {
-    //     return ;
-    // }
 }
 
 </script>
