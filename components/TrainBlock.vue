@@ -4,7 +4,7 @@
             <h5 class="card-title mb-0">Тренировки</h5>
         </div>
         <div class="list-group list-group-flush">
-            <info-block v-for="train in props.data.exercises" :train="train"/>
+            <info-block v-for="train in props.data.exercises" :train="train" :dayId="props.data._id"/>
         </div>
     </div>
 </template>
@@ -12,6 +12,7 @@
 <script lang="ts" setup>
 import InfoBlock from "~/components/infoBlock.vue";
 const props = defineProps<{ data: any }>();
+
 
 </script>
 

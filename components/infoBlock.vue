@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <result-modal/>
+        <result-modal :dayId="props.dayId"/>
     </div>
 </template>
 
@@ -41,7 +41,7 @@ import {useModal} from "~/composables/useModal";
 import ResultModal from "~/components/modals/ResultModal.vue";
 import {parseJwt} from "~/utils/auth";
 
-const props = defineProps<{ train: any }>();
+const props = defineProps<{ train: any, dayId: string }>();
 
 const modal = useModal('videoModal');
 const resModal = useModal('resultModal');
@@ -56,6 +56,7 @@ const res = await useService('rpc').create({
     data: {
         service: useRoute().fullPath.split('/')[1],
         courseId: useRoute().params.slug,
+        dayId: props.dayId,
         exerciseId: exercise.value._id
     }
 });
