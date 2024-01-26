@@ -17,9 +17,9 @@
                     <div class="col-sm-auto flex-shrink-0 d-flex gap-3 align-items-center justify-content-between">
                         <div>
                             <h6 class="mb-0 text-white">Результат:</h6>
-                                <div class="results" v-for="rep in exercise.results">
-                                    <p class="mb-0 small">{{rep.weight}} кг - {{rep.reps}} раз</p>
-                                </div>
+                            <div class="results" v-for="rep in exercise.results">
+                                <p class="mb-0 small">{{ rep.weight }} кг - {{ rep.reps }} раз</p>
+                            </div>
                         </div>
                         <button data-bs-target="#resultModal" data-bs-toggle="modal" @click="openResModal"
                                 class="btn btn-link p-0 text-danger">
@@ -50,6 +50,16 @@ const route = useRoute().params;
 const service = useRoute().fullPath.split('/')[1];
 const cookie: any = useCookie('token').value;
 const token = parseJwt(cookie);
+
+const res = await useService('rpc').create({
+    method: 'GetResults',
+    data: {
+        service: 'trainings',
+        courseId: useRoute().params.slug,
+        exerciseId: exercise.value._id
+    }
+});
+exercise.value.results = res.data;
 
 function openModal() {
     modal.open(props.train.video)
