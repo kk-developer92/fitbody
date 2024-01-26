@@ -54,7 +54,7 @@ const token = parseJwt(cookie);
 const res = await useService('rpc').create({
     method: 'GetResults',
     data: {
-        service: 'trainings',
+        service: useRoute().fullPath.split('/')[1],
         courseId: useRoute().params.slug,
         exerciseId: exercise.value._id
     }
