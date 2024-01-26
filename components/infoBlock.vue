@@ -18,7 +18,7 @@
                         <div>
                             <h6 class="mb-0 text-white">Результат:</h6>
                             <div class="results" v-for="rep in exercise.results">
-                                <p class="mb-0 small">{{ rep.weight }} кг - {{ rep.reps }} раз</p>
+                                <p v-if="+rep.weight > 0 || +rep.reps > 0" class="mb-0 small">{{ rep.weight }} кг - {{ rep.reps }} раз</p>
                             </div>
                         </div>
                         <button data-bs-target="#resultModal" data-bs-toggle="modal" @click="openResModal"
