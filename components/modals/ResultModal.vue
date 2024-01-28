@@ -33,7 +33,7 @@ import Modal from "~/components/common/Modal.vue";
 const exercise: any = ref();
 const isLoading = ref(false);
 const results: any = ref([]);
-const props = defineProps<{dayId: string}>()
+const props = defineProps<{ dayId: string }>()
 
 function shown(data: any) {
     exercise.value = data;
@@ -45,9 +45,7 @@ async function countResult() {
         method: 'GetResults',
         data: {
             service: useRoute().fullPath.split('/')[1],
-            courseId: useRoute().params.slug,
-            exerciseId: exercise.value._id,
-        dayId: props.dayId,
+            exerciseId: exercise.value.uniqueId,
         }
     });
 
@@ -70,10 +68,8 @@ async function submit() {
         method: 'SetResults',
         data: {
             service: useRoute().fullPath.split('/')[1],
-            courseId: useRoute().params.slug,
-            exerciseId: exercise.value._id,
+            exerciseId: exercise.value.uniqueId,
             results: results.value,
-            dayId: props.dayId
         }
     });
 

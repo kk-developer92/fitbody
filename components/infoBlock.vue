@@ -51,15 +51,18 @@ const service = useRoute().fullPath.split('/')[1];
 const cookie: any = useCookie('token').value;
 const token = parseJwt(cookie);
 
+
+
 const res = await useService('rpc').create({
     method: 'GetResults',
     data: {
         service: useRoute().fullPath.split('/')[1],
         courseId: useRoute().params.slug,
         dayId: props.dayId,
-        exerciseId: exercise.value._id
+        exerciseId: exercise.value.uniqueId
     }
 });
+console.log(res.data);
 exercise.value.results = res.data;
 
 function openModal() {
