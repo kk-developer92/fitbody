@@ -35,6 +35,8 @@
 
 import Logout from "~/components/icons/logout.vue";
 import {parseJwt} from "~/utils/auth";
+import Axios from 'axios';
+import {setupCache} from 'axios-cache-interceptor';
 
 const cookie: any = useCookie('token');
 
@@ -52,6 +54,8 @@ if (cookie.value) {
     }
     user.value = res.data;
 }
+
+
 </script>
 
 <style scoped>

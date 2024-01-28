@@ -1,4 +1,8 @@
-import axios from "axios";
+import {setupCache} from 'axios-cache-interceptor';
+import Axios from 'axios';
+
+const instance = Axios.create();
+const axios = setupCache(instance);
 
 export default (service: string) => {
     const url = `${import.meta.env.VITE_API_URL}/${service}`;
