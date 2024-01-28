@@ -109,7 +109,9 @@
                     </section>
                 </div>
             </main>
-            <div v-else>
+        </transition>
+        <transition name="form">
+            <div v-if="isPurchased">
                 <training-index service="trainings"/>
             </div>
         </transition>
