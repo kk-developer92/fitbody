@@ -92,12 +92,12 @@ h2 {
 
 
 .button {
-    height: 60px ;
+    height: 60px;
     background-color: $main-color;
     border-color: $main-color;
-    display: inline-flex ;
-    align-items: center ;
-    padding: 0 35px ;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 35px;
 
     &:hover {
         background: none;
@@ -940,4 +940,24 @@ h2.head-nav {
 .form-control {
     background-color: #212529;
     color: white;
+}
+
+
+.form-enter-active,
+.form-leave-active {
+    transition: all 0.25s ease-out;
+}
+
+.form-enter-from {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.form-leave-to {
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+.bg-opacity {
+    opacity: .5;
 }
