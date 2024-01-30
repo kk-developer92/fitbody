@@ -22,7 +22,9 @@
     <client-only>
         <section id="programs" v-for="section in sections" class="traning pb-3 pb-lg-5 ">
             <div class="container">
-                <h2 class="text-center mb-md-4">{{ section.title }}</h2>
+                <h2 class="text-center mb-md-4">
+                    <nuxt-link :href="section.route" class="text-decoration-none text-white">{{ section.title }}</nuxt-link>
+                </h2>
                 <tab-header :dataTarget="section.target"></tab-header>
                 <!-- tab1 -->
                 <div class="tab-content" id="training">
