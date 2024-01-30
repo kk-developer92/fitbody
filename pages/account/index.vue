@@ -1,9 +1,10 @@
 <template>
+    <loading class="loading-value" v-if="isLoading"/>
     <div class="training__programs">
         <div class="container">
             <h1 class="mb-5">Мои покупки</h1>
             <div class="gy-4">
-                <div v-if="!all.length">
+                <div v-if="!all.length && !isLoading">
                     <h1 style="text-align: center; font-size: 24px;">У вас пока ничего нет 😢</h1>
                 </div>
                 <div v-else class="row gy-4">
@@ -54,8 +55,10 @@ definePageMeta({
 
 const user: any = ref({});
 const all: any = ref([]);
+const isLoading = ref(false);
 
 onMounted(async () => {
+    isLoading.value = true;
     const cookie: any = useCookie('token');
     const token: any = parseJwt(cookie.value);
     const res = await useService('users').get(token.sub);
@@ -86,8 +89,17 @@ onMounted(async () => {
     user.value.nutrition = nutrition;
 
     all.value = [...user.value.trainings, ...user.value.courses, ...user.value.nutrition];
+    isLoading.value = false;
 });
 
 </script>
 
-<style scoped></style>
+<style scoped>
+.loading-value {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+</style>
