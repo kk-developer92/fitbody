@@ -86,7 +86,6 @@
                         </div>
                     </div>
                 </section>
-                <a class="btn btn-primary button mt-5" href="#">Заказать индивидуальную программу</a>
             </div>
             <div class="program__video">
                 <h2>Ошибки новичков</h2>

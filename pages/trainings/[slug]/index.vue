@@ -122,6 +122,7 @@
 
 import TrainingIndex from "~/components/TrainingIndex.vue";
 import checkPurchased from "~/utils/checkPurchased";
+const isPurchased: Ref<boolean | undefined> = ref(false);
 
 const route: any = useRoute().params.slug;
 
@@ -132,7 +133,6 @@ const training = ref(res.data);
 const nutrions = ref(await getNutrions(training.value.type, 2));
 const courses = ref(await getCourses(training.value.type, 2));
 
-const isPurchased: Ref<boolean | undefined> = ref(false);
 
 onMounted(async () => {
     isPurchased.value = await checkPurchased(route);
@@ -144,6 +144,6 @@ function filterByGender(arr: any) {
 
 </script>
 
-<style>
+<style scoped>
 
 </style>

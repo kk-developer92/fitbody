@@ -42,9 +42,9 @@
                                     <nuxt-link :to="'/courses/' + c._id" class="service">
                                         <!-- <img class="img-fluid" :src="c.media.images.full || '/_nuxt/assets/img/services/service_man.jpg'" alt=""> -->
                                         <img alt="" class="img-fluid" format="webp" :src="c.image || '/_nuxt/assets/img/services/service_man.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
-                                        
+
                                         <div class="service__wrapper">
-                                            
+
                                             <div>
                                                 <h3 class="service__title">{{ c.title }}</h3>
                                                 <div class="service__desc">{{ c.short_description }}</div>
@@ -72,7 +72,7 @@
                                     <nuxt-link :to="'/courses/' + c._id" class="service">
                                         <!-- <img class="img-fluid" :src="c.media.images.full || '/_nuxt/assets/img/services/junior_woman.jpg'" alt=""> -->
                                         <img alt="" class="img-fluid" format="webp" :src="c.image || '/_nuxt/assets/img/services/junior_woman.jpg'" sizes="sm:100vw md:100vw lg:600px"    />
-                                        
+
                                         <div class="service__wrapper">
 
                                             <div>
@@ -95,7 +95,6 @@
                         </div>
                     </div>
                 </section>
-                <a class="btn btn-primary button mt-5" href="#">Заказать индивидуальную программу</a>
             </div>
             <div class="program__video">
                 <h2>Ошибки новичков</h2>

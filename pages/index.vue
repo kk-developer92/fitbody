@@ -13,7 +13,7 @@
                         АНАТОМИИ мышц и ФИЗИОЛОГИИ мышечной деятельности
                     </div>
 
-                    <a class="btn btn-primary button" href="#programs">Выбрать программу тренировок</a>
+                    <nuxt-link class="btn btn-primary button" href="/trainings">Выбрать программу тренировок</nuxt-link>
                 </div>
             </div>
         </div>
