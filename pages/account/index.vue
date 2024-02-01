@@ -8,9 +8,9 @@
                     <h1 style="text-align: center; font-size: 24px;">У вас пока ничего нет 😢</h1>
                 </div>
                 <div v-else class="row gy-4">
-                    <div class="row gy-4" v-if="user.trainings?.length">
+                    <div class="row gy-4" v-if="trainings?.length">
                         <h1 style="font-size: 24px;">Тренировки</h1>
-                        <div v-for="training in user.trainings" class="col-6 col-md-4 cursor-pointer">
+                        <div v-for="training in trainings" class="col-6 col-md-4 cursor-pointer">
                             <nuxt-link :to="`/trainings/${training._id}`" class="service">
                                 <img alt="" class="img-fluid" format="webp"
                                      :src="training.image || '/_nuxt/assets/img/services/service_man.jpg'"
@@ -30,13 +30,13 @@
                             </nuxt-link>
                         </div>
                     </div>
-                    <div class="row gy-4" v-if="user.nutrition?.length">
+                    <div class="row gy-4" v-if="nutrition?.length">
                         <h1 style="font-size: 24px;">Питание</h1>
-                        <tab-block v-for="data in user.nutrition" route="nutritions" :section="data"></tab-block>
+                        <tab-block v-for="data in nutrition" route="nutritions" :section="data"></tab-block>
                     </div>
-                    <div class="row gy-4" v-if="user.courses?.length">
+                    <div class="row gy-4" v-if="courses?.length">
                         <h1 style="font-size: 24px;">Курсы</h1>
-                        <tab-block v-for="courses in user.courses" route="courses" :section="courses"></tab-block>
+                        <tab-block v-for="courses in courses" route="courses" :section="courses"></tab-block>
                     </div>
                 </div>
             </div>
@@ -57,6 +57,11 @@ const user: any = ref({});
 const all: any = ref([]);
 const isLoading = ref(false);
 
+
+const trainings: any = ref([]);
+const courses: any = ref([]);
+const nutrition: any = ref([]);
+
 onMounted(async () => {
     isLoading.value = true;
     const cookie: any = useCookie('token');
@@ -65,30 +70,22 @@ onMounted(async () => {
 
     user.value = res.data;
 
-    const trainings = [];
-    const courses = [];
-    const nutrition = [];
-
     for (let i of user.value.trainings) {
         const response = await useService('trainings').get(i.courseId);
-        trainings.push(response.data)
+        trainings.value.push(response.data)
     }
 
     for (let i of user.value.courses) {
         const response = await useService('courses').get(i.courseId);
-        courses.push(response.data)
+        courses.value.push(response.data)
     }
 
     for (let i of user.value.nutrition) {
         const response = await useService('nutrition').get(i);
-        nutrition.push(response.data)
+        nutrition.value.push(response.data)
     }
 
-    user.value.trainings = trainings;
-    user.value.courses = courses;
-    user.value.nutrition = nutrition;
-
-    all.value = [...user.value.trainings, ...user.value.courses, ...user.value.nutrition];
+    all.value = [...trainings.value, ...courses.value, ...nutrition.value];
     isLoading.value = false;
 });
 

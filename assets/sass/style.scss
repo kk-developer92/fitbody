@@ -961,3 +961,22 @@ h2.head-nav {
 .bg-opacity {
     opacity: .5;
 }
+
+.red__text {
+    color: $main-color;
+}
+
+.trainings {
+    .accordion {
+        &-button {
+            background-color: transparent;
+            color: white;
+            box-shadow: none;
+            
+        }
+    }
+}
+
+.card {
+    border-radius: 20px !important;
+}

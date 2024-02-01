@@ -34,6 +34,7 @@ const exercise: any = ref();
 const isLoading = ref(false);
 const results: any = ref([]);
 const props = defineProps<{ dayId: string }>()
+const emit = defineEmits(['fetch']);
 
 function shown(data: any) {
     exercise.value = data;
@@ -64,7 +65,8 @@ async function countResult() {
 }
 
 async function submit() {
-    const res = await useService('rpc').create({
+    isLoading.value = true;
+    await useService('rpc').create({
         method: 'SetResults',
         data: {
             service: useRoute().fullPath.split('/')[1],
@@ -73,10 +75,8 @@ async function submit() {
         }
     });
 
-    if (res.data.message) {
-        return window.location.reload();
-    }
-
+    isLoading.value = false;
+    reloadNuxtApp({force: true});
 }
 
 </script>

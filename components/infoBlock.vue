@@ -18,7 +18,8 @@
                         <div>
                             <h6 class="mb-0 text-white">Результат:</h6>
                             <div class="results" v-for="rep in exercise.results">
-                                <p v-if="+rep.weight > 0 || +rep.reps > 0" class="mb-0 small">{{ rep.weight }} кг - {{ rep.reps }} раз</p>
+                                <p v-if="+rep.weight > 0 || +rep.reps > 0" class="mb-0 small">{{ rep.weight }} кг -
+                                    {{ rep.reps }} раз</p>
                             </div>
                         </div>
                         <button data-bs-target="#resultModal" data-bs-toggle="modal" @click="openResModal"
@@ -29,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <result-modal :dayId="props.dayId"/>
+        <result-modal @fetch="fetch" :dayId="props.dayId"/>
     </div>
 </template>
 
@@ -52,18 +53,20 @@ const cookie: any = useCookie('token').value;
 const token = parseJwt(cookie);
 
 
+async function fetch() {
+    const res = await useService('rpc').create({
+        method: 'GetResults',
+        data: {
+            service: useRoute().fullPath.split('/')[1],
+            courseId: useRoute().params.slug,
+            dayId: props.dayId,
+            exerciseId: exercise.value.uniqueId
+        }
+    });
+    exercise.value.results = res.data;
+}
 
-const res = await useService('rpc').create({
-    method: 'GetResults',
-    data: {
-        service: useRoute().fullPath.split('/')[1],
-        courseId: useRoute().params.slug,
-        dayId: props.dayId,
-        exerciseId: exercise.value.uniqueId
-    }
-});
-console.log(res.data);
-exercise.value.results = res.data;
+fetch();
 
 function openModal() {
     modal.open(props.train.video)
