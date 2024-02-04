@@ -209,10 +209,13 @@ import CategoriesMain from "~/components/common/categories/CategoriesMain.vue";
 const slides = ref(["/img/diploms/diplom-1.webp", "/img/diploms/diplom-2.webp", "/img/diploms/diplom-3.webp", "/img/diploms/diplom-4.webp", "/img/diploms/diplom-5.webp", "/img/diploms/diplom-6.webp", "/img/diploms/diplom-7.webp", "/img/diploms/diplom-5.webp", "/img/diploms/diplom-6.webp", "/img/diploms/diplom-7.webp"])
 const reviews = ref(["/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png"])
 
-const sections = ref([]);
-const res: any = await useService('rpc').create({method: 'GetBase', data: {}});
-sections.value = res.data;
+const sections = ref(await fetch());
 
+async function fetch() {
+    const res: any = await useService('rpc').create({method: 'GetBase', data: {}});
+
+    return res.data;
+}
 </script>
 
 <style lang="scss"></style>

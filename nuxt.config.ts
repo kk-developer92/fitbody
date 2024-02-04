@@ -1,11 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    optimization: undefined,
     // @ts-ignore
     devtools: {enabled: false},
     modules: [
-        '@nuxt/image',
-        'nuxt-ssr-cache'
+        '@nuxt/image'
     ],
     routeRules: {
         '/': {static: true}
