@@ -20,34 +20,32 @@
         </div>
     </section>
     <!-- traiing -->
-    <client-only>
-        <section id="programs" v-for="section in sections" class="traning pb-3 pb-lg-5 ">
-            <div class="container">
-                <h2 class="text-center mb-md-4">
-                    <nuxt-link :href="section.route" class="text-decoration-none text-white">{{
-                            section.title
-                        }}
-                    </nuxt-link>
-                </h2>
-                <tab-header :dataTarget="section.target"></tab-header>
-                <!-- tab1 -->
-                <div class="tab-content" id="training">
-                    <div class="tab-pane fade show active" :id="section.target.man" role="tabpanel" tabindex="0">
-                        <div class="row justify-content-center">
-                            <tab-block v-for="course in section.man" :route="section.route"
-                                       :section="course"></tab-block>
-                        </div>
+    <section id="programs" v-for="section in sections" class="traning pb-3 pb-lg-5 ">
+        <div class="container">
+            <h2 class="text-center mb-md-4">
+                <nuxt-link :href="section.route" class="text-decoration-none text-white">{{
+                        section.title
+                    }}
+                </nuxt-link>
+            </h2>
+            <tab-header :dataTarget="section.target"></tab-header>
+            <!-- tab1 -->
+            <div class="tab-content" id="training">
+                <div class="tab-pane fade show active" :id="section.target.man" role="tabpanel" tabindex="0">
+                    <div class="row justify-content-center">
+                        <tab-block v-for="course in section.man" :route="section.route"
+                                   :section="course"></tab-block>
                     </div>
-                    <div class="tab-pane fade" :id="section.target.woman" role="tabpanel" tabindex="0">
-                        <div class="row justify-content-center">
-                            <tab-block v-for="course in section.woman" :route="section.route"
-                                       :section="course"></tab-block>
-                        </div>
+                </div>
+                <div class="tab-pane fade" :id="section.target.woman" role="tabpanel" tabindex="0">
+                    <div class="row justify-content-center">
+                        <tab-block v-for="course in section.woman" :route="section.route"
+                                   :section="course"></tab-block>
                     </div>
                 </div>
             </div>
-        </section>
-    </client-only>
+        </div>
+    </section>
     <section class="about py-md-5">
         <about></about>
     </section>
@@ -61,9 +59,7 @@
         </div>
     </section>
     <section class="categories py-3 py-md-5">
-        <client-only>
-            <categories-main></categories-main>
-        </client-only>
+        <categories-main></categories-main>
     </section>
     <section class="diploms py-3 py-md-5">
         <div class="container py-3">
@@ -86,9 +82,7 @@
                     </button>
                 </div>
             </h2>
-            <client-only>
-                <swiper-js :data="slides" prev=".myPrev" next=".myNext"></swiper-js>
-            </client-only>
+            <swiper-js :data="slides" prev=".myPrev" next=".myNext"></swiper-js>
         </div>
     </section>
     <section class="video py-3">
@@ -119,9 +113,7 @@
                     </button>
                 </div>
             </h2>
-            <client-only>
-                <swiper-js :data="reviews" prev=".Prev" next=".Next"></swiper-js>
-            </client-only>
+            <swiper-js :data="reviews" prev=".Prev" next=".Next"></swiper-js>
         </div>
     </section>
     <section class="buttons py-4 py-md-5">
@@ -217,47 +209,9 @@ import CategoriesMain from "~/components/common/categories/CategoriesMain.vue";
 const slides = ref(["/img/diploms/diplom-1.webp", "/img/diploms/diplom-2.webp", "/img/diploms/diplom-3.webp", "/img/diploms/diplom-4.webp", "/img/diploms/diplom-5.webp", "/img/diploms/diplom-6.webp", "/img/diploms/diplom-7.webp", "/img/diploms/diplom-5.webp", "/img/diploms/diplom-6.webp", "/img/diploms/diplom-7.webp"])
 const reviews = ref(["/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png", "/img/reviews/review-1.png"])
 
-const train_beginner = ref(await getTrainings('men', 2));
-const train_beginner_w = ref(await getTrainings('women', 2));
-
-const course_men = ref(await getCourses('men', 2));
-const course_women = ref(await getCourses('women', 2));
-
-const nutrition = ref(await getNutrions('men', 2));
-const nutrition_w = ref(await getNutrions('women', 2));
-
-const sections = ref([
-    {
-        title: 'Тренировки',
-        route: 'trainings',
-        target: {
-            man: 'training-man',
-            woman: 'training-woman'
-        },
-        woman: train_beginner_w.value.splice(0, 2),
-        man: train_beginner.value.splice(0, 2),
-    },
-    {
-        title: 'Питание',
-        route: 'nutritions',
-        target: {
-            man: 'nutrition-man',
-            woman: 'nutrition-woman'
-        },
-        woman: nutrition_w.value.splice(0, 2),
-        man: nutrition.value.splice(0, 2),
-    },
-    {
-        title: 'Курсы',
-        route: 'courses',
-        target: {
-            man: 'courses-man',
-            woman: 'courses-woman'
-        },
-        woman: course_women.value.splice(0, 2),
-        man: course_men.value.splice(0, 2),
-    }
-])
+const sections = ref([]);
+const res: any = await useService('rpc').create({method: 'GetBase', data: {}});
+sections.value = res.data;
 
 </script>
 
