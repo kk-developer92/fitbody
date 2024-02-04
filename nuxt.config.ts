@@ -7,9 +7,8 @@ export default defineNuxtConfig({
         '@nuxt/image',
         'nuxt-ssr-cache'
     ],
-    
     routeRules: {
-        '/': {ssr: false}
+        '/': {static: true}
     },
     app: {
         head: {
