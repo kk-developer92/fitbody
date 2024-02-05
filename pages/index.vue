@@ -23,7 +23,10 @@
         <section id="programs" v-for="section in sections" class="traning pb-3 pb-lg-5 ">
             <div class="container">
                 <h2 class="text-center mb-md-4">
-                    <nuxt-link :href="section.route" class="text-decoration-none text-white">{{ section.title }}</nuxt-link>
+                    <nuxt-link :href="section.route" class="text-decoration-none text-white">
+                        {{ section.title }} 
+                        <svg class="align-self-end" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="15" fill="#F52626"></circle><path d="M13 9L19 15L13 21" stroke="white" stroke-width="2" stroke-linejoin="round"></path></svg>
+                    </nuxt-link>
                 </h2>
                 <tab-header :dataTarget="section.target"></tab-header>
                 <!-- tab1 -->
