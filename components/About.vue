@@ -3,7 +3,9 @@
         <div class="about__wrapper row align-items-center">
             <div class="about__image text-center col-lg-4">
                 <!-- <img class="img-fluid" src="~/assets/img/about_img.png" alt=""> -->
-                <img src="/img/about_img.webp" />
+                <!-- <img src="/img/about_img.webp" /> -->
+                <nuxt-img src="/img/about-2.png" :placeholder="15" />
+
             </div>
             <div class="about__text col-lg-8">
                 <h2 class="about__title">Рамис Сахибов</h2>
