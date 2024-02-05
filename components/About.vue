@@ -2,9 +2,9 @@
     <div class="container py-3">
         <div class="about__wrapper row align-items-center">
             <div class="about__image text-center col-lg-4">
-                <!-- <img class="img-fluid" src="~/assets/img/about_img.png" alt=""> -->
+                <img class="img-fluid" src="/img/about-2.png" alt="">
                 <!-- <img src="/img/about_img.webp" /> -->
-                <nuxt-img src="/img/about-2.png" :placeholder="15" />
+                <!-- <nuxt-img format="webp" src="/img/about-2.png" :placeholder="15" /> -->
 
             </div>
             <div class="about__text col-lg-8">
