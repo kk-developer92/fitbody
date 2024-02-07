@@ -198,6 +198,9 @@ h2 {
         font-size: 16px;
         line-height: 20px;
         margin-top: 12px;
+        p {
+            margin-bottom: 0;
+        }
     }
 
 
@@ -472,7 +475,7 @@ h2.head-nav {
                 top: 2px;
                 left: 50%;
                 translate: -50%;
-                background: url(../../public/img/review_mask.webp);
+                background: url(../img/review_mask.webp);
             }
         }
 
@@ -778,7 +781,7 @@ h2.head-nav {
                 top: 0;
                 right: 11px;
                 bottom: 0;
-                background: url(../../public/img/mask.webp) no-repeat center center / cover;
+                background: url(../img/mask.webp) no-repeat center center / cover;                
             }
 
             @media (max-width: 1199.98px) {
@@ -924,7 +927,7 @@ h2.head-nav {
     padding: 0;
     display: flex;
     align-items: flex-start;
-    justify-content: start;
+    justify-content: flex-start;
     color: $main-color;
     gap: 5px;
 
