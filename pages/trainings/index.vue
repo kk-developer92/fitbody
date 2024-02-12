@@ -200,7 +200,7 @@
                         </div>
                     </div>
                 </section>
-                <a class="btn btn-primary button mt-5" href="#">Заказать индивидуальную программу</a>
+                <nuxt-link class="btn btn-primary button mt-5" href="https://t.me/Ramis_Sahibov">Заказать индивидуальную программу</nuxt-link>
             </div>
             <div class="program__video">
                 <h2>Ошибки новичков</h2>
