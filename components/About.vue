@@ -4,8 +4,6 @@
             <div class="about__image text-center col-lg-4">
                 <img class="img-fluid" src="/img/about-2.png" />
                 <!-- <img src="/img/about_img.webp" /> -->
-                <!-- <nuxt-img format="webp" src="/img/about-2.png" :placeholder="15" /> -->
-
             </div>
             <div class="about__text col-lg-8">
                 <h2 class="about__title">Рамис Сахибов</h2>
