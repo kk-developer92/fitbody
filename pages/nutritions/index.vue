@@ -115,6 +115,7 @@ useHead({
 
 const nutrition = ref(await getNutrions('men'))
 const nutrition_w = ref(await getNutrions('women'))
+useFooter('footerComponent').show();
 
 </script>
 

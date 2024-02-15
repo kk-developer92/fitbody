@@ -130,5 +130,6 @@ onMounted(async () => {
 function filterByGender(arr: any) {
     return arr.filter((el: any) => el._id !== current_course.value._id);
 }
+useFooter('footerComponent').show();
 
 </script>

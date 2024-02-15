@@ -76,6 +76,7 @@ current_nutrition.value = res.data;
 
 const image = ref(current_nutrition.value?.type === "men" ? '/_nuxt/assets/img/services/service_man.jpg' : '/_nuxt/assets/img/services/service_woman.jpg')
 const router = useRoute();
+useFooter('footerComponent').hide();
 </script>
 
 <style scoped>

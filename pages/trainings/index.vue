@@ -243,6 +243,8 @@ const train_beginner = ref(await getTraining('men', 'beginner'));
 const train_master = ref(await getTraining('men', 'advanced'));
 const train_beginner_w = ref(await getTraining('women', 'beginner'));
 const train_advanced_w = ref(await getTraining('women', 'advanced'));
+useFooter('footerComponent').show();
+
 </script>
 
 <style scoped></style>
