@@ -66,26 +66,18 @@ onMounted(async () => {
     isLoading.value = true;
     const cookie: any = useCookie('token');
     const token: any = parseJwt(cookie.value);
-    const res = await useService('users').get(token.sub);
+    const res = await useService('rpc').create({
+        method: "GetAccountCourses",
+        data: {
+            userId: token.sub
+        }
+    });
 
-    user.value = res.data;
+    trainings.value = res.data.trainings;
+    courses.value = res.data.courses;
+    nutrition.value = res.data.nutrition;
 
-    for (let i of user.value.trainings) {
-        const response = await useService('trainings').get(i.courseId);
-        trainings.value.push(response.data)
-    }
-
-    for (let i of user.value.courses) {
-        const response = await useService('courses').get(i.courseId);
-        courses.value.push(response.data)
-    }
-
-    for (let i of user.value.nutrition) {
-        const response = await useService('nutrition').get(i);
-        nutrition.value.push(response.data)
-    }
-
-    all.value = [...trainings.value, ...courses.value, ...nutrition.value];
+    all.value = res.data.all;
     isLoading.value = false;
 });
 
