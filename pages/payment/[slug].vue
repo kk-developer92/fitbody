@@ -44,7 +44,7 @@ function closeError() {
 }
 
 function doThousand(price: string) {
-    price = price + '';
+    price = price + '00';
     return +price;
 }
 

@@ -34,7 +34,6 @@ const exercise: any = ref();
 const isLoading = ref(false);
 const results: any = ref([]);
 const props = defineProps<{ dayId: string }>()
-const emit = defineEmits(['fetch']);
 
 function shown(data: any) {
     exercise.value = data;
@@ -56,6 +55,9 @@ async function countResult() {
     }
 
     if (exercise.value.reps) {
+        if (exercise.value.reps.includes('х')) {
+            exercise.value.reps = exercise.value.reps.replace('х', 'x');
+        }
         const reps = Number(exercise.value.reps.split('x')[0]);
         results.value = [];
         for (let i = 1; i <= reps; i++) {

@@ -216,6 +216,7 @@ async function fetch() {
 
     return res.data;
 }
+useFooter('footerComponent').show();
 </script>
 
 <style lang="scss"></style>

@@ -54,6 +54,7 @@ const token = parseJwt(cookie);
 
 
 async function fetch() {
+    const exercises = await useService('exercises').get(exercise.value.exerciseId);
     const res = await useService('rpc').create({
         method: 'GetResults',
         data: {
@@ -63,13 +64,14 @@ async function fetch() {
             exerciseId: exercise.value.uniqueId
         }
     });
+    exercise.value = {...exercise.value, ...exercises.data};
     exercise.value.results = res.data;
 }
 
 fetch();
 
 function openModal() {
-    modal.open(props.train.video)
+    modal.open(exercise.value.video);
 }
 
 function openResModal() {

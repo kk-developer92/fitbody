@@ -7,7 +7,7 @@
             <navbar/>
         </client-only>
         <slot></slot>
-        <footer-component></footer-component>
+        <footer-component id="footerComponent"></footer-component>
     </div>
 </template>
 

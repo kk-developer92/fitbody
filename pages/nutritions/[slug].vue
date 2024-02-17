@@ -130,4 +130,6 @@ const isPurchased = ref(await checkPurchased(route.params.slug));
 function filterByGender(arr: any) {
     return arr.filter((el: any) => el._id !== current_nutrion.value._id);
 }
+useFooter('footerComponent').show();
+
 </script>

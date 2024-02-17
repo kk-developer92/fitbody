@@ -200,7 +200,7 @@
                         </div>
                     </div>
                 </section>
-                <a class="btn btn-primary button mt-5" href="#">Заказать индивидуальную программу</a>
+                <nuxt-link class="btn btn-primary button mt-5" href="https://t.me/Ramis_Sahibov">Заказать индивидуальную программу</nuxt-link>
             </div>
             <div class="program__video">
                 <h2>Ошибки новичков</h2>
@@ -243,6 +243,8 @@ const train_beginner = ref(await getTraining('men', 'beginner'));
 const train_master = ref(await getTraining('men', 'advanced'));
 const train_beginner_w = ref(await getTraining('women', 'beginner'));
 const train_advanced_w = ref(await getTraining('women', 'advanced'));
+useFooter('footerComponent').show();
+
 </script>
 
 <style scoped></style>

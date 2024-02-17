@@ -57,4 +57,5 @@ const res = await useService(props.service).get(route);
 
 training.value = res.data;
 
+useFooter('footerComponent').hide();
 </script>
