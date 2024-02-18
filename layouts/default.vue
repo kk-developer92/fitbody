@@ -3,9 +3,7 @@
         <span class="d-none">
             {{ useCookie('route').value = useRoute().path }}
         </span>
-        <client-only>
-            <navbar/>
-        </client-only>
+        <navbar/>
         <slot></slot>
         <footer-component id="footerComponent"></footer-component>
     </div>

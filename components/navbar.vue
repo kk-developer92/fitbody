@@ -11,9 +11,10 @@
             <div class="d-flex align-items-center p-2">
                 <div class="">
                     <div class="header-reg" v-if="user?.name">
-                        <client-only>
+                        <div class="d-flex align-items-center gap-2">
                             <logout class="cursor-pointer"/>
-                        </client-only>
+                            <span>Выйти</span>
+                        </div>
                         <nuxt-link class="account" to="/account">
                             <span class="name">{{ user.name }}</span>
                             <img class="placeholder_account"

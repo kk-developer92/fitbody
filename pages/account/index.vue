@@ -80,7 +80,7 @@ onMounted(async () => {
     all.value = res.data.all;
     isLoading.value = false;
 });
-useFooter('footerComponent').hide();
+// useFooter('footerComponent').hide();
 </script>
 
 <style scoped>
