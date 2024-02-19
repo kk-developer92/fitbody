@@ -9,6 +9,13 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-10">
                                         <div class="list-group list-group-flush">
+                                            <button @click="useRouter().back()" class="page-nav">
+                                                <svg width="19" height="8" viewBox="0 0 19 8" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 4H19M1 4L4 1M1 4L4 7" stroke="currentColor"/>
+                                                </svg>
+                                                Назад
+                                            </button>
                                             <train-block v-for="data in training?.trainings" :data="data"/>
                                         </div>
                                     </div>
