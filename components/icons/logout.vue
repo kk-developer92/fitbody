@@ -1,12 +1,5 @@
-<script setup lang="ts">
-const refresh = () => {
-    navigateTo('/');
-    window.location.reload();
-}
-</script>
-
 <template>
-    <div class="d-flex align-items-center gap-2" @click="useCookie('token').value = null; refresh()">
+    <div class="d-flex align-items-center gap-2" @click="refresh()">
         <svg xmlns="http://www.w3.org/2000/svg" width="24"
              height="24"
              viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -18,6 +11,13 @@ const refresh = () => {
         <span>Выйти</span>
     </div>
 </template>
+
+<script setup lang="ts">
+const refresh = () => {
+    useCookie('token').value = null;
+    window.location.href = '/';
+}
+</script>
 
 <style scoped>
 
