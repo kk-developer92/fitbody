@@ -35,7 +35,8 @@
                         <div class="row">
                             <div class="col-lg-8 mx-auto">
                                 <h2>О ПРОГРАММЕ</h2>
-                                <div v-html="training.about_program"></div>
+                                <div v-html="training.about_program">
+                                </div>
 
                                 <purchase-button :price="training.price" service="trainings"
                                                  class="btn btn-primary button"/>
