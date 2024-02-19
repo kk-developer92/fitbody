@@ -2,7 +2,7 @@
     <nuxt-layout data-bs-theme="dark">
         <nuxt-page></nuxt-page>
         <video-viewer/>
-        <nuxt-loading-indicator/>
+        <nuxt-loading-indicator color="#F52626"/>
         <image-modal/>
     </nuxt-layout>
 </template>
