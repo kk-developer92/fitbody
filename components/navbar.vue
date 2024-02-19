@@ -11,10 +11,7 @@
             <div class="d-flex align-items-center p-2">
                 <div class="">
                     <div class="header-reg" v-if="user?.name">
-                        <div class="d-flex align-items-center gap-2">
-                            <logout class="cursor-pointer"/>
-                            <span>Выйти</span>
-                        </div>
+                        <logout class="cursor-pointer"/>
                         <nuxt-link class="account" to="/account">
                             <span class="name">{{ user.name }}</span>
                             <img class="placeholder_account"
@@ -36,8 +33,6 @@
 
 import Logout from "~/components/icons/logout.vue";
 import {parseJwt} from "~/utils/auth";
-import Axios from 'axios';
-import {setupCache} from 'axios-cache-interceptor';
 
 const cookie: any = useCookie('token');
 
@@ -87,10 +82,6 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.cursor-pointer {
-    width: 20px;
 }
 
 .navbar {
