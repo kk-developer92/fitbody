@@ -122,6 +122,7 @@
 
 import TrainingIndex from "~/components/TrainingIndex.vue";
 import checkPurchased from "~/utils/checkPurchased";
+
 const isPurchased: Ref<boolean | undefined> = ref(false);
 
 const route: any = useRoute().params.slug;
@@ -134,13 +135,12 @@ const nutrions = ref(await getNutrions(training.value.type, 2));
 const courses = ref(await getCourses(training.value.type, 2));
 
 
-onMounted(async () => {
-    isPurchased.value = await checkPurchased(route);
-});
+isPurchased.value = await checkPurchased(route);
 
 function filterByGender(arr: any) {
     return arr.filter((el: any) => el._id !== training.value._id);
 }
+
 useFooter('footerComponent').show();
 
 </script>

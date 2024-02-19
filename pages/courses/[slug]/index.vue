@@ -123,13 +123,12 @@ const nutrions = ref(await getNutrions(current_course.value.type, 2));
 const trainings = ref(await getTrainings(current_course.value.type, 2));
 const isPurchased: Ref<boolean | undefined> = ref(false);
 
-onMounted(async () => {
-    isPurchased.value = await checkPurchased(route.params.slug);
-});
+isPurchased.value = await checkPurchased(route.params.slug);
 
 function filterByGender(arr: any) {
     return arr.filter((el: any) => el._id !== current_course.value._id);
 }
+
 useFooter('footerComponent').show();
 
 </script>

@@ -125,7 +125,6 @@ useHead({
 const course = ref(await getCourses('men'))
 const course_w = ref(await getCourses('women'))
 useFooter('footerComponent').show();
-
 </script>
 
 <style scoped></style>
