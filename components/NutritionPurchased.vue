@@ -24,7 +24,7 @@
             <section class="training-page">
                 <div class="row">
                     <div class="col-lg-12 mx-auto">
-                        <section class=" py-3 py-md-5 mt-3 mt-md-5">
+                        <section class="py-3 py-md-5 mt-3 mt-md-5">
                             <div class="container py-3">
                                 <div class="row justify-content-center">
                                     <div class="col-md-10 trainings d-flex flex-column gap-2">

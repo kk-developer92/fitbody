@@ -4,7 +4,6 @@
         <Meta name="description" :content="current_nutrion.description"/>
     </Head>
     <transition name="form">
-
         <main class="page" v-if="!isPurchased">
             <section class="promo page__promo py-3 py-md-5">
                 <div class="container py-3">
@@ -36,13 +35,10 @@
                         <div class="col-lg-8 mx-auto">
                             <h2>О ПРОГРАММЕ</h2>
                             <div v-html="current_nutrion?.about_program"></div>
-
                             <purchase-button :price="current_nutrion.price" service="nutrition"/>
-
                         </div>
                     </div>
                 </section>
-
                 <section class="others">
                     <h3 class="others__header">С этой программой также покупают</h3>
                     <div class="py-4">
