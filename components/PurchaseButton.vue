@@ -1,6 +1,6 @@
 <template>
     <button class="btn btn-primary button" @click="purchase">
-        <span v-if="+props.price !== 0">Купить за {{ props.price }} сум</span>
+        <span v-if="+props.price !== 0">Купить за {{ props.price.toLocaleString() }} сум</span>
         <span v-else>Бесплатно</span>
     </button>
 </template>
