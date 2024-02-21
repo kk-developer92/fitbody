@@ -16,6 +16,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
     try {
         res = await useService('users').get(token.sub)
     } catch (e) {
+        useCookie('token').value = '';
         return navigateTo('/login');
     }
     
