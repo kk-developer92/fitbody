@@ -105,7 +105,7 @@
                 </section>
             </div>
         </main>
-        <nutrition-purchased v-else/>
+        <nutrition-purchased service="nutrition" v-else/>
     </transition>
 </template>
 
@@ -126,6 +126,7 @@ const isPurchased = ref(await checkPurchased(route.params.slug));
 function filterByGender(arr: any) {
     return arr.filter((el: any) => el._id !== current_nutrion.value._id);
 }
+
 useFooter('footerComponent').show();
 
 </script>

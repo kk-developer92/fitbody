@@ -55,12 +55,13 @@
 <script setup lang="ts">
 
 const route: any = useRoute();
-
+const props = defineProps<{ service: string }>();
 const current_nutrition: any = ref({});
 
-const res = await useService('nutrition').get(route.params.slug);
+const res = await useService(props.service).get(route.params.slug);
 
 current_nutrition.value = res.data;
+console.log(current_nutrition.value);
 
 const image = ref(current_nutrition.value?.type === "men" ? '/_nuxt/assets/img/services/service_man.jpg' : '/_nuxt/assets/img/services/service_woman.jpg')
 const router = useRoute();

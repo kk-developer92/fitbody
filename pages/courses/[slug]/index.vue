@@ -103,7 +103,7 @@
         </transition>
         <transition name="form">
             <div v-if="isPurchased">
-                <training-index service="courses"/>
+                <nutrition-purchased service="courses"/>
             </div>
         </transition>
     </div>
