@@ -63,6 +63,7 @@ const courses: any = ref([]);
 const nutrition: any = ref([]);
 
 onMounted(async () => {
+    useFooter('footerComponent').hide();
     isLoading.value = true;
     const cookie: any = useCookie('token');
     const token: any = parseJwt(cookie.value);
@@ -80,7 +81,6 @@ onMounted(async () => {
     all.value = res.data.all;
     isLoading.value = false;
 });
-useFooter('footerComponent').hide();
 </script>
 
 <style scoped>

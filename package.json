@@ -21,9 +21,11 @@
     "@fancyapps/ui": "^5.0.19",
     "axios": "^1.4.0",
     "axios-cache-interceptor": "^1.5.1",
+    "maska": "^2.1.11",
     "moment": "^2.29.4",
     "nuxt-multi-cache": "^3.1.1",
     "nuxt-ssr-cache": "^1.5.2",
-    "swiper": "^9.4.1"
+    "swiper": "^9.4.1",
+    "v-mask": "^2.3.0"
   }
 }
