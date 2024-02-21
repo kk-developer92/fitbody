@@ -47,7 +47,6 @@ if (cookie.value) {
         res = await useService('users').get(token.sub);
     } catch (e) {
         useCookie('token').value = '';
-        console.log(e);
     }
     user.value = res.data;
 }
