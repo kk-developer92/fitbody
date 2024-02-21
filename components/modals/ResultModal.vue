@@ -8,8 +8,6 @@
                         <input type="text" class="form-control" id="floatingInput"
                                placeholder="Вес"
                                v-model="res.weight"
-                               @blur="res.weight = 0"
-                               @focus="res.weight = ''"
                                inputmode="numeric">
                         <label for="floatingInput" :style="{color: 'gray'}">Вес</label>
                     </div>
@@ -18,8 +16,6 @@
                     <div class="form-floating">
                         <input type="text" class="form-control" id="floatingSet"
                                placeholder="Подходы"
-                               @blur="res.reps = 0"
-                               @focus="res.reps = ''"
                                v-model="res.reps"
                                inputmode="numeric">
                         <label for="floatingSet" :style="{color: 'gray'}">Повторения</label>
@@ -65,7 +61,7 @@ async function countResult() {
         const reps = Number(exercise.value.reps.split('x')[0]);
         results.value = [];
         for (let i = 1; i <= reps; i++) {
-            results.value.push({weight: "0", reps: "0"});
+            results.value.push({weight: "", reps: ""});
         }
     }
 }
