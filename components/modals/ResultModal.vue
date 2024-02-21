@@ -8,6 +8,8 @@
                         <input type="text" class="form-control" id="floatingInput"
                                placeholder="Вес"
                                v-model="res.weight"
+                               @blur="res.weight = 0"
+                               @focus="res.weight = ''"
                                inputmode="numeric">
                         <label for="floatingInput" :style="{color: 'gray'}">Вес</label>
                     </div>
@@ -16,6 +18,8 @@
                     <div class="form-floating">
                         <input type="text" class="form-control" id="floatingSet"
                                placeholder="Подходы"
+                               @blur="res.reps = 0"
+                               @focus="res.reps = ''"
                                v-model="res.reps"
                                inputmode="numeric">
                         <label for="floatingSet" :style="{color: 'gray'}">Повторения</label>
