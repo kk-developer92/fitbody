@@ -6,7 +6,7 @@
                 <div class="col-4">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="floatingInput"
-                               placeholder="Вес"
+                               placeholder="Весcls"
                                v-model="res.weight"
                                inputmode="numeric">
                         <label for="floatingInput" :style="{color: 'gray'}">Вес</label>
@@ -78,7 +78,7 @@ async function submit() {
     });
 
     isLoading.value = false;
-    reloadNuxtApp({force: true});
+    window.location.reload();
 }
 
 </script>
