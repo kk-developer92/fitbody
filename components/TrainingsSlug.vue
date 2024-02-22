@@ -16,7 +16,7 @@
                                                 </svg>
                                                 Назад
                                             </button>
-                                            <train-block v-for="data in training?.trainings" :data="data"/>
+                                            <train-block v-for="data in training?.trainings" :data="data" :name="training.name"/>
                                         </div>
                                     </div>
                                 </div>
