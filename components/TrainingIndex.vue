@@ -16,7 +16,17 @@
                                             Назад
                                         </button>
                                         <div class="list-group list-group-flush">
-                                            <h2 class="red__text">{{ training?.title }}</h2>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <h2 class="red__text">{{ training?.title }}</h2>
+                                                <button class="btn mb-4" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                                                        aria-expanded="false" aria-controls="collapseExample">
+                                                    Показать описание
+                                                </button>
+                                            </div>
+                                            <div class="collapse mb-4" id="collapseExample">
+                                                <div class="card rounded-sm card-body trainings" v-html="training.about_program"></div>
+                                            </div>
                                             <training-weeks v-for="week in training?.exercises" :data="week"/>
                                         </div>
                                     </div>
@@ -43,3 +53,9 @@ training.value = res.data;
 
 useFooter('footerComponent').hide();
 </script>
+
+<style>
+.rounded-sm {
+    border-radius: 5px !important;
+}
+</style>
