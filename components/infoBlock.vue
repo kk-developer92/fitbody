@@ -53,14 +53,12 @@ const cookie: any = useCookie('token').value;
 const token = parseJwt(cookie);
 
 
-async function fetch() {
+async function fetch(id?: string) {
     const exercises = await useService('exercises').get(exercise.value.exerciseId);
     const res = await useService('rpc').create({
         method: 'GetResults',
         data: {
             service: useRoute().fullPath.split('/')[1],
-            courseId: useRoute().params.slug,
-            dayId: props.dayId,
             exerciseId: exercise.value.uniqueId
         }
     });
@@ -75,7 +73,7 @@ function openModal() {
 }
 
 function openResModal() {
-    resModal.open(props.train);
+    resModal.open(exercise.value);
 }
 
 </script>

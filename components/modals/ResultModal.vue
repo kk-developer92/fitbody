@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary button mt-3">сохранить</button>
+            <button type="submit" class="btn btn-primary button mt-3" data-bs-dismiss="modal" aria-label="Close">сохранить</button>
         </form>
     </modal>
 </template>
@@ -38,22 +38,10 @@ const props = defineProps<{ dayId: string }>()
 function shown(data: any) {
     exercise.value = data;
     countResult();
+    results.value = exercise.value.results;
 }
 
 async function countResult() {
-    const res = await useService('rpc').create({
-        method: 'GetResults',
-        data: {
-            service: useRoute().fullPath.split('/')[1],
-            exerciseId: exercise.value.uniqueId,
-        }
-    });
-
-    if (res.data?.length) {
-        results.value = res.data;
-        return;
-    }
-
     if (exercise.value.reps) {
         if (exercise.value.reps.includes('х')) {
             exercise.value.reps = exercise.value.reps.replace('х', 'x');
@@ -78,7 +66,7 @@ async function submit() {
     });
 
     isLoading.value = false;
-    window.location.reload();
+    useModal('resultModal').close();
 }
 
 </script>
