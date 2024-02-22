@@ -1,7 +1,7 @@
 <template>
     <modal class="modal fade" id="resultModal" @shown="shown">
         <loading class="loading-value" v-if="isLoading"/>
-        <form class="form p-3" @submit.prevent="submit">
+        <form class="form p-3">
             <div class="row" v-for="res in results">
                 <div class="col-4">
                     <div class="form-floating mb-3">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary button mt-3" data-bs-dismiss="modal" aria-label="Close">сохранить</button>
+            <button @click="submit" class="btn btn-primary button mt-3">сохранить</button>
         </form>
     </modal>
 </template>
@@ -66,7 +66,7 @@ async function submit() {
     });
 
     isLoading.value = false;
-    useModal('resultModal').close();
+    // class="btn btn-primary button mt-3" data-bs-dismiss="modal" aria-label="Close"
 }
 
 </script>
