@@ -1,5 +1,6 @@
 import {useCookie} from "#build/imports";
 import {Ref} from "vue";
+import useService from '~/utils/useService';
 
 function decodeBase64(data: string): string {
     if (process.server) {

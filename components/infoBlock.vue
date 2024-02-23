@@ -38,22 +38,16 @@
 
 import EditBtn from "~/components/icons/editBtn.vue";
 import PlayButton from "~/components/icons/PlayButton.vue";
-import {useModal} from "~/composables/useModal";
 import ResultModal from "~/components/modals/ResultModal.vue";
-import {parseJwt} from "~/utils/auth";
 
 const props = defineProps<{ train: any, dayId: string }>();
 
-const modal = useModal('videoModal');
-const resModal = useModal('resultModal');
+
 const exercise = ref(props.train);
 const route = useRoute().params;
 const service = useRoute().fullPath.split('/')[1];
-const cookie: any = useCookie('token').value;
-const token = parseJwt(cookie);
 
-
-async function fetch(id?: string) {
+async function fetch() {
     const exercises = await useService('exercises').get(exercise.value.exerciseId);
     const res = await useService('rpc').create({
         method: 'GetResults',
@@ -69,10 +63,12 @@ async function fetch(id?: string) {
 fetch();
 
 function openModal() {
+    const modal = useModal('videoModal');
     modal.open(exercise.value.video);
 }
 
 function openResModal() {
+    const resModal = useModal('resultModal');
     resModal.open(exercise.value);
 }
 

@@ -36,6 +36,7 @@
 </template>
 
 <script setup lang="ts">
+import useService from '~/utils/useService';
 
 const {slug: nutritionId, id: dayId}: any = useRoute().params;
 const service = useRoute().fullPath.split('/')[1];

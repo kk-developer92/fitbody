@@ -42,6 +42,7 @@
 
 
 <script lang="ts" setup>
+import useService from '~/utils/useService';
 
 const props = defineProps<{ service: string }>()
 const route: any = useRoute().params.slug;

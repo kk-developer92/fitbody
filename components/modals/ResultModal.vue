@@ -66,7 +66,6 @@ async function submit() {
     });
 
     isLoading.value = false;
-    // class="btn btn-primary button mt-3" data-bs-dismiss="modal" aria-label="Close"
 }
 
 </script>

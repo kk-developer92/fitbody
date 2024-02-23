@@ -16,7 +16,8 @@
                                                 </svg>
                                                 Назад
                                             </button>
-                                            <train-block v-for="data in training?.trainings" :data="data" :name="training.name"/>
+                                            <train-block v-for="data in training?.trainings" :data="data"
+                                                         :name="training.name"/>
                                         </div>
                                     </div>
                                 </div>
@@ -34,16 +35,20 @@ const props = defineProps<{ service: string }>()
 const route: any = useRoute().params;
 const training: any = ref({});
 
-const res = await useService('rpc').create({
-    method: 'GetDay',
-    data: {
-        service: props.service,
-        dayId: route.id,
-        courseId: route.slug
-    }
-});
+async function fetch() {
+    const res = await useService('rpc').create({
+        method: 'GetDay',
+        data: {
+            service: props.service,
+            dayId: route.id,
+            courseId: route.slug
+        }
+    });
 
-training.value = res.data;
+    training.value = res.data;
+}
+
+fetch();
 </script>
 
 <style>

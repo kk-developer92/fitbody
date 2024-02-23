@@ -1,3 +1,5 @@
+import useService from '~/utils/useService';
+
 export default defineNuxtRouteMiddleware(async (to, from) => {
     const cookies = useCookie('token');
     
