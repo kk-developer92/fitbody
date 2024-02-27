@@ -2,8 +2,7 @@
     <nav id="main-navbar" class="navbar pt-2">
         <div class="container">
             <div class="d-flex w-100 align-items-center p-2">
-                <div class="header-reg" v-if="user?.name">
-                    <!--                    <logout class="cursor-pointer"/>-->
+                <div class="header-reg">
                     <nuxt-link class="account" to="/">
                         <home-icon/>
                         <span>Главная</span>
@@ -20,14 +19,10 @@
                         <nutrition-icon/>
                         <span>Питание</span>
                     </nuxt-link>
-                    <nuxt-link class="account" to="/account">
+                    <nuxt-link class="account" :to="user?._id ? '/account' : '/login'">
                         <account-icon/>
                         <span>КАБИНЕТ</span>
                     </nuxt-link>
-                </div>
-                <div class="header-reg" v-else>
-                    <nuxt-link to="/login">Войти</nuxt-link>
-                    <nuxt-link to="/signup">Регистрироваться</nuxt-link>
                 </div>
             </div>
         </div>
@@ -69,8 +64,7 @@ if (cookie.value) {
     align-items: center;
     justify-content: left;
     background: #3C4555;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 0 0 10px 10px;
 
     @media (max-width: 450px) {
         width: 100%;
