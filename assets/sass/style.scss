@@ -937,7 +937,7 @@ h2.head-nav {
 }
 
 .router-link-exact-active {
-    color: $main-color !important;
+    opacity: .4;
 }
 
 .form-control {
