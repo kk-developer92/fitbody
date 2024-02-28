@@ -1,5 +1,5 @@
 <template>
-    <div class="pt-3" v-if="open">
+    <div class="pt-3 component" v-if="open">
         <section class="faq py-3 py-md-5 mt-3 mt-md-5">
             <div class="container py-3">
                 <div class="row">
@@ -166,3 +166,12 @@ bus.on('footer.hide', ({id}) => {
 });
 
 </script>
+
+
+<style>
+.component {
+    @media (max-width: 450px) {
+        padding-bottom: 90px;
+    }
+}
+</style>
