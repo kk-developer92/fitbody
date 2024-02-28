@@ -1,7 +1,7 @@
 <template>
     <modal class="modal fade" id="resultModal" @shown="shown">
         <loading class="loading-value" v-if="isLoading"/>
-        <form class="form p-3">
+        <form class="form p-3" @submit.prevent="submit">
             <div class="row" v-for="res in results">
                 <div class="col-4">
                     <div class="form-floating mb-3">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <button @click="submit" class="btn btn-primary button mt-3">сохранить</button>
+            <button class="btn btn-primary button mt-3">сохранить</button>
         </form>
     </modal>
 </template>
@@ -56,16 +56,21 @@ async function countResult() {
 
 async function submit() {
     isLoading.value = true;
-    await useService('rpc').create({
-        method: 'SetResults',
-        data: {
-            service: useRoute().fullPath.split('/')[1],
-            exerciseId: exercise.value.uniqueId,
-            results: results.value,
-        }
-    });
-
-    isLoading.value = false;
+    try {
+        await useService('rpc').create({
+            method: 'SetResults',
+            data: {
+                service: useRoute().fullPath.split('/')[1],
+                exerciseId: exercise.value.uniqueId,
+                results: results.value,
+            }
+        });
+        reloadNuxtApp({force: true});
+    } catch (e) {
+        console.log(e);
+    } finally {
+        isLoading.value = false;
+    }
 }
 
 </script>
