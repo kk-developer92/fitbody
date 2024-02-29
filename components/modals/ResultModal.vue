@@ -6,7 +6,7 @@
                 <div class="col-4">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="floatingInput"
-                               placeholder="Весcls"
+                               placeholder="0"
                                v-model="res.weight"
                                inputmode="numeric">
                         <label for="floatingInput" :style="{color: 'gray'}">Вес</label>
@@ -15,7 +15,7 @@
                 <div class="col">
                     <div class="form-floating">
                         <input type="text" class="form-control" id="floatingSet"
-                               placeholder="Подходы"
+                               placeholder="0"
                                v-model="res.reps"
                                inputmode="numeric">
                         <label for="floatingSet" :style="{color: 'gray'}">Повторения</label>
@@ -38,7 +38,9 @@ const props = defineProps<{ dayId: string }>()
 function shown(data: any) {
     exercise.value = data;
     countResult();
-    results.value = exercise.value.results;
+    if (!exercise.value.results?.message) {
+        results.value = exercise.value.results;
+    }
 }
 
 async function countResult() {
